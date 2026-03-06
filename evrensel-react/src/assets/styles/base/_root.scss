@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as *;
+
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-dark: #{$color-primary-dark};
+  --color-secondary: #{$color-secondary};
+  --color-accent: #{$color-accent};
+
+  --color-white: #{$color-white};
+  --color-black: #{$color-black};
+
+  --color-text: #{$color-text};
+  --color-text-light: #{$color-text-light};
+  --color-border: #{$color-border};
+  --color-background: #{$color-background};
+  --color-surface: #{$color-surface};
+
+  --font-primary: #{$font-primary};
+  --font-secondary: #{$font-secondary};
+}

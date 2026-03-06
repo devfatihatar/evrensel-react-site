@@ -1,0 +1,36 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.navbar {
+  background-color: $color-white;
+  border-bottom: 1px solid $color-border;
+  box-shadow: $shadow-sm;
+
+  &__inner {
+    @include container;
+    @include flex-between;
+    min-height: 80px;
+  }
+
+  &__logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: $color-primary;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__link {
+    color: $color-secondary;
+    font-weight: 500;
+    transition: $transition-base;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
