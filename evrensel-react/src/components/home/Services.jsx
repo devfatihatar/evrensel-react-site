@@ -2,9 +2,9 @@ import SectionTitle from "../shared/SectionTitle"
 import Button from "../shared/Button"
 
 const stats = [
-  { label: "Yıl Tecrübe", value: "12+" },
-  { label: "Tamamlanan Proje", value: "250+" },
-  { label: "Destek Erişimi", value: "7/24" },
+  { label: "Yıl Tecrübe", value: "32+" },
+  { label: "Tamamlanan Proje", value: "500+" },
+  { label: "Hafta içi Destek Erişimi", value: " 10:00 - 17:00" },
 ]
 
 const serviceCards = [

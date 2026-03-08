@@ -171,6 +171,9 @@
   &__slide {
     position: absolute;
     inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     opacity: 0;
     transform: scale(1.02);
     transition: opacity 0.45s ease, transform 0.45s ease;

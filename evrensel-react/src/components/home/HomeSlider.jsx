@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react"
+import slider1 from "../../assets/images/slider1.webp"
+import slider2 from "../../assets/images/slider2.png"
+import slider3 from "../../assets/images/slider3.jpg"
 
 const slides = [
   {
-    title: "Yeni Fikirler, Güçlü Başlangıç",
-    text: "Buraya kampanya veya manşet metnini hızlıca yerleştirebilirsin.",
-    color: "#f28a1b",
+    title: "Web site tasarımı ve geliştirme",
+    text: "Güncel teknoloji ve kullanıcı odaklı tasarımla markanıza özel bir web deneyimi sunalım.",
+    image: slider1,
   },
   {
-    title: "Dijitalde Hızlı Büyüme",
-    text: "Bu alana ürün/hizmet vurgusu gibi kısa bir açıklama girebilirsin.",
-    color: "#f3c73b",
+    title: "Sosyal medya yönetimi",
+    text: "Sosyal medya varlığınızı güçlendirecek stratejiler ve içeriklerle hedef kitlenizle etkili iletişim kurmanıza yardımcı olalım.",
+    image: slider2,
   },
   {
-    title: "Markanı Öne Çıkar",
-    text: "Son slaytta güçlü bir çağrı metni veya teklif mesajı kullanabilirsin.",
-    color: "#cf2d2d",
+    title: "Donanım ve altyapı çözümleri",
+    text: "Donanım ve altyapı ihtiyaçlarınızı karşılayacak güvenilir çözümlerle iş süreçlerinizi kesintisiz hale getirelim.",
+    image: slider3,
   },
 ]
 
@@ -45,10 +48,9 @@ export default function HomeSlider() {
             <article
               key={slide.title}
               className={`home-slider__slide ${index === activeIndex ? "is-active" : ""}`.trim()}
-              style={{ backgroundColor: slide.color }}
+              style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="home-slider__overlay">
-                <p className="home-slider__eyebrow">Örnek Slider Metni</p>
                 <h2>{slide.title}</h2>
                 <p>{slide.text}</p>
               </div>

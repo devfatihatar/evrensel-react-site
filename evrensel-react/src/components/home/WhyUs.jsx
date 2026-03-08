@@ -5,12 +5,12 @@ const features = [
   {
     title: "Hızlı İletişim",
     text: "Talebinizi bekletmeden ele alır, net aksiyon planı ile geri dönüş yaparız.",
-    metric: "< 2 saat ilk dönüş",
+    metric: "Hızlı geri dönüş garantisi",
   },
   {
     title: "Proaktif Destek",
     text: "Sorun çıkmasını beklemeden sistemi izler, kritik noktaları önceden iyileştiririz.",
-    metric: "%99,9 sistem sürekliliği hedefi",
+    metric: "%80 önleyici müdahale oranı",
   },
   {
     title: "Ölçülebilir Sonuç",
@@ -22,8 +22,8 @@ const features = [
 const processSteps = ["Keşif", "Plan", "Uygulama", "Sürekli Destek"]
 
 const trustStats = [
-  { label: "Aktif Kurumsal Müşteri", value: "85+" },
-  { label: "Tamamlanan Proje", value: "250+" },
+  { label: "Aktif Kurumsal Müşteri", value: "25+" },
+  { label: "Tamamlanan Proje", value: "500+" },
   { label: "Destek Memnuniyeti", value: "%96" },
 ]
 
