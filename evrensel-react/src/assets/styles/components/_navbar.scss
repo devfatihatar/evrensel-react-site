@@ -2,35 +2,294 @@
 @use "../abstracts/mixins" as *;
 
 .navbar {
-  background-color: $color-white;
-  border-bottom: 1px solid $color-border;
-  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 70;
+  backface-visibility: hidden;
 
-  &__inner {
-    @include container;
-    @include flex-between;
-    min-height: 80px;
+  &__top {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(108deg, #5b1625 0%, #7e1f32 52%, #aa3d2f 100%);
+    border-bottom: 1px solid rgba($color-white, 0.16);
+    max-height: 60px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: max-height 0.26s ease, opacity 0.2s ease, transform 0.2s ease;
+    will-change: max-height, opacity, transform;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -120% auto auto -10%;
+      width: 44%;
+      aspect-ratio: 1 / 1;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba($color-white, 0.22) 0%, rgba($color-white, 0) 70%);
+      pointer-events: none;
+    }
   }
 
-  &__logo {
-    font-size: 24px;
+  &__top-inner {
+    @include flex-between;
+    gap: 16px;
+    min-height: 52px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__top-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  &__top-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__top-text {
+    color: $color-white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  &__top-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  &__top-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
     font-weight: 700;
-    color: $color-primary;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: $color-white;
+    border: 1px solid rgba($color-white, 0.26);
+    background-color: rgba($color-white, 0.1);
+  }
+
+  &__top-contact {
+    color: $color-white;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding-right: 10px;
+    margin-right: 2px;
+    border-right: 1px solid rgba($color-white, 0.24);
+    transition: $transition-base;
+
+    &:hover {
+      color: rgba($color-white, 0.82);
+    }
+  }
+
+  &__top-cta.btn {
+    min-height: 32px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: linear-gradient(160deg, rgba($color-white, 0.28), rgba($color-white, 0.12));
+    color: $color-white;
+    border-color: rgba($color-white, 0.18);
+    box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18), inset 0 1px 0 rgba($color-white, 0.24);
+    backdrop-filter: blur(8px);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+    &:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(160deg, rgba($color-white, 0.34), rgba($color-white, 0.16));
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.24), inset 0 1px 0 rgba($color-white, 0.3);
+    }
+  }
+
+  &__main {
+    background-color: rgba(255, 243, 239, 0.95);
+    border-bottom: 1px solid #ead4d7;
+    box-shadow: $shadow-sm;
+    transition: background-color 0.22s ease;
+  }
+
+  &__inner {
+    @include flex-between;
+    min-height: 84px;
+    gap: 28px;
+    transition: min-height 0.28s ease, gap 0.28s ease, padding 0.28s ease;
+    will-change: min-height;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__brand-mark {
+    @include flex-center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #8f1d2c 0%, #4a0f1a 100%);
+    color: $color-white;
+    font-family: $font-secondary;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: width 0.28s ease, height 0.28s ease, border-radius 0.28s ease;
+  }
+
+  &__brand-text {
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1.2;
+
+    strong {
+      color: $color-secondary;
+      font-family: $font-secondary;
+      font-size: 19px;
+      transition: font-size 0.28s ease;
+    }
+
+    small {
+      color: $color-text-light;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: opacity 0.22s ease;
+    }
   }
 
   &__menu {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 24px;
+    justify-content: center;
+    gap: 12px;
   }
 
   &__link {
-    color: $color-secondary;
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 0 8px;
+    font-size: 14px;
     font-weight: 500;
+    color: $color-secondary;
     transition: $transition-base;
+    border-bottom: 2px solid transparent;
 
     &:hover {
-      color: $color-primary;
+      color: #8f1d2c;
+    }
+
+    &--active {
+      color: #8f1d2c;
+      border-bottom-color: #8f1d2c;
+    }
+  }
+
+  &__main-cta.btn {
+    min-height: 40px;
+    padding: 10px 16px;
+    transition: min-height 0.28s ease, padding 0.28s ease;
+  }
+
+  &--scrolled {
+    .navbar__top {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      border-bottom-color: transparent;
+      pointer-events: none;
+    }
+
+    .navbar__main {
+      background-color: rgba(255, 237, 233, 0.97);
+      box-shadow: 0 8px 24px rgba(74, 15, 26, 0.12);
+    }
+
+    .navbar__inner {
+      min-height: 66px;
+      gap: 18px;
+    }
+
+    .navbar__brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+    }
+
+    .navbar__brand-text {
+      strong {
+        font-size: 17px;
+      }
+
+      small {
+        opacity: 0;
+      }
+    }
+
+    .navbar__main-cta.btn {
+      min-height: 36px;
+      padding: 8px 14px;
+    }
+  }
+
+  @include respond(lg) {
+    &__inner {
+      min-height: 72px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  @include respond(md) {
+    &__top-inner {
+      min-height: 42px;
+    }
+
+    &__top-left {
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__top-right {
+      display: none;
+    }
+
+    &__top-text {
+      font-size: 12px;
+    }
+
+    &__top-badge {
+      display: none;
+    }
+
+    &__top-cta.btn {
+      min-height: 30px;
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+
+    &__brand-text small {
+      display: none;
+    }
+
+    &__main-cta {
+      width: 100%;
     }
   }
 }

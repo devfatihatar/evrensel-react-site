@@ -2,14 +2,20 @@
 
 body {
   background-color: $color-background;
+  overflow-x: hidden;
 }
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
   min-height: calc(100vh - 160px);
+}
+
+.page {
+  padding-top: 24px;
 }
 
 .section {
