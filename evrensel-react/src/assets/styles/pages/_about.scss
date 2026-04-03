@@ -1,5 +1,265 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
 .about-page {
   &__hero {
     padding-top: 56px;
+  }
+
+  &__hero-grid,
+  &__story-grid,
+  &__capabilities-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  &__hero-content,
+  &__story-text {
+    p + p {
+      margin-top: 14px;
+    }
+  }
+
+  &__lead {
+    max-width: 62ch;
+    margin-top: 22px;
+    margin-bottom: 0;
+    font-size: 17px;
+    line-height: 1.75;
+    color: $color-text;
+  }
+
+  &__hero-actions,
+  &__cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  &__hero-panel,
+  &__capability-box {
+    padding: 24px;
+    border-radius: $radius-lg;
+    background: linear-gradient(165deg, rgba($color-white, 0.98), rgba($color-white, 0.9));
+    border: 1px solid rgba($color-primary, 0.12);
+    box-shadow: $shadow-sm;
+  }
+
+  &__panel-label,
+  &__cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background-color: rgba($color-primary, 0.08);
+    border: 1px solid rgba($color-primary, 0.15);
+    color: $color-primary;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__facts {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+  }
+
+  &__fact {
+    padding: 16px;
+    border-radius: $radius-md;
+    background-color: rgba($color-primary, 0.03);
+    border: 1px solid rgba($color-primary, 0.08);
+
+    strong {
+      display: block;
+      margin-bottom: 4px;
+      color: $color-secondary;
+      font-size: 28px;
+      line-height: 1.1;
+      font-family: $font-secondary;
+    }
+
+    span {
+      color: $color-text-light;
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+
+  &__story,
+  &__model {
+    background: linear-gradient(180deg, rgba($color-white, 0.2), rgba($color-primary, 0.02));
+  }
+
+  &__story-text {
+    padding: 6px 0 0;
+
+    p {
+      color: $color-text;
+      line-height: 1.8;
+    }
+  }
+
+  &__timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  &__timeline-item,
+  &__principle-card,
+  &__model-card {
+    position: relative;
+    padding: 22px;
+    border-radius: $radius-lg;
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    box-shadow: $shadow-sm;
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 0;
+      color: $color-text;
+      line-height: 1.7;
+    }
+  }
+
+  &__timeline-year,
+  &__model-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    min-height: 30px;
+    margin-bottom: 14px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba($color-primary, 0.14), rgba($color-accent, 0.16));
+    color: $color-secondary;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__principles-grid,
+  &__model-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 28px;
+  }
+
+  &__capability-list {
+    display: grid;
+    gap: 12px;
+
+    li {
+      position: relative;
+      padding-left: 18px;
+      color: $color-text;
+      line-height: 1.7;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.72em;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background-color: $color-accent;
+      }
+    }
+  }
+
+  &__cta {
+    padding-top: 8px;
+  }
+
+  &__cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 30px;
+    border-radius: $radius-lg;
+    background: linear-gradient(
+      135deg,
+      rgba($color-secondary, 0.96) 0%,
+      rgba($color-primary, 0.92) 60%,
+      rgba($color-accent, 0.86) 100%
+    );
+    box-shadow: 0 16px 36px rgba($color-secondary, 0.16);
+
+    h2,
+    p {
+      color: $color-white;
+    }
+
+    h2 {
+      margin-top: 14px;
+      margin-bottom: 10px;
+      max-width: 18ch;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+      max-width: 58ch;
+      color: rgba($color-white, 0.9);
+    }
+  }
+
+  &__cta-actions {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+}
+
+@include respond(lg) {
+  .about-page {
+    &__hero-grid,
+    &__story-grid,
+    &__capabilities-grid,
+    &__cta-box {
+      grid-template-columns: 1fr;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__timeline,
+    &__principles-grid,
+    &__model-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@include respond(md) {
+  .about-page {
+    &__timeline,
+    &__principles-grid,
+    &__model-grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__hero-panel,
+    &__capability-box,
+    &__timeline-item,
+    &__principle-card,
+    &__model-card,
+    &__cta-box {
+      padding: 20px;
+    }
   }
 }

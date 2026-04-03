@@ -29,7 +29,17 @@ export default function HomeSlider() {
       setActiveIndex((prev) => (prev + 1) % slides.length)
     }, 5000)
 
-    return () => window.clearInterval(timer)
+    const preloadAfterFirstPaint = window.setTimeout(() => {
+      slides.slice(1).forEach((slide) => {
+        const img = new Image()
+        img.src = slide.image
+      })
+    }, 1200)
+
+    return () => {
+      window.clearInterval(timer)
+      window.clearTimeout(preloadAfterFirstPaint)
+    }
   }, [])
 
   const goPrev = () => {
@@ -40,22 +50,27 @@ export default function HomeSlider() {
     setActiveIndex((prev) => (prev + 1) % slides.length)
   }
 
+  const activeSlide = slides[activeIndex]
+
   return (
     <section className="home-slider section reveal-on-scroll reveal-left">
       <div className="container">
         <div className="home-slider__frame">
-          {slides.map((slide, index) => (
-            <article
-              key={slide.title}
-              className={`home-slider__slide ${index === activeIndex ? "is-active" : ""}`.trim()}
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              <div className="home-slider__overlay">
-                <h2>{slide.title}</h2>
-                <p>{slide.text}</p>
-              </div>
-            </article>
-          ))}
+          <article className="home-slider__slide is-active">
+            <img
+              className="home-slider__image"
+              src={activeSlide.image}
+              alt={activeSlide.title}
+              fetchPriority={activeIndex === 0 ? "high" : "auto"}
+              loading={activeIndex === 0 ? "eager" : "lazy"}
+              decoding={activeIndex === 0 ? "sync" : "async"}
+            />
+
+            <div className="home-slider__overlay">
+              <h2>{activeSlide.title}</h2>
+              <p>{activeSlide.text}</p>
+            </div>
+          </article>
 
           <button className="home-slider__arrow home-slider__arrow--prev" onClick={goPrev} type="button">
             ←

@@ -8,8 +8,8 @@ const quickLinks = [
 ]
 
 const serviceLinks = [
-  { to: "/web-tasarim", label: "Web Tasarım" },
-  { to: "/donanim", label: "Donanım Altyapı" },
+  { to: "/web-tasarim", label: "Web Tasarımı" },
+  { to: "/donanim", label: "Donanım Altyapısı" },
   { to: "/yardim-destek", label: "Yardım ve Destek" },
 ]
 

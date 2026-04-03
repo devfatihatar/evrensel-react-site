@@ -4,7 +4,7 @@ import Button from "../shared/Button"
 const stats = [
   { label: "Yıl Tecrübe", value: "32+" },
   { label: "Tamamlanan Proje", value: "500+" },
-  { label: "Hafta içi Destek Erişimi", value: " 10:00 - 17:00" },
+  { label: "Hafta içi Destek Erişimi", value: "10:00 - 17:00" },
 ]
 
 const serviceCards = [

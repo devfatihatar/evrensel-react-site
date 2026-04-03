@@ -16,6 +16,47 @@ main {
 
 .page {
   padding-top: 24px;
+
+  > .section {
+    position: relative;
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+    will-change: opacity, transform;
+  }
+
+  > .section:first-child {
+    opacity: 1;
+    transform: none;
+  }
+
+  > .section.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  > .section + .section {
+    margin-top: 8px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: min(1120px, calc(100% - 32px));
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba($color-primary, 0.28) 18%,
+        rgba($color-accent, 0.32) 50%,
+        rgba($color-primary, 0.28) 82%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+  }
 }
 
 .section {
@@ -24,4 +65,12 @@ main {
 
 .text-center {
   text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page > .section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -1,0 +1,77 @@
+[
+  {
+    "slug": "web-tasarimi",
+    "eyebrow": "Web Tasarımı",
+    "title": "Kurumsal web deneyimi",
+    "shortDescription": "Markanızı doğru anlatan, güven oluşturan ve dönüşüm odaklı çalışan modern web siteleri tasarlıyor ve geliştiriyoruz.",
+    "summary": "Web sitesini sadece görünüm olarak değil; içerik akışı, hız, mobil uyum ve yönetilebilirlik açısından bir iş aracı olarak ele alıyoruz.",
+    "highlights": [
+      "Kurumsal tasarım dili",
+      "Mobil uyumlu altyapı",
+      "Yönetilebilir içerik yapısı"
+    ],
+    "includes": [
+      "Kurumsal web tasarımı",
+      "Ön yüz geliştirme",
+      "Responsive uyumluluk",
+      "İçerik ve sayfa kurgusu",
+      "Temel SEO ve performans düzeni",
+      "Yayın öncesi test süreci"
+    ],
+    "process": [
+      "İhtiyaç analizi ve konumlama",
+      "Sayfa mimarisi ve tasarım",
+      "Geliştirme, test ve yayın"
+    ]
+  },
+  {
+    "slug": "donanim-altyapisi",
+    "eyebrow": "Donanım Hizmetleri",
+    "title": "Güvenilir sistem altyapısı",
+    "shortDescription": "Ofis içi cihaz, ağ ve çevre birimi ihtiyaçlarını planlı, düzenli ve sürdürülebilir bir yapıyla kuruyoruz.",
+    "summary": "Donanım tarafında hedefimiz yalnızca kurulum yapmak değil; arızayı azaltan, büyümeye uygun ve takip edilebilir bir altyapı oluşturmaktır.",
+    "highlights": [
+      "Ofis altyapısı planlama",
+      "Ağ ve bağlantı kurulumu",
+      "Kurulum sonrası test ve teslim"
+    ],
+    "includes": [
+      "Bilgisayar ve çevre birimi kurulumu",
+      "Yazıcı ve tarayıcı bağlantıları",
+      "Ağ, modem ve switch yapılandırmaları",
+      "Yeni ofis kurulum desteği",
+      "Yenileme ve iyileştirme planı",
+      "Temel güvenlik ve erişim ayarları"
+    ],
+    "process": [
+      "Mevcut yapıyı inceleme",
+      "İhtiyaca uygun plan oluşturma",
+      "Kurulum ve devreye alma"
+    ]
+  },
+  {
+    "slug": "yardim-destek",
+    "eyebrow": "Yardım ve Destek",
+    "title": "Süreci yöneten teknik destek",
+    "shortDescription": "Uzaktan ya da yerinde destekle işletmenizin günlük operasyonunu aksatmadan sorunları çözen destek yapısı kuruyoruz.",
+    "summary": "Destek hizmetini sadece arıza çözümü değil, iş sürekliliğini koruyan takipli bir operasyon modeli olarak kurguluyoruz.",
+    "highlights": [
+      "Hızlı geri dönüş",
+      "Uzaktan ve yerinde müdahale",
+      "Periyodik bakım yaklaşımı"
+    ],
+    "includes": [
+      "Uzaktan teknik destek",
+      "Yerinde müdahale organizasyonu",
+      "Arıza ve talep karşılama süreci",
+      "Periyodik bakım kontrolleri",
+      "Kullanıcı yönlendirme desteği",
+      "Tekrar eden sorunlar için iyileştirme önerileri"
+    ],
+    "process": [
+      "Talebi kayda alma",
+      "Müdahale biçimini belirleme",
+      "Çözüm ve takip"
+    ]
+  }
+]
