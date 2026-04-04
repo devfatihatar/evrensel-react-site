@@ -1,9 +1,10 @@
-ï»¿import Button from "../components/shared/Button"
+import Button from "../components/shared/Button"
 import SectionTitle from "../components/shared/SectionTitle"
 import PageSeo from "../components/seo/PageSeo"
 import webDesignData from "../data/webDesignData.json"
 import seoData from "../data/seoData.json"
 import { getBreadcrumbSchema, getServiceSchema } from "../seo/schema"
+import CountUpText from "../components/shared/CountUpText"
 
 const {
   hero,
@@ -24,11 +25,11 @@ const webDesignSeo = seoData.webDesign
 export default function WebDesign() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
-    { name: "Web TasarÄ±m", path: webDesignSeo.path },
+    { name: "Web Tasarým", path: webDesignSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({
-    name: "Web TasarÄ±m ve GeliÅŸtirme Hizmetleri",
+    name: "Web Tasarým ve Geliþtirme Hizmetleri",
     description: webDesignSeo.description,
     path: webDesignSeo.path,
   })
@@ -62,7 +63,7 @@ export default function WebDesign() {
               <ul className="web-design-page__highlight-list">
                 {highlights.map((item) => (
                   <li key={item.label} className="web-design-page__highlight-item">
-                    <strong>{item.value}</strong>
+                    <strong><CountUpText value={item.value} /></strong>
                     <span>{item.label}</span>
                   </li>
                 ))}
@@ -102,7 +103,7 @@ export default function WebDesign() {
             <div className="web-design-page__process-grid">
               {processSteps.map((item) => (
                 <article key={item.step} className="web-design-page__process-card">
-                  <span className="web-design-page__process-step">{item.step}</span>
+                  <span className="web-design-page__process-step"><CountUpText value={item.step} /></span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -175,3 +176,4 @@ export default function WebDesign() {
     </>
   )
 }
+

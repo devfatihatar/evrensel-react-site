@@ -1,9 +1,10 @@
-ï»¿import Button from "../components/shared/Button"
+import Button from "../components/shared/Button"
 import SectionTitle from "../components/shared/SectionTitle"
 import PageSeo from "../components/seo/PageSeo"
 import aboutData from "../data/aboutData.json"
 import seoData from "../data/seoData.json"
 import { getBreadcrumbSchema } from "../seo/schema"
+import CountUpText from "../components/shared/CountUpText"
 
 const {
   hero,
@@ -24,7 +25,7 @@ const aboutSeo = seoData.about
 export default function About() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
-    { name: "HakkÄ±mÄ±zda", path: aboutSeo.path },
+    { name: "Hakkýmýzda", path: aboutSeo.path },
   ])
 
   return (
@@ -57,7 +58,7 @@ export default function About() {
               <ul className="about-page__facts">
                 {facts.map((fact) => (
                   <li key={fact.label} className="about-page__fact">
-                    <strong>{fact.value}</strong>
+                    <strong><CountUpText value={fact.value} /></strong>
                     <span>{fact.label}</span>
                   </li>
                 ))}
@@ -83,7 +84,7 @@ export default function About() {
             <div className="about-page__timeline">
               {timeline.map((item) => (
                 <article key={`${item.year}-${item.title}`} className="about-page__timeline-item">
-                  <span className="about-page__timeline-year">{item.year}</span>
+                  <span className="about-page__timeline-year"><CountUpText value={item.year} /></span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -139,7 +140,7 @@ export default function About() {
             <div className="about-page__model-grid">
               {workModel.map((item) => (
                 <article key={item.step} className="about-page__model-card">
-                  <span className="about-page__model-step">{item.step}</span>
+                  <span className="about-page__model-step"><CountUpText value={item.step} /></span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -168,3 +169,4 @@ export default function About() {
     </>
   )
 }
+

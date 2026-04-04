@@ -15,5 +15,16 @@
     { "value": "8", "label": "Farklı Sektör" },
     { "value": "%96", "label": "Memnuniyet Oranı" }
   ],
-  "logoAriaSuffix": "logo alanı"
+  "logoAriaSuffix": "logo alanı",
+  "brandTickerTitle": "Çalıştığımız Markalar",
+  "brandLogos": [
+    { "name": "Artemis", "logo": "AR", "bgColor": "#A53A49", "textColor": "#FFF1F2" },
+    { "name": "Vertex", "logo": "VX", "bgColor": "#B33F4F", "textColor": "#FFF1F2" },
+    { "name": "Nexa", "logo": "NX", "bgColor": "#A83958", "textColor": "#FFF0F6" },
+    { "name": "Lumio", "logo": "LU", "bgColor": "#943444", "textColor": "#FFF5F7" },
+    { "name": "Orion", "logo": "OR", "bgColor": "#8B3140", "textColor": "#FFF1F3" },
+    { "name": "Penta", "logo": "PT", "bgColor": "#9B3750", "textColor": "#FFF1F3" },
+    { "name": "Mosaic", "logo": "MO", "bgColor": "#B04563", "textColor": "#FFF0F4" },
+    { "name": "Zenit", "logo": "ZN", "bgColor": "#7F2D43", "textColor": "#FFEAF0" }
+  ]
 }

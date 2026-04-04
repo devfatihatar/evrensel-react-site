@@ -1,13 +1,28 @@
 @use "../abstracts/variables" as *;
 
+html {
+  overflow-x: clip;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body {
   background-color: $color-background;
-  overflow-x: hidden;
+  overflow-x: clip;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 #root {
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
 }
 
 main {

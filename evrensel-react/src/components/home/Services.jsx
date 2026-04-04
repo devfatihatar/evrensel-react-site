@@ -1,5 +1,6 @@
-﻿import SectionTitle from "../shared/SectionTitle"
+import SectionTitle from "../shared/SectionTitle"
 import Button from "../shared/Button"
+import CountUpText from "../shared/CountUpText"
 import homeServicesData from "../../data/homeServicesData.json"
 
 const { section, stats, serviceCards, cardLink, footerButton } = homeServicesData
@@ -12,13 +13,15 @@ export default function Services() {
           eyebrow={section.eyebrow}
           title={section.title}
           subtitle={section.subtitle}
-          align="center"
+          align="right"
         />
 
         <div className="services__stats">
           {stats.map((stat) => (
             <article className="services__stat" key={stat.label}>
-              <strong>{stat.value}</strong>
+              <strong>
+                <CountUpText value={stat.value} />
+              </strong>
               <span>{stat.label}</span>
             </article>
           ))}

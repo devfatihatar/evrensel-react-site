@@ -1,4 +1,5 @@
-﻿import SectionTitle from "../shared/SectionTitle"
+import SectionTitle from "../shared/SectionTitle"
+import CountUpText from "../shared/CountUpText"
 import homeReferencesData from "../../data/homeReferencesData.json"
 
 const { section, references, trust, logoAriaSuffix } = homeReferencesData
@@ -11,7 +12,7 @@ export default function References() {
           eyebrow={section.eyebrow}
           title={section.title}
           subtitle={section.subtitle}
-          align="center"
+          align="right"
         />
 
         <div className="references__grid">
@@ -42,7 +43,9 @@ export default function References() {
               }`.trim()}
               key={item.label}
             >
-              <strong>{item.value}</strong>
+              <strong>
+                <CountUpText value={item.value} />
+              </strong>
               <span>{item.label}</span>
             </article>
           ))}

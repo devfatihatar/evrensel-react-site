@@ -10,6 +10,15 @@
     text-align: center;
   }
 
+  &--right {
+    margin-left: auto;
+    text-align: right;
+
+    .section-title__subtitle {
+      margin-left: auto;
+    }
+  }
+
   &__eyebrow {
     display: inline-block;
     margin-bottom: 8px;

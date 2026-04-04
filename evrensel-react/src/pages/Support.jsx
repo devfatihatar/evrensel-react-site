@@ -1,9 +1,10 @@
-ï»¿import Button from "../components/shared/Button"
+import Button from "../components/shared/Button"
 import SectionTitle from "../components/shared/SectionTitle"
 import PageSeo from "../components/seo/PageSeo"
 import supportData from "../data/supportData.json"
 import seoData from "../data/seoData.json"
 import { getBreadcrumbSchema, getServiceSchema } from "../seo/schema"
+import CountUpText from "../components/shared/CountUpText"
 
 const {
   hero,
@@ -24,11 +25,11 @@ const supportSeo = seoData.support
 export default function Support() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
-    { name: "YardÄ±m ve Destek", path: supportSeo.path },
+    { name: "Yardým ve Destek", path: supportSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({
-    name: "YardÄ±m ve Destek Hizmetleri",
+    name: "Yardým ve Destek Hizmetleri",
     description: supportSeo.description,
     path: supportSeo.path,
   })
@@ -62,7 +63,7 @@ export default function Support() {
               <ul className="support-page__highlight-list">
                 {highlights.map((item) => (
                   <li key={item.label} className="support-page__highlight-item">
-                    <strong>{item.value}</strong>
+                    <strong><CountUpText value={item.value} /></strong>
                     <span>{item.label}</span>
                   </li>
                 ))}
@@ -102,7 +103,7 @@ export default function Support() {
             <div className="support-page__process-grid">
               {processSteps.map((item) => (
                 <article key={item.step} className="support-page__process-card">
-                  <span className="support-page__process-step">{item.step}</span>
+                  <span className="support-page__process-step"><CountUpText value={item.step} /></span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -171,3 +172,4 @@ export default function Support() {
     </>
   )
 }
+

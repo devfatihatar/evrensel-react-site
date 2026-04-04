@@ -1,0 +1,77 @@
+"filename", "language", "JavaScript", "JavaScript JSX", "JSON", "PostCSS", "SCSS", "Markdown", "XML", "HTML", "comment", "blank", "total"
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\README.md", "Markdown", 0, 0, 0, 0, 0, 9, 0, 0, 0, 8, 17
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\eslint.config.js", "JavaScript", 28, 0, 0, 0, 0, 0, 0, 0, 0, 2, 30
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 36, 0, 1, 37
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\package-lock.json", "JSON", 0, 0, 6037, 0, 0, 0, 0, 0, 0, 1, 6038
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\package.json", "JSON", 0, 0, 31, 0, 0, 0, 0, 0, 0, 1, 32
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\public\og-image.svg", "XML", 0, 0, 0, 0, 0, 0, 16, 0, 0, 1, 17
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\public\sitemap.xml", "XML", 0, 0, 0, 0, 0, 0, 53, 0, 0, 1, 54
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\public\vite.svg", "XML", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\App.jsx", "JavaScript JSX", 0, 5, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\abstracts\_breakpoints.scss", "SCSS", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 4
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\abstracts\_functions.scss", "SCSS", 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\abstracts\_mixins.scss", "SCSS", 0, 0, 0, 0, 41, 0, 0, 0, 0, 7, 48
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\abstracts\_variables.scss", "SCSS", 0, 0, 0, 0, 21, 0, 0, 0, 0, 8, 29
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\base\_globals.scss", "SCSS", 0, 0, 0, 0, 77, 0, 0, 0, 0, 15, 92
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\base\_reset.scss", "SCSS", 0, 0, 0, 0, 27, 0, 0, 0, 0, 5, 32
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\base\_root.scss", "SCSS", 0, 0, 0, 0, 16, 0, 0, 0, 0, 4, 20
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\base\_typography.scss", "SCSS", 0, 0, 0, 0, 30, 0, 0, 0, 0, 6, 36
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\components\_button.scss", "SCSS", 0, 0, 0, 0, 27, 0, 0, 0, 0, 6, 33
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\components\_footer.scss", "SCSS", 0, 0, 0, 0, 108, 0, 0, 0, 0, 19, 127
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\components\_navbar.scss", "SCSS", 0, 0, 0, 0, 305, 0, 0, 0, 0, 52, 357
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\components\_section-title.scss", "SCSS", 0, 0, 0, 0, 32, 0, 0, 0, 0, 8, 40
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\layout\_container.scss", "SCSS", 0, 0, 0, 0, 4, 0, 0, 0, 0, 1, 5
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\layout\_grid.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\main.scss", "SCSS", 0, 0, 0, 0, 21, 0, 0, 0, 0, 4, 25
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\pages\_about.scss", "SCSS", 0, 0, 0, 0, 232, 0, 0, 0, 0, 34, 266
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\pages\_contact.scss", "SCSS", 0, 0, 0, 0, 164, 0, 0, 0, 0, 28, 192
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\pages\_hardware.scss", "SCSS", 0, 0, 0, 0, 196, 0, 0, 0, 0, 28, 224
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\pages\_home.scss", "SCSS", 0, 0, 0, 0, 1245, 0, 0, 0, 0, 184, 1429
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\pages\_services.scss", "SCSS", 0, 0, 0, 0, 159, 0, 0, 0, 0, 25, 184
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\pages\_support.scss", "SCSS", 0, 0, 0, 0, 192, 0, 0, 0, 0, 27, 219
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\assets\styles\pages\_web-design.scss", "SCSS", 0, 0, 0, 0, 231, 0, 0, 0, 0, 35, 266
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\home\CTA.jsx", "JavaScript JSX", 0, 29, 0, 0, 0, 0, 0, 0, 0, 5, 34
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\home\Hero.jsx", "JavaScript JSX", 0, 39, 0, 0, 0, 0, 0, 0, 0, 5, 44
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\home\HomeBrands.jsx", "JavaScript JSX", 0, 88, 0, 0, 0, 0, 0, 0, 0, 17, 105
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\home\HomeSlider.jsx", "JavaScript JSX", 0, 74, 0, 0, 0, 0, 0, 0, 0, 13, 87
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\home\References.jsx", "JavaScript JSX", 0, 52, 0, 0, 0, 0, 0, 0, 0, 5, 57
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\home\Services.jsx", "JavaScript JSX", 0, 51, 0, 0, 0, 0, 0, 0, 0, 6, 57
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\home\WhyUs.jsx", "JavaScript JSX", 0, 63, 0, 0, 0, 0, 0, 0, 0, 7, 70
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\layout\Footer.jsx", "JavaScript JSX", 0, 82, 0, 0, 0, 0, 0, 0, 0, 10, 92
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\layout\Navbar.jsx", "JavaScript JSX", 0, 110, 0, 0, 0, 0, 0, 0, 0, 18, 128
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\seo\PageSeo.jsx", "JavaScript JSX", 0, 55, 0, 0, 0, 0, 0, 0, 0, 8, 63
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\seo\SiteSeo.jsx", "JavaScript JSX", 0, 31, 0, 0, 0, 0, 0, 0, 0, 7, 38
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\shared\Button.jsx", "JavaScript JSX", 0, 31, 0, 0, 0, 0, 0, 0, 0, 5, 36
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\shared\CountUpText.jsx", "JavaScript JSX", 0, 69, 0, 0, 0, 0, 0, 0, 0, 16, 85
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\components\shared\SectionTitle.jsx", "JavaScript JSX", 0, 9, 0, 0, 0, 0, 0, 0, 0, 1, 10
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\aboutData.json", "JSON", 0, 0, 118, 0, 0, 0, 0, 0, 0, 1, 119
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\contactData.json", "JSON", 0, 0, 80, 0, 0, 0, 0, 0, 0, 1, 81
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\hardwareData.json", "JSON", 0, 0, 105, 0, 0, 0, 0, 0, 0, 1, 106
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\homeCtaData.json", "JSON", 0, 0, 8, 0, 0, 0, 0, 0, 0, 1, 9
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\homeHeroData.json", "JSON", 0, 0, 10, 0, 0, 0, 0, 0, 0, 1, 11
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\homeReferencesData.json", "JSON", 0, 0, 30, 0, 0, 0, 0, 0, 0, 1, 31
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\homeServicesData.json", "JSON", 0, 0, 34, 0, 0, 0, 0, 0, 0, 1, 35
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\homeSliderData.json", "JSON", 0, 0, 19, 0, 0, 0, 0, 0, 0, 1, 20
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\homeWhyUsData.json", "JSON", 0, 0, 32, 0, 0, 0, 0, 0, 0, 1, 33
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\seoData.json", "JSON", 0, 0, 47, 0, 0, 0, 0, 0, 0, 1, 48
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\serviceDetailData.json", "JSON", 0, 0, 6, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\servicesData.json", "JSON", 0, 0, 77, 0, 0, 0, 0, 0, 0, 1, 78
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\servicesPageData.json", "JSON", 0, 0, 36, 0, 0, 0, 0, 0, 0, 1, 37
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\supportData.json", "JSON", 0, 0, 105, 0, 0, 0, 0, 0, 0, 1, 106
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\data\webDesignData.json", "JSON", 0, 0, 111, 0, 0, 0, 0, 0, 0, 1, 112
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\index.css", "PostCSS", 0, 0, 0, 61, 0, 0, 0, 0, 0, 8, 69
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\main.jsx", "JavaScript JSX", 0, 12, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\About.jsx", "JavaScript JSX", 0, 152, 0, 0, 0, 0, 0, 0, 0, 21, 173
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\Contact.jsx", "JavaScript JSX", 0, 118, 0, 0, 0, 0, 0, 0, 0, 17, 135
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\Hardware.jsx", "JavaScript JSX", 0, 155, 0, 0, 0, 0, 0, 0, 0, 21, 176
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\Home.jsx", "JavaScript JSX", 0, 197, 0, 0, 0, 0, 0, 0, 0, 36, 233
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\NotFound.jsx", "JavaScript JSX", 0, 18, 0, 0, 0, 0, 0, 0, 0, 4, 22
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\ServiceDetail.jsx", "JavaScript JSX", 0, 80, 0, 0, 0, 0, 0, 0, 0, 14, 94
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\Services.jsx", "JavaScript JSX", 0, 96, 0, 0, 0, 0, 0, 0, 0, 14, 110
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\Support.jsx", "JavaScript JSX", 0, 155, 0, 0, 0, 0, 0, 0, 0, 21, 176
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\pages\WebDesign.jsx", "JavaScript JSX", 0, 159, 0, 0, 0, 0, 0, 0, 0, 21, 180
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\router\AppRouter.jsx", "JavaScript JSX", 0, 63, 0, 0, 0, 0, 0, 0, 0, 13, 76
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\seo\config.js", "JavaScript", 11, 0, 0, 0, 0, 0, 0, 0, 0, 2, 13
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\src\seo\schema.js", "JavaScript", 77, 0, 0, 0, 0, 0, 0, 0, 0, 6, 83
+"c:\Users\Fatih Atar\Desktop\Projects\evrenselsite\evrensel-react\vite.config.cjs", "JavaScript", 25, 0, 0, 0, 0, 0, 0, 0, 0, 3, 28
+"Total", "-", 141, 1993, 6886, 61, 3135, 9, 70, 36, 0, 855, 13186

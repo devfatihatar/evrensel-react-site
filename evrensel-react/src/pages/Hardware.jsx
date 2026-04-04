@@ -1,9 +1,10 @@
-ï»¿import Button from "../components/shared/Button"
+import Button from "../components/shared/Button"
 import SectionTitle from "../components/shared/SectionTitle"
 import PageSeo from "../components/seo/PageSeo"
 import hardwareData from "../data/hardwareData.json"
 import seoData from "../data/seoData.json"
 import { getBreadcrumbSchema, getServiceSchema } from "../seo/schema"
+import CountUpText from "../components/shared/CountUpText"
 
 const {
   hero,
@@ -24,11 +25,11 @@ const hardwareSeo = seoData.hardware
 export default function Hardware() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
-    { name: "DonanÄ±m", path: hardwareSeo.path },
+    { name: "Donaným", path: hardwareSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({
-    name: "DonanÄ±m ve AltyapÄ± Hizmetleri",
+    name: "Donaným ve Altyapý Hizmetleri",
     description: hardwareSeo.description,
     path: hardwareSeo.path,
   })
@@ -62,7 +63,7 @@ export default function Hardware() {
               <ul className="hardware-page__highlight-list">
                 {highlights.map((item) => (
                   <li key={item.label} className="hardware-page__highlight-item">
-                    <strong>{item.value}</strong>
+                    <strong><CountUpText value={item.value} /></strong>
                     <span>{item.label}</span>
                   </li>
                 ))}
@@ -102,7 +103,7 @@ export default function Hardware() {
             <div className="hardware-page__process-grid">
               {processSteps.map((item) => (
                 <article key={item.step} className="hardware-page__process-card">
-                  <span className="hardware-page__process-step">{item.step}</span>
+                  <span className="hardware-page__process-step"><CountUpText value={item.step} /></span>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
                 </article>
@@ -171,3 +172,4 @@ export default function Hardware() {
     </>
   )
 }
+
