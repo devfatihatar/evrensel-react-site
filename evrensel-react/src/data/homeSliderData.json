@@ -1,0 +1,19 @@
+﻿{
+  "slides": [
+    {
+      "title": "Web site tasarımı ve geliştirme",
+      "text": "Güncel teknoloji ve kullanıcı odaklı tasarımla markanıza özel bir web deneyimi sunalım."
+    },
+    {
+      "title": "Sosyal medya yönetimi",
+      "text": "Sosyal medya varlığınızı güçlendirecek stratejiler ve içeriklerle hedef kitlenizle etkili iletişim kurmanıza yardımcı olalım."
+    },
+    {
+      "title": "Donanım ve altyapı çözümleri",
+      "text": "Donanım ve altyapı ihtiyaçlarınızı karşılayacak güvenilir çözümlerle iş süreçlerinizi kesintisiz hale getirelim."
+    }
+  ],
+  "prevArrow": "←",
+  "nextArrow": "→",
+  "dotAriaSuffix": "slayta git"
+}

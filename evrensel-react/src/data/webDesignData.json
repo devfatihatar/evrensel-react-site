@@ -1,0 +1,111 @@
+﻿{
+  "hero": {
+    "eyebrow": "Web Tasarımı",
+    "title": "Kurumsal görünümü güçlü, kullanımı net web deneyimleri tasarlıyoruz",
+    "subtitle": "Web sitesini sadece bir vitrin olarak değil; markayı doğru anlatan, güven oluşturan ve iletişimi kolaylaştıran bir iş aracı olarak ele alıyoruz.",
+    "lead": "İyi bir kurumsal site; sadece güzel görünmekle kalmaz. Hızlı çalışır, mobilde rahat kullanılır, içeriği anlaşılırdır ve firmanızın profesyonel duruşunu net biçimde yansıtır. Biz bu dengeyi tasarım ve teknik tarafı birlikte düşünerek kuruyoruz.",
+    "primaryButton": "Projenizi Konuşalım",
+    "secondaryButton": "Tüm Hizmetler",
+    "panelAriaLabel": "Web tasarım özeti"
+  },
+  "highlights": [
+    {
+      "value": "Kurumsal",
+      "label": "Marka kimliğine uygun tasarım dili"
+    },
+    {
+      "value": "Hızlı",
+      "label": "Mobil uyumlu ve performans odaklı yapı"
+    },
+    {
+      "value": "Yönetilebilir",
+      "label": "Geliştirilebilir ve sürdürülebilir teslimat"
+    }
+  ],
+  "servicesSection": {
+    "eyebrow": "Neler Yapıyoruz",
+    "title": "Web tasarım sürecini sadece görsel değil, işlevsel olarak ele alıyoruz",
+    "subtitle": "Her projede estetik görünüm ile kullanım kolaylığını aynı standardın parçası olarak kurguluyoruz."
+  },
+  "services": [
+    {
+      "title": "Kurumsal Web Tasarımı",
+      "text": "Firmanızın güven veren yönlerini öne çıkaran, sade ama güçlü bir arayüz dili tasarlıyoruz."
+    },
+    {
+      "title": "Yazılım ve Geliştirme",
+      "text": "Tasarımı sadece görsel olarak bırakmıyor; hızlı, düzenli ve ölçeklenebilir bir ön yüz yapısına dönüştürüyoruz."
+    },
+    {
+      "title": "İçerik ve Yapı Kurgusu",
+      "text": "Ziyaretçinin aradığını kolay bulacağı sayfa akışı, içerik hiyerarşisi ve dönüşüm noktaları oluşturuyoruz."
+    }
+  ],
+  "processSection": {
+    "eyebrow": "Süreç",
+    "title": "Projeyi nasıl ilerletiyoruz?",
+    "subtitle": "Kararları baştan netleştirip tasarım, geliştirme ve yayın sürecini kontrollü biçimde yönetiyoruz."
+  },
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "İhtiyaç ve Konumlama Analizi",
+      "text": "Firmanızın sektörü, hedef kitlesi ve mevcut dijital görünümü üzerinden doğru çerçeveyi kuruyoruz."
+    },
+    {
+      "step": "02",
+      "title": "Sayfa Mimarisi ve Tasarım",
+      "text": "İçerik akışı, sayfa yapısı, görsel dil ve kullanıcı deneyimi kararlarını netleştiriyoruz."
+    },
+    {
+      "step": "03",
+      "title": "Geliştirme ve Yayın",
+      "text": "Tasarımı kodluyor, responsive kontrolleri yapıyor ve yayına hazır hale getiriyoruz."
+    }
+  ],
+  "deliverablesSection": {
+    "eyebrow": "Teslim Kapsamı",
+    "title": "Projede hangi başlıkları ele alıyoruz?",
+    "subtitle": "İhtiyaca göre değişebilmekle birlikte çoğu projede aşağıdaki kapsam başlıklarını birlikte yürütüyoruz."
+  },
+  "deliverables": [
+    "Ana sayfa ve iç sayfa tasarım sistemi",
+    "Mobil uyumlu responsive yapı",
+    "İletişim ve teklif toplama alanları",
+    "Temel SEO ve teknik performans düzeni",
+    "Yayın öncesi test ve son kontrol süreci",
+    "Gerekirse bakım ve güncelleme desteği"
+  ],
+  "referencesSection": {
+    "eyebrow": "Referanslarımız",
+    "title": "Bu alanda firmaları ve yaptığımız işleri tanıtacağız",
+    "subtitle": "Aşağıdaki kartlar örnek yapı olarak hazırlandı. Sonraki adımda gerçek firma isimleri, sektörleri ve proje çıktılarıyla bunları birlikte güncelleyebiliriz."
+  },
+  "references": [
+    {
+      "name": "Artemis Sigorta",
+      "sector": "Finans ve Danışmanlık",
+      "summary": "Kurumsal güven algısını güçlendiren, teklif toplama odaklı modern bir web yapısı hazırlandı.",
+      "detail": "Ana sayfa mesajları sadeleştirildi, hizmet sayfaları yeniden kurgulandı ve iletişim dönüşümü önceliklendirildi."
+    },
+    {
+      "name": "Marmara Klinik",
+      "sector": "Sağlık",
+      "summary": "Hasta ve ziyaretçi tarafında güven veren, hızlı yüklenen ve mobilde rahat kullanılan bir site tasarlandı.",
+      "detail": "Bölüm tanıtımları, doktor kartları ve iletişim akışı daha okunabilir bir bilgi mimarisiyle yeniden düzenlendi."
+    },
+    {
+      "name": "Kuzey Makina",
+      "sector": "Sanayi",
+      "summary": "Ürün ve hizmetlerini daha profesyonel anlatan, teklif sürecini destekleyen kurumsal bir vitrin oluşturuldu.",
+      "detail": "Teknik kabiliyeti öne çıkaran sayfa yapısı, referans blokları ve sektör odaklı içerik kurgusu geliştirildi."
+    }
+  ],
+  "cta": {
+    "eyebrow": "Sonraki Adım",
+    "title": "İstersen bu sayfadaki referansları gerçek müşteri hikayelerine çevirelim",
+    "text": "Firma adı, sektör, hangi işi yaptığınız ve varsa öne çıkarmak istediğin sonuç bilgisini verirsen kartları doğrudan gerçek içerikle güncelleyebilirim.",
+    "primaryButton": "İletişime Geç",
+    "secondaryButton": "Bizi Ara"
+  }
+}

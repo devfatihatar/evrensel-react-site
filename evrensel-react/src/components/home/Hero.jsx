@@ -1,31 +1,40 @@
-import Button from "../shared/Button"
+﻿import Button from "../shared/Button"
+import homeHeroData from "../../data/homeHeroData.json"
+
+const {
+  eyebrow,
+  title,
+  description,
+  primaryButton,
+  secondaryButton,
+  imageAriaLabel,
+  imagePlaceholderTitle,
+  imagePlaceholderHint,
+} = homeHeroData
 
 export default function Hero() {
   return (
     <section className="hero section reveal-on-scroll reveal-right">
       <div className="container hero__inner">
         <div className="hero__content">
-          <p className="hero__eyebrow">Evrensel Bilişim</p>
-          <h1>Teknoloji çözümleri ile işinizi büyütün</h1>
-          <p>
-            Web tasarım, donanım ve teknik destek tarafında işletmelere hızlı ve
-            güvenilir hizmet sunuyoruz.
-          </p>
+          <p className="hero__eyebrow">{eyebrow}</p>
+          <h1>{title}</h1>
+          <p>{description}</p>
 
           <div className="hero__buttons">
             <Button to="/hizmetlerimiz" variant="primary">
-              Hizmetlerimiz
+              {primaryButton}
             </Button>
             <Button to="/iletisim" variant="secondary">
-              Bize Ulaşın
+              {secondaryButton}
             </Button>
           </div>
         </div>
 
-        <div className="hero__image" aria-label="Görsel alanı">
+        <div className="hero__image" aria-label={imageAriaLabel}>
           <div className="hero__image-placeholder">
-            Görsel Alanı
-            <small>Buraya kendi görselini ekleyebilirsin</small>
+            {imagePlaceholderTitle}
+            <small>{imagePlaceholderHint}</small>
           </div>
         </div>
       </div>

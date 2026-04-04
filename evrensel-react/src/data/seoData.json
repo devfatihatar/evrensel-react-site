@@ -1,0 +1,47 @@
+﻿{
+  "home": {
+    "title": "Evrensel Bilişim | Web, Donanım ve Teknik Destek",
+    "description": "Web tasarımı, donanım altyapısı ve teknik destek süreçlerini tek merkezden yöneten kurumsal teknoloji partneriniz.",
+    "path": "/"
+  },
+  "about": {
+    "title": "Hakkımızda | Evrensel Bilişim",
+    "description": "Evrensel Bilişim'in çalışma modeli, uzmanlık alanları ve kurumsal yaklaşımı hakkında detayları inceleyin.",
+    "path": "/hakkimizda"
+  },
+  "services": {
+    "title": "Hizmetlerimiz | Evrensel Bilişim",
+    "description": "Web tasarım, donanım altyapısı ve teknik destek hizmetlerini tek çatı altında sunan çözüm katalogumuzu keşfedin.",
+    "path": "/hizmetlerimiz"
+  },
+  "serviceDetail": {
+    "titleSuffix": "| Hizmet Detayı | Evrensel Bilişim",
+    "descriptionPrefix": "Hizmet kapsamı, süreç adımları ve teslim detayları:",
+    "breadcrumbServices": "Hizmetlerimiz"
+  },
+  "webDesign": {
+    "title": "Web Tasarım Hizmetleri | Evrensel Bilişim",
+    "description": "Kurumsal görünümü güçlendiren, hızlı ve yönetilebilir web tasarım ve geliştirme çözümleri.",
+    "path": "/web-tasarim"
+  },
+  "hardware": {
+    "title": "Donanım ve Altyapı | Evrensel Bilişim",
+    "description": "Ofisiniz için güvenilir ağ, cihaz ve altyapı kurulumlarını planlı şekilde yönetin.",
+    "path": "/donanim"
+  },
+  "support": {
+    "title": "Yardım ve Destek | Evrensel Bilişim",
+    "description": "Uzaktan ve yerinde teknik destek, periyodik bakım ve operasyon sürekliliği odaklı destek hizmetleri.",
+    "path": "/yardim-destek"
+  },
+  "contact": {
+    "title": "İletişim | Evrensel Bilişim",
+    "description": "Web, donanım ve teknik destek ihtiyaçlarınız için Evrensel Bilişim ile hemen iletişime geçin.",
+    "path": "/iletisim"
+  },
+  "notFound": {
+    "title": "Sayfa Bulunamadı | Evrensel Bilişim",
+    "description": "Aradığınız sayfa bulunamadı. Ana sayfaya dönerek hizmetlerimize göz atabilirsiniz.",
+    "path": "/404"
+  }
+}

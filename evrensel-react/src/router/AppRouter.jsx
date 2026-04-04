@@ -3,7 +3,9 @@ import { Suspense, lazy, useEffect } from "react"
 
 import Navbar from "../components/layout/Navbar"
 import Footer from "../components/layout/Footer"
+import SiteSeo from "../components/seo/SiteSeo"
 import Home from "../pages/Home"
+import NotFound from "../pages/NotFound"
 
 const About = lazy(() => import("../pages/About"))
 const WebDesign = lazy(() => import("../pages/WebDesign"))
@@ -42,6 +44,7 @@ function RouterContent() {
 
   return (
     <>
+      <SiteSeo />
       <Navbar />
 
       <Suspense fallback={null}>
@@ -54,6 +57,7 @@ function RouterContent() {
           <Route path="/hizmetlerimiz/:slug" element={<ServiceDetail />} />
           <Route path="/yardim-destek" element={<Support />} />
           <Route path="/iletisim" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
 

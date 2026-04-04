@@ -1,0 +1,118 @@
+﻿{
+  "hero": {
+    "eyebrow": "Hakkımızda",
+    "title": "İşletmeler için güven veren bir teknoloji çalışma modeli kuruyoruz",
+    "subtitle": "Evrensel Bilişim; web çözümleri, donanım altyapısı ve teknik destek süreçlerini tek noktadan yöneten kurumsal çözüm ortağıdır.",
+    "lead": "Bizim için iyi hizmet sadece teknik işi tamamlamak değildir. Süreci anlaşılır kılmak, doğru öncelikleri belirlemek ve işletmenin günlük akışını aksatmadan ilerlemek en az teknik kalite kadar önemlidir.",
+    "primaryButton": "Bizimle İletişime Geçin",
+    "secondaryButton": "Hizmetlerimizi İnceleyin",
+    "panelAriaLabel": "Şirket özeti",
+    "panelLabel": "Kurumsal Bakış"
+  },
+  "story": {
+    "eyebrow": "Tarihçe",
+    "title": "Yerel teknik destekten kurumsal çözüm ortaklığına",
+    "subtitle": "Büyümemizi tek bir hizmete değil, işletmelerin gerçek ihtiyaçlarına kulak vermeye borçluyuz.",
+    "paragraphs": [
+      "İlk yıllarda odak noktamız arıza çözen ve sistemi ayağa kaldıran bir teknik destek yapısıydı. Zaman içinde gördük ki işletmelerin ihtiyacı sadece müdahale değil; planlama, standardizasyon ve sürdürülebilirlik.",
+      "Bu nedenle hizmet yapımızı web projeleri, altyapı kurulumları ve düzenli bakım süreçleriyle genişlettik. Bugün müşterilerimizle çalışırken parçalı tedarik modeli yerine, sorumluluğu net olan tek bir ekip gibi hareket ediyoruz."
+    ]
+  },
+  "timeline": [
+    {
+      "year": "2012",
+      "title": "Başlangıç",
+      "text": "Yerel işletmelere teknik servis, bilgisayar bakımı ve temel ağ kurulumlarıyla hizmet vermeye başladık."
+    },
+    {
+      "year": "2017",
+      "title": "Hizmet Alanı Genişledi",
+      "text": "Donanım desteğini web çözümleri, kurumsal e-posta, yedekleme ve bakım süreçleriyle birleştirdik."
+    },
+    {
+      "year": "2021",
+      "title": "Süreç Odaklı Yapı",
+      "text": "Tek seferlik işler yerine ölçülebilir teslimat, düzenli raporlama ve sürdürülebilir destek modeline geçtik."
+    },
+    {
+      "year": "Bugün",
+      "title": "Uçtan Uca Partnerlik",
+      "text": "Web, altyapı ve teknik destek taraflarını tek çatı altında toplayarak işletmelere daha net ve hızlı çözümler sunuyoruz."
+    }
+  ],
+  "principlesSection": {
+    "eyebrow": "Yaklaşımımız",
+    "title": "Nasıl çalıştığımız, ne yaptığımız kadar önemlidir",
+    "subtitle": "İş akışımızı şekillendiren temel yaklaşım; netlik, disiplin ve sürdürülebilir teslimattır."
+  },
+  "principles": [
+    {
+      "title": "Net İletişim",
+      "text": "Teknik konuları karmaşıklaştırmadan anlatır, ne yapılacağını ve neden yapılacağını açıkça paylaşırız."
+    },
+    {
+      "title": "Sahiplenme",
+      "text": "İşi teslim edip geri çekilen değil, sistemin sorumluluğunu süreç boyunca taşıyan ekip gibi çalışırız."
+    },
+    {
+      "title": "Sürdürülebilirlik",
+      "text": "Kısa vadeli çözümler yerine bakımı yapılabilir, geliştirilebilir ve devredilebilir altyapılar kurarız."
+    }
+  ],
+  "capabilitiesSection": {
+    "eyebrow": "Yetkinlik Alanları",
+    "title": "Teknik tarafı birbirinden kopuk değil, birlikte ele alıyoruz",
+    "subtitle": "İşletmeler için en verimli yapı; web, sistem ve destek süreçlerinin tek bir plan içinde yönetilmesidir."
+  },
+  "capabilities": [
+    "Kurumsal web tasarım ve geliştirme",
+    "Hosting, domain ve teknik yayın süreçleri",
+    "Bilgisayar, çevre birimi ve ofis altyapısı kurulumu",
+    "Ağ, modem, yazıcı ve temel sistem yapılandırmaları",
+    "Uzaktan ve yerinde teknik destek operasyonu",
+    "Bakım, güncelleme, yedekleme ve iyileştirme planı"
+  ],
+  "facts": [
+    {
+      "value": "32+",
+      "label": "Yıllık sektör deneyimi"
+    },
+    {
+      "value": "500+",
+      "label": "Tamamlanan iş ve proje"
+    },
+    {
+      "value": "Tek ekip",
+      "label": "Web + donanım + destek yönetimi"
+    }
+  ],
+  "modelSection": {
+    "eyebrow": "Çalışma Modeli",
+    "title": "Projeleri nasıl ele alıyoruz?",
+    "subtitle": "İlk görüşmeden teslimata kadar sade, takip edilebilir ve kontrollü bir akış kuruyoruz."
+  },
+  "workModel": [
+    {
+      "step": "01",
+      "title": "İhtiyacı Dinleriz",
+      "text": "Firmanızın mevcut durumunu, darboğazlarını ve önceliklerini anlamadan çözüm önermeyiz."
+    },
+    {
+      "step": "02",
+      "title": "Planı Netleştiririz",
+      "text": "Kapsamı, teslim kalemlerini, sorumlulukları ve gerekiyorsa etapları baştan belirleriz."
+    },
+    {
+      "step": "03",
+      "title": "Uygular ve Takip Ederiz",
+      "text": "Kurulum, yayın, test ve destek adımlarını tek bir akış içinde yönetiriz."
+    }
+  ],
+  "cta": {
+    "eyebrow": "Birlikte Çalışalım",
+    "title": "İhtiyacınızı konuşalım, size uygun yapıyı birlikte netleştirelim",
+    "text": "Bu metinler başlangıç taslağı olarak hazırlandı. İstersen bir sonraki adımda dili daha resmi, daha sıcak ya da daha teknik bir tona çekebilirim.",
+    "primaryButton": "Toplantı Planla",
+    "secondaryButton": "Hizmetlere Git"
+  }
+}

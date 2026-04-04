@@ -1,0 +1,36 @@
+﻿{
+  "hero": {
+    "eyebrow": "Hizmetlerimiz",
+    "title": "İşletmeniz için uçtan uca teknoloji hizmetleri",
+    "subtitle": "Web tasarımı, donanım altyapısı ve teknik destek taraflarını birbirinden kopuk değil; aynı iş akışının parçaları olarak ele alıyoruz.",
+    "lead": "Her işletmenin ihtiyacı farklıdır. Kimi zaman görünürlüğü artıran bir web sitesi gerekir, kimi zaman ofis altyapısının düzenlenmesi ya da günlük iş akışını koruyacak hızlı teknik destek. Biz bu başlıkları tek bir çatı altında sunuyoruz.",
+    "primaryButton": "İhtiyacınızı Konuşalım",
+    "secondaryButton": "Bizi Arayın",
+    "panelAriaLabel": "Hizmet özeti"
+  },
+  "catalog": {
+    "eyebrow": "Hizmet Kataloğu",
+    "title": "Ana hizmet alanlarımız",
+    "subtitle": "Aşağıdaki başlıklar, en sık çalıştığımız ana hizmet kategorilerini özetler.",
+    "detailButton": "Detayları Gör"
+  },
+  "benefitsSection": {
+    "eyebrow": "Neden Tek Çatı?",
+    "title": "Parçalı hizmet yerine bütünlüklü yaklaşım",
+    "subtitle": "Farklı teknik ihtiyaçlar aynı işletme düzeninin parçasıdır; bu yüzden bunları birlikte düşünmek daha sağlıklı sonuç verir."
+  },
+  "benefits": [
+    {
+      "title": "Tek Noktadan Yönetim",
+      "text": "Web, donanım ve destek taraflarını ayrı ayrı takip etmek yerine tek ekip üzerinden ilerleyebilirsiniz."
+    },
+    {
+      "title": "Daha Net İletişim",
+      "text": "İhtiyaç, kapsam ve teslim başlıklarını baştan netleştirerek süreci daha görünür hale getiriyoruz."
+    },
+    {
+      "title": "Sürdürülebilir Yapı",
+      "text": "Kurulan sistemlerin sadece bugün değil, sonraki bakım ve geliştirme süreçlerinde de yönetilebilir olmasına odaklanıyoruz."
+    }
+  ]
+}

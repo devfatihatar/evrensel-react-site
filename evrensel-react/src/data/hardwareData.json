@@ -1,0 +1,105 @@
+﻿{
+  "hero": {
+    "eyebrow": "Donanım Hizmetleri",
+    "title": "Ofisiniz için düzenli, güvenilir ve yönetilebilir sistem altyapıları kuruyoruz",
+    "subtitle": "Donanım hizmetlerini sadece cihaz temini olarak değil; iş sürekliliğini destekleyen planlı bir altyapı çalışması olarak ele alıyoruz.",
+    "lead": "İşletmelerde verim kaybının önemli bir kısmı dağınık kurulumlardan, eskiyen cihazlardan ve belirsiz ağ yapılarından kaynaklanır. Donanım tarafında hedefimiz sadece kurmak değil; sorunsuz çalışan, gerektiğinde büyüyebilen ve takibi kolay bir yapı kurmaktır.",
+    "primaryButton": "İhtiyacınızı Konuşalım",
+    "secondaryButton": "Destek Tarafını Gör",
+    "panelAriaLabel": "Donanım hizmet özeti"
+  },
+  "highlights": [
+    {
+      "value": "Planlı",
+      "label": "İhtiyaca göre şekillenen altyapı kurulumu"
+    },
+    {
+      "value": "Güvenilir",
+      "label": "Kesintiyi azaltan donanım ve ağ düzeni"
+    },
+    {
+      "value": "Sürdürülebilir",
+      "label": "Bakımı ve takibi kolay sistem yapısı"
+    }
+  ],
+  "servicesSection": {
+    "eyebrow": "Hizmet Kapsamı",
+    "title": "Donanım tarafında hangi başlıklarda çalışıyoruz?",
+    "subtitle": "Kurulumdan yenilemeye, ağ düzeninden çevre birimlerine kadar ihtiyaç duyulan ana başlıkları uçtan uca yönetiyoruz."
+  },
+  "services": [
+    {
+      "title": "Bilgisayar ve Çevre Birimi Kurulumu",
+      "text": "Ofis içinde ihtiyaç duyulan masaüstü, dizüstü, yazıcı ve çevre birimlerini düzenli bir yapı içinde kuruyoruz."
+    },
+    {
+      "title": "Ağ ve Ofis Altyapısı",
+      "text": "İnternet, modem, switch, kablolama ve temel ağ ihtiyaçlarını iş akışınızı aksatmayacak şekilde planlıyoruz."
+    },
+    {
+      "title": "Yenileme ve İyileştirme",
+      "text": "Yavaşlayan, dağınık hale gelen ya da eskiyen sistemleri yeniden düzenleyip daha verimli hale getiriyoruz."
+    }
+  ],
+  "processSection": {
+    "eyebrow": "Süreç",
+    "title": "Kurulum işlerini nasıl ele alıyoruz?",
+    "subtitle": "Önce mevcut durumu netleştiriyor, ardından ihtiyaçla uyumlu altyapıyı planlayıp devreye alıyoruz."
+  },
+  "processSteps": [
+    {
+      "step": "01",
+      "title": "Mevcut Yapıyı İnceleriz",
+      "text": "Cihaz sayısı, kullanım şekli, darboğazlar ve riskli noktalar üzerinden mevcut altyapıyı analiz ederiz."
+    },
+    {
+      "step": "02",
+      "title": "İhtiyaca Uygun Plan Kurarız",
+      "text": "Gereksiz maliyet oluşturmadan doğru cihaz, doğru bağlantı ve doğru kurulum senaryosunu belirleriz."
+    },
+    {
+      "step": "03",
+      "title": "Kurulum ve Devreye Alma",
+      "text": "Kurulum, test, kullanıcıya teslim ve temel kullanım düzenini tek bir akış içinde tamamlarız."
+    }
+  ],
+  "deliverablesSection": {
+    "eyebrow": "Teslim Başlıkları",
+    "title": "Projede genelde neleri kapsıyoruz?",
+    "subtitle": "İşin büyüklüğüne göre değişmekle birlikte çoğu donanım çalışmasında aşağıdaki alanları birlikte ele alıyoruz."
+  },
+  "deliverables": [
+    "Bilgisayar ve donanım envanteri planı",
+    "Ofis içi ağ ve bağlantı düzeni",
+    "Yazıcı, tarayıcı ve çevre birimi kurulumu",
+    "Temel güvenlik ve erişim yapılandırmaları",
+    "Kurulum sonrası test ve son kontrol",
+    "Gerekirse bakım ve yenileme öneri planı"
+  ],
+  "casesSection": {
+    "eyebrow": "Uygun Senaryolar",
+    "title": "Bu hizmet en çok hangi durumlarda değer üretir?",
+    "subtitle": "Aşağıdaki senaryolar, donanım ve altyapı tarafında en sık karşılaşılan ihtiyaç alanlarını gösterir."
+  },
+  "useCases": [
+    {
+      "title": "Yeni Ofis Kurulumu",
+      "text": "Sıfırdan açılan ofislerde cihaz, internet, ağ ve çevre birimi yapısını tek merkezden kuruyoruz."
+    },
+    {
+      "title": "Büyüyen Ekip Yapısı",
+      "text": "Artan kullanıcı ve cihaz sayısına göre altyapıyı yeniden düzenleyip yönetilebilir hale getiriyoruz."
+    },
+    {
+      "title": "Eskiyen Sistemlerin Toparlanması",
+      "text": "Parçalı ilerlemiş, takibi zorlaşmış veya sık arıza veren yapılarda sadeleştirme ve yenileme yapıyoruz."
+    }
+  ],
+  "cta": {
+    "eyebrow": "Sonraki Adım",
+    "title": "İstersen bu alanı gerçek hizmet senaryolarınla daha da güçlendirelim",
+    "text": "Hangi cihazlarla çalıştığınız, ne tür kurulumlar yaptığınız ve hedef müşteri tipiniz belli oldukça bu sayfayı daha güçlü ve daha spesifik hale getirebiliriz.",
+    "primaryButton": "Teklif Al",
+    "secondaryButton": "Destek Hizmetine Geç"
+  }
+}

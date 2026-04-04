@@ -1,41 +1,17 @@
-import SectionTitle from "../shared/SectionTitle"
+﻿import SectionTitle from "../shared/SectionTitle"
 import Button from "../shared/Button"
+import homeServicesData from "../../data/homeServicesData.json"
 
-const stats = [
-  { label: "Yıl Tecrübe", value: "32+" },
-  { label: "Tamamlanan Proje", value: "500+" },
-  { label: "Hafta içi Destek Erişimi", value: "10:00 - 17:00" },
-]
-
-const serviceCards = [
-  {
-    tag: "Web",
-    title: "Web Tasarım ve Geliştirme",
-    text: "Markanıza özel, hızlı ve yönetilebilir web deneyimleri oluşturuyoruz.",
-    points: ["Kurumsal arayüz tasarımı", "Mobil uyumlu altyapı", "SEO odaklı teknik kurulum"],
-  },
-  {
-    tag: "Sistem",
-    title: "Donanım ve Altyapı",
-    text: "Ofis ve operasyon süreçlerinizi kesintisiz çalışacak şekilde yapılandırıyoruz.",
-    points: ["Cihaz ve ağ planlaması", "Kurulum ve devreye alma", "Performans ve güvenlik kontrolü"],
-  },
-  {
-    tag: "Servis",
-    title: "Teknik Destek Süreçleri",
-    text: "Hızlı müdahale ve sürdürülebilir bakım modeli ile işinizi koruyoruz.",
-    points: ["Uzaktan ve yerinde destek", "Önleyici bakım yaklaşımı", "Arıza ve talep takibi"],
-  },
-]
+const { section, stats, serviceCards, cardLink, footerButton } = homeServicesData
 
 export default function Services() {
   return (
     <section className="services section reveal-on-scroll reveal-left">
       <div className="container services__container">
         <SectionTitle
-          eyebrow="Hizmetler"
-          title="İşinizi hızlandıran teknoloji çözümleri"
-          subtitle="Tasarım, altyapı ve destek süreçlerini tek merkezden yönetebilmeniz için uçtan uca çalışıyoruz."
+          eyebrow={section.eyebrow}
+          title={section.title}
+          subtitle={section.subtitle}
           align="center"
         />
 
@@ -60,7 +36,7 @@ export default function Services() {
                 ))}
               </ul>
               <a href="/hizmetlerimiz" className="service-card__link">
-                Detayları İncele
+                {cardLink}
               </a>
             </article>
           ))}
@@ -68,7 +44,7 @@ export default function Services() {
 
         <div className="services__footer">
           <Button to="/hizmetlerimiz" variant="primary">
-            Tüm Hizmetleri Gör
+            {footerButton}
           </Button>
         </div>
       </div>

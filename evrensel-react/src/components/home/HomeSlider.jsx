@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react"
+﻿import { useEffect, useState } from "react"
 import slider1 from "../../assets/images/slider1.webp"
 import slider2 from "../../assets/images/slider2.png"
 import slider3 from "../../assets/images/slider3.jpg"
+import homeSliderData from "../../data/homeSliderData.json"
 
 const slides = [
-  {
-    title: "Web site tasarımı ve geliştirme",
-    text: "Güncel teknoloji ve kullanıcı odaklı tasarımla markanıza özel bir web deneyimi sunalım.",
-    image: slider1,
-  },
-  {
-    title: "Sosyal medya yönetimi",
-    text: "Sosyal medya varlığınızı güçlendirecek stratejiler ve içeriklerle hedef kitlenizle etkili iletişim kurmanıza yardımcı olalım.",
-    image: slider2,
-  },
-  {
-    title: "Donanım ve altyapı çözümleri",
-    text: "Donanım ve altyapı ihtiyaçlarınızı karşılayacak güvenilir çözümlerle iş süreçlerinizi kesintisiz hale getirelim.",
-    image: slider3,
-  },
+  { ...homeSliderData.slides[0], image: slider1 },
+  { ...homeSliderData.slides[1], image: slider2 },
+  { ...homeSliderData.slides[2], image: slider3 },
 ]
 
 export default function HomeSlider() {
@@ -73,10 +62,10 @@ export default function HomeSlider() {
           </article>
 
           <button className="home-slider__arrow home-slider__arrow--prev" onClick={goPrev} type="button">
-            ←
+            {homeSliderData.prevArrow}
           </button>
           <button className="home-slider__arrow home-slider__arrow--next" onClick={goNext} type="button">
-            →
+            {homeSliderData.nextArrow}
           </button>
 
           <div className="home-slider__dots">
@@ -86,7 +75,7 @@ export default function HomeSlider() {
                 className={`home-slider__dot ${index === activeIndex ? "is-active" : ""}`.trim()}
                 onClick={() => setActiveIndex(index)}
                 type="button"
-                aria-label={`${index + 1}. slayta git`}
+                aria-label={`${index + 1}. ${homeSliderData.dotAriaSuffix}`}
               />
             ))}
           </div>

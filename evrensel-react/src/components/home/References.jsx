@@ -1,26 +1,16 @@
-import SectionTitle from "../shared/SectionTitle"
+﻿import SectionTitle from "../shared/SectionTitle"
+import homeReferencesData from "../../data/homeReferencesData.json"
 
-const references = [
-  { name: "Nova Lojistik", sector: "Lojistik", result: "Operasyon paneli + destek", logo: "NL" },
-  { name: "Ahenk Otomasyon", sector: "Endüstri", result: "Sistem altyapısı dönüşümü", logo: "AO" },
-  { name: "Mavi Klinik", sector: "Sağlık", result: "Web sitesi + bakım süreci", logo: "MK" },
-  { name: "Delta Muhasebe", sector: "Finans", result: "Kurumsal web + teknik servis", logo: "DM" },
-]
-
-const trust = [
-  { value: "40+", label: "Aktif Referans" },
-  { value: "8", label: "Farklı Sektör" },
-  { value: "%96", label: "Memnuniyet Oranı" },
-]
+const { section, references, trust, logoAriaSuffix } = homeReferencesData
 
 export default function References() {
   return (
     <section className="references section reveal-on-scroll reveal-left">
       <div className="container">
         <SectionTitle
-          eyebrow="Referanslar"
-          title="Birlikte çalıştığımız markalar"
-          subtitle="Farklı sektörlerdeki firmalarla uzun vadeli dijital ve teknik iş ortaklıkları yürütüyoruz."
+          eyebrow={section.eyebrow}
+          title={section.title}
+          subtitle={section.subtitle}
           align="center"
         />
 
@@ -33,7 +23,7 @@ export default function References() {
               key={item.name}
             >
               <div className="references__head">
-                <div className="references__logo" aria-label={`${item.name} logo alanı`}>
+                <div className="references__logo" aria-label={`${item.name} ${logoAriaSuffix}`}>
                   {item.logo}
                 </div>
                 <span className="references__sector">{item.sector}</span>

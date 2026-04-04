@@ -1,10 +1,14 @@
-import { useEffect, useRef } from "react"
+﻿import { useEffect, useRef } from "react"
 import HomeSlider from "../components/home/HomeSlider"
 import Hero from "../components/home/Hero"
 import Services from "../components/home/Services"
 import WhyUs from "../components/home/WhyUs"
 import References from "../components/home/References"
 import CTA from "../components/home/CTA"
+import PageSeo from "../components/seo/PageSeo"
+import seoData from "../data/seoData.json"
+
+const homeSeo = seoData.home
 
 export default function Home() {
   const homeRef = useRef(null)
@@ -77,19 +81,22 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="home-page" ref={homeRef}>
-      <HomeSlider />
+    <>
+      <PageSeo title={homeSeo.title} description={homeSeo.description} path={homeSeo.path} />
 
-      <Hero />
+      <main className="home-page" ref={homeRef}>
+        <HomeSlider />
 
-      <Services />
+        <Hero />
 
-      <WhyUs />
+        <Services />
 
-      <References />
+        <WhyUs />
 
-      <CTA />
+        <References />
 
-    </main>
+        <CTA />
+      </main>
+    </>
   )
 }

@@ -1,0 +1,80 @@
+﻿{
+  "hero": {
+    "eyebrow": "İletişim",
+    "title": "İhtiyacınızı paylaşın, size uygun yolu birlikte netleştirelim",
+    "subtitle": "Web, donanım veya teknik destek tarafında hangi konuda desteğe ihtiyaç duyduğunuzu iletin; en uygun başlangıç planını birlikte çıkaralım.",
+    "lead": "İlk görüşmede amacımız sizi gereksiz teknik detaylarla yormak değil, ihtiyacınızı doğru anlamaktır. Kısa bir özet bile çoğu zaman doğru çerçeveyi kurmak için yeterlidir.",
+    "primaryButton": "Hemen Arayın",
+    "secondaryButton": "E-posta Gönderin",
+    "panelAriaLabel": "İletişim bilgileri"
+  },
+  "contactCards": [
+    {
+      "title": "Telefon",
+      "value": "+90 555 111 22 33",
+      "detail": "Hafta içi çalışma saatlerinde doğrudan ulaşabilirsiniz.",
+      "href": "tel:+905551112233"
+    },
+    {
+      "title": "E-posta",
+      "value": "info@evrenselbilisim.com",
+      "detail": "Taleplerinizi kısa bir özetle e-posta üzerinden iletebilirsiniz.",
+      "href": "mailto:info@evrenselbilisim.com"
+    },
+    {
+      "title": "Adres",
+      "value": "Şişli / İstanbul",
+      "detail": "Merkez Mah. Teknoloji Cad. No:12 adresinde hizmet veriyoruz."
+    }
+  ],
+  "formSection": {
+    "eyebrow": "İletişim Formu",
+    "title": "Kısa bir ön bilgi bırakın",
+    "subtitle": "Bu alan şimdilik statik form yapısı olarak hazırlandı. Sonraki adımda bunu mail servisi ya da backend'e bağlayabiliriz.",
+    "fields": {
+      "name": {
+        "label": "Ad Soyad",
+        "placeholder": "Adınızı ve soyadınızı yazın"
+      },
+      "phone": {
+        "label": "Telefon",
+        "placeholder": "Telefon numaranızı yazın"
+      },
+      "email": {
+        "label": "E-posta",
+        "placeholder": "E-posta adresinizi yazın"
+      },
+      "topic": {
+        "label": "İlgilendiğiniz Hizmet",
+        "placeholder": "Hizmet başlığı seçin"
+      },
+      "message": {
+        "label": "Mesajınız",
+        "placeholder": "Kısaca ihtiyacınızı, mevcut durumunuzu veya almak istediğiniz hizmeti yazın"
+      }
+    },
+    "submitButton": "Mesajı Gönder"
+  },
+  "serviceTopics": [
+    "Web tasarımı ve geliştirme",
+    "Donanım ve altyapı kurulumu",
+    "Teknik destek ve bakım",
+    "Genel bilgi ve teklif talebi"
+  ],
+  "workingModel": {
+    "title": "Çalışma Düzeni",
+    "items": [
+      "Hafta içi 09:00 - 18:30 aktif iletişim",
+      "Ön görüşmeler için telefon ya da e-posta üzerinden planlama",
+      "İhtiyaca göre uzaktan veya yerinde değerlendirme"
+    ]
+  },
+  "quickNotes": {
+    "title": "Hızlı Notlar"
+  },
+  "notes": [
+    "İhtiyacınızı kısa ve net şekilde iletin.",
+    "Varsa mevcut sorun ya da hedefinizi belirtin.",
+    "Dilerseniz telefon üzerinden de ön görüşme planlayabiliriz."
+  ]
+}

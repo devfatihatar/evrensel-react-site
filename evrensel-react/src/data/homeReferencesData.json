@@ -1,0 +1,19 @@
+﻿{
+  "section": {
+    "eyebrow": "Referanslar",
+    "title": "Birlikte çalıştığımız markalar",
+    "subtitle": "Farklı sektörlerdeki firmalarla uzun vadeli dijital ve teknik iş ortaklıkları yürütüyoruz."
+  },
+  "references": [
+    { "name": "Nova Lojistik", "sector": "Lojistik", "result": "Operasyon paneli + destek", "logo": "NL" },
+    { "name": "Ahenk Otomasyon", "sector": "Endüstri", "result": "Sistem altyapısı dönüşümü", "logo": "AO" },
+    { "name": "Mavi Klinik", "sector": "Sağlık", "result": "Web sitesi + bakım süreci", "logo": "MK" },
+    { "name": "Delta Muhasebe", "sector": "Finans", "result": "Kurumsal web + teknik servis", "logo": "DM" }
+  ],
+  "trust": [
+    { "value": "40+", "label": "Aktif Referans" },
+    { "value": "8", "label": "Farklı Sektör" },
+    { "value": "%96", "label": "Memnuniyet Oranı" }
+  ],
+  "logoAriaSuffix": "logo alanı"
+}

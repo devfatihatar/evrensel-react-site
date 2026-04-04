@@ -1,41 +1,14 @@
-import SectionTitle from "../shared/SectionTitle"
+﻿import SectionTitle from "../shared/SectionTitle"
 import Button from "../shared/Button"
+import homeWhyUsData from "../../data/homeWhyUsData.json"
 
-const features = [
-  {
-    title: "Hızlı İletişim",
-    text: "Talebinizi bekletmeden ele alır, net aksiyon planı ile geri dönüş yaparız.",
-    metric: "Hızlı geri dönüş garantisi",
-  },
-  {
-    title: "Proaktif Destek",
-    text: "Sorun çıkmasını beklemeden sistemi izler, kritik noktaları önceden iyileştiririz.",
-    metric: "%80 önleyici müdahale oranı",
-  },
-  {
-    title: "Ölçülebilir Sonuç",
-    text: "Her iş adımını raporlayarak süreçte nerede olduğunuzu şeffaf biçimde gösteririz.",
-    metric: "Aylık performans raporu",
-  },
-]
-
-const processSteps = ["Keşif", "Plan", "Uygulama", "Sürekli Destek"]
-
-const trustStats = [
-  { label: "Aktif Kurumsal Müşteri", value: "25+" },
-  { label: "Tamamlanan Proje", value: "500+" },
-  { label: "Destek Memnuniyeti", value: "%96" },
-]
+const { section, features, processSteps, trustStats, footerText, footerButton } = homeWhyUsData
 
 export default function WhyUs() {
   return (
     <section className="why-us section reveal-on-scroll reveal-right">
       <div className="container">
-        <SectionTitle
-          eyebrow="Neden Biz"
-          title="Teslim eden değil, süreci yöneten ekip"
-          subtitle="İhtiyacı analiz eder, planlar, uygular ve işinizin kesintisiz devam etmesi için yanınızda kalırız."
-        />
+        <SectionTitle eyebrow={section.eyebrow} title={section.title} subtitle={section.subtitle} />
 
         <div className="why-us__features">
           {features.map((item, index) => (
@@ -80,9 +53,9 @@ export default function WhyUs() {
         </div>
 
         <div className="why-us__footer reveal-on-scroll reveal-right">
-          <p>Süreç planını birlikte çıkaralım, size en uygun modeli netleştirelim.</p>
+          <p>{footerText}</p>
           <Button to="/iletisim" variant="secondary">
-            Ücretsiz Ön Görüşme
+            {footerButton}
           </Button>
         </div>
       </div>
