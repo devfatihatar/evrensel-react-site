@@ -1,10 +1,18 @@
 ﻿{
   "eyebrow": "Evrensel Bilişim",
-  "title": "Teknoloji çözümleri ile işinizi büyütün",
-  "description": "Web tasarım, donanım ve teknik destek tarafında işletmelere hızlı ve güvenilir hizmet sunuyoruz.",
-  "primaryButton": "Hizmetlerimiz",
-  "secondaryButton": "Bize Ulaşın",
+  "title": "İşinizi hızlandıran teknoloji altyapısı",
+  "description": "Web, donanım ve teknik destek süreçlerini tek merkezden yönetiyor; işletmenizi daha hızlı, güvenli ve sürdürülebilir hale getiriyoruz.",
+  "primaryButton": "Ücretsiz Ön Görüşme",
+  "secondaryButton": "Hizmetlerimizi İncele",
+  "quickPromise": "24 saat içinde geri dönüş, net yol haritası ve ölçülebilir sonuç.",
+  "trustBadges": ["32+ yıl deneyim", "500+ tamamlanan proje", "Hafta içi canlı destek"],
   "imageAriaLabel": "Görsel alanı",
-  "imagePlaceholderTitle": "Görsel Alanı",
-  "imagePlaceholderHint": "Buraya kendi görselini ekleyebilirsin"
+  "imageAlt": "Teknik ekip çalışma görseli",
+  "imagePlaceholderTitle": "Canlı Operasyon Desteği",
+  "imagePlaceholderHint": "Sistem, ağ ve destek süreçlerini tek panelden yönetiyoruz.",
+  "visualStats": [
+    { "value": "32+", "label": "Yıl Tecrübe" },
+    { "value": "500+", "label": "Proje" },
+    { "value": "10:00-17:00", "label": "Destek Saatleri" }
+  ]
 }

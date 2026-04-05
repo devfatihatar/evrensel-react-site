@@ -1,0 +1,31 @@
+﻿{
+  "links": [
+    { "to": "/", "label": "Anasayfa" },
+    { "to": "/hakkimizda", "label": "Hakkımızda" },
+    { "to": "/web-tasarim", "label": "Web Tasarımı" },
+    { "to": "/hizmetlerimiz/web-tasarimi", "label": "Sosyal Medya" },
+    { "to": "/hizmetlerimiz/donanim-altyapisi", "label": "Drone ve Kamera" },
+    { "to": "/hizmetlerimiz/yardim-destek", "label": "Sunucu" },
+    { "to": "/donanim", "label": "Donanım" },
+    { "to": "/iletisim", "label": "İletişim" }
+  ],
+  "topBar": {
+    "leftLabel": "Avantajlı Paket",
+    "features": ["Sosyal Medya", "Web Sitesi", "Drone ve Kamera Çekimleri"],
+    "ctaLabel": "Kampanyayı Görüntüle",
+    "ctaTo": "/iletisim",
+    "closeAriaLabel": "Kampanya barını kapat",
+    "openAriaLabel": "Kampanya barını aç",
+    "fabLabel": "Kampanya"
+  },
+  "brand": {
+    "mark": "EB",
+    "title": "Evrensel Bilişim",
+    "subtitle": "Web | Donanım | Destek"
+  },
+  "mainCta": {
+    "label": "Teklif Al",
+    "to": "/iletisim"
+  },
+  "menuAriaLabel": "Ana menü"
+}

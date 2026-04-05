@@ -13,18 +13,27 @@ const parseDisplayValue = (input) => {
   }
 }
 
-export default function CountUpText({ value, duration = 4800 }) {
+export default function CountUpText({ value, duration = 4800, onProgress, onComplete }) {
   const parsed = useMemo(() => parseDisplayValue(value), [value])
   const ref = useRef(null)
   const hasAnimatedRef = useRef(false)
+  const onProgressRef = useRef(onProgress)
+  const onCompleteRef = useRef(onComplete)
   const [display, setDisplay] = useState(() => {
     if (!parsed) return String(value ?? "")
     return `${parsed.prefix}${String(0).padStart(parsed.padLength, "0")}${parsed.suffix}`
   })
 
   useEffect(() => {
+    onProgressRef.current = onProgress
+    onCompleteRef.current = onComplete
+  }, [onProgress, onComplete])
+
+  useEffect(() => {
     if (!parsed) {
       setDisplay(String(value ?? ""))
+      onProgressRef.current?.(1)
+      onCompleteRef.current?.()
       return
     }
 
@@ -49,9 +58,12 @@ export default function CountUpText({ value, duration = 4800 }) {
         const next = Math.round(parsed.target * eased)
         const numberText = String(next).padStart(parsed.padLength, "0")
         setDisplay(`${parsed.prefix}${numberText}${parsed.suffix}`)
+        onProgressRef.current?.(progress)
 
         if (progress < 1) {
           rafId = window.requestAnimationFrame(tick)
+        } else {
+          onCompleteRef.current?.()
         }
       }
 

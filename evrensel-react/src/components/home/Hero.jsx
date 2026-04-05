@@ -1,5 +1,6 @@
 ﻿import Button from "../shared/Button"
 import homeHeroData from "../../data/homeHeroData.json"
+import heroVisual from "../../assets/images/sliders/slider1.webp"
 
 const {
   eyebrow,
@@ -8,8 +9,7 @@ const {
   primaryButton,
   secondaryButton,
   imageAriaLabel,
-  imagePlaceholderTitle,
-  imagePlaceholderHint,
+  imageAlt,
 } = homeHeroData
 
 export default function Hero() {
@@ -22,19 +22,18 @@ export default function Hero() {
           <p>{description}</p>
 
           <div className="hero__buttons">
-            <Button to="/hizmetlerimiz" variant="primary">
+            <Button to="/iletisim" variant="primary">
               {primaryButton}
             </Button>
-            <Button to="/iletisim" variant="secondary">
+            <Button to="/hizmetlerimiz" variant="primary">
               {secondaryButton}
             </Button>
           </div>
         </div>
 
         <div className="hero__image" aria-label={imageAriaLabel}>
-          <div className="hero__image-placeholder">
-            {imagePlaceholderTitle}
-            <small>{imagePlaceholderHint}</small>
+          <div className="hero__image-shell">
+            <img src={heroVisual} alt={imageAlt} className="hero__image-media" />
           </div>
         </div>
       </div>

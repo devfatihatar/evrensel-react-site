@@ -1,7 +1,7 @@
 ﻿import { useEffect, useState } from "react"
-import slider1 from "../../assets/images/slider1.webp"
-import slider2 from "../../assets/images/slider2.png"
-import slider3 from "../../assets/images/slider3.jpg"
+import slider1 from "../../assets/images/sliders/slider1.webp"
+import slider2 from "../../assets/images/sliders/slider2.png"
+import slider3 from "../../assets/images/sliders/slider3.jpg"
 import homeSliderData from "../../data/homeSliderData.json"
 
 const slides = [

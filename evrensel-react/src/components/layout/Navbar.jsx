@@ -1,23 +1,29 @@
-import { NavLink } from "react-router-dom"
-import { useEffect, useRef, useState } from "react"
+﻿import { NavLink } from "react-router-dom"
+import { useEffect, useMemo, useRef, useState } from "react"
 import Button from "../shared/Button"
+import navbarData from "../../data/navbarData.json"
+import evrenselLogo from "../../assets/images/icons/evrensel-logo.png"
 
-const links = [
-  { to: "/", label: "Anasayfa" },
-  { to: "/hakkimizda", label: "Hakkımızda" },
-  { to: "/web-tasarim", label: "Web Tasarımı" },
-  { to: "/donanim", label: "Donanım" },
-  { to: "/hizmetlerimiz", label: "Hizmetlerimiz" },
-  { to: "/yardim-destek", label: "Yardım Destek" },
-]
+const { links, topBar, menuAriaLabel } = navbarData
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isPromoClosed, setIsPromoClosed] = useState(false)
   const isScrolledRef = useRef(false)
   const rafRef = useRef(0)
   const lastYRef = useRef(0)
   const COLLAPSE_AT = 96
   const EXPAND_AT = 4
+
+  const uniqueLinks = useMemo(() => {
+    const seen = new Set()
+    return links.filter((link) => {
+      const key = `${link.label}|${link.to}`
+      if (seen.has(key)) return false
+      seen.add(key)
+      return true
+    })
+  }, [])
 
   useEffect(() => {
     const applyScrollState = () => {
@@ -62,66 +68,97 @@ export default function Navbar() {
     }
   }, [])
 
+  const headerClasses = `navbar ${isScrolled ? "navbar--scrolled" : ""} ${
+    isPromoClosed ? "navbar--promo-closed" : ""
+  }`.trim()
+
+  const spacerClasses = `navbar-spacer ${isScrolled ? "navbar-spacer--scrolled" : ""} ${
+    isPromoClosed ? "navbar-spacer--promo-closed" : ""
+  }`.trim()
+
   return (
     <>
-      <header className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`.trim()}>
+      <header className={headerClasses}>
         <div className="navbar__top">
           <div className="container navbar__top-inner">
             <div className="navbar__top-left">
-              <p className="navbar__top-text">Kurumsal teknoloji partneriniz</p>
+              <p className="navbar__top-text">{topBar.leftLabel}</p>
+            </div>
+
+            <div className="navbar__top-center">
               <ul className="navbar__top-badges">
-                <li className="navbar__top-badge">7/24 Destek</li>
-                <li className="navbar__top-badge">Aynı Gün Geri Dönüş</li>
-                <li className="navbar__top-badge">Ücretsiz Keşif</li>
+                <li className="navbar__top-badge navbar__top-badge--strip">
+                  {topBar.features.map((item, index) => (
+                    <span key={item} className="navbar__top-strip-part">
+                      <span>{item}</span>
+                      {index < topBar.features.length - 1 ? (
+                        <span className="navbar__top-strip-sep" aria-hidden="true">
+                          -
+                        </span>
+                      ) : null}
+                    </span>
+                  ))}
+                </li>
               </ul>
             </div>
 
             <div className="navbar__top-right">
-              <a className="navbar__top-contact" href="tel:+905551112233">
-                +90 555 111 22 33
-              </a>
-              <Button to="/iletisim" variant="secondary" className="navbar__top-cta">
-                Ön Görüşme Planla
+              <Button to={topBar.ctaTo} variant="secondary" className="navbar__top-cta">
+                {topBar.ctaLabel}
               </Button>
             </div>
+
+            <button
+              type="button"
+              className="navbar__top-close"
+              aria-label={topBar.closeAriaLabel}
+              onClick={() => setIsPromoClosed(true)}
+            >
+              ×
+            </button>
           </div>
         </div>
 
         <div className="navbar__main">
           <div className="container navbar__inner">
-            <NavLink to="/" className="navbar__brand">
-              <span className="navbar__brand-mark">EB</span>
-              <span className="navbar__brand-text">
-                <strong>Evrensel Bilişim</strong>
-                <small>Web | Donanım | Destek</small>
-              </span>
-            </NavLink>
+            <div className="navbar__main-left">
+              <NavLink to="/" className="navbar__brand">
+                <img src={evrenselLogo} alt="Evrensel Bilişim" className="navbar__brand-logo" />
+              </NavLink>
+            </div>
 
-            <nav aria-label="Ana menü">
-              <ul className="navbar__menu">
-                {links.map((link) => (
-                  <li key={link.to}>
-                    <NavLink
-                      to={link.to}
-                      className={({ isActive }) =>
-                        `navbar__link ${isActive ? "navbar__link--active" : ""}`.trim()
-                      }
-                    >
-                      {link.label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            <Button to="/iletisim" className="navbar__main-cta">
-              Teklif Al
-            </Button>
+            <div className="navbar__main-right">
+              <nav className="navbar__nav" aria-label={menuAriaLabel}>
+                <ul className="navbar__menu">
+                  {uniqueLinks.map((link) => (
+                    <li key={`${link.to}-${link.label}`}>
+                      <NavLink
+                        to={link.to}
+                        className={({ isActive }) =>
+                          `navbar__link ${isActive ? "navbar__link--active" : ""}`.trim()
+                        }
+                      >
+                        {link.label}
+                      </NavLink>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
           </div>
         </div>
       </header>
 
-      <div className={`navbar-spacer ${isScrolled ? "navbar-spacer--scrolled" : ""}`.trim()} />
+      <button
+        type="button"
+        className={`navbar__promo-fab ${isPromoClosed ? "is-visible" : ""}`.trim()}
+        onClick={() => setIsPromoClosed(false)}
+        aria-label={topBar.openAriaLabel}
+      >
+        <span>{topBar.fabLabel}</span>
+      </button>
+
+      <div className={spacerClasses} />
     </>
   )
 }
