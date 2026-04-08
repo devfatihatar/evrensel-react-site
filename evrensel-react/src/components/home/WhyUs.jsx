@@ -1,6 +1,6 @@
-import SectionTitle from "../shared/SectionTitle"
-import Button from "../shared/Button"
+﻿import Button from "../shared/Button"
 import CountUpText from "../shared/CountUpText"
+import SectionTitle from "../shared/SectionTitle"
 import homeWhyUsData from "../../data/homeWhyUsData.json"
 
 const { section, features, processSteps, trustStats, footerText, footerButton } = homeWhyUsData
@@ -9,46 +9,29 @@ export default function WhyUs() {
   return (
     <section className="why-us section reveal-on-scroll reveal-right">
       <div className="container">
-        <SectionTitle eyebrow={section.eyebrow} title={section.title} subtitle={section.subtitle} align="left" />
+        <SectionTitle eyebrow={section.eyebrow} title={section.title} subtitle={section.subtitle} />
 
         <div className="why-us__features">
-          {features.map((item, index) => (
-            <article
-              className={`why-us__card reveal-on-scroll ${
-                index % 2 === 0 ? "reveal-left" : "reveal-right"
-              }`.trim()}
-              key={item.title}
-            >
+          {features.map((item) => (
+            <article className="why-us__card" key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <span className="why-us__metric">
-                <CountUpText value={item.metric} />
-              </span>
+              <span className="why-us__metric">{item.metric}</span>
             </article>
           ))}
         </div>
 
-        <div className="why-us__process">
-          {processSteps.map((step, index) => (
-            <div
-              className={`why-us__step reveal-on-scroll ${
-                index % 2 === 0 ? "reveal-left" : "reveal-right"
-              }`.trim()}
-              key={step}
-            >
+        <div className="why-us__process" aria-label="Hizmet süreci adımları">
+          {processSteps.map((step) => (
+            <div className="why-us__step" key={step}>
               {step}
             </div>
           ))}
         </div>
 
         <div className="why-us__trust">
-          {trustStats.map((stat, index) => (
-            <article
-              className={`why-us__trust-item reveal-on-scroll ${
-                index % 2 === 0 ? "reveal-left" : "reveal-right"
-              }`.trim()}
-              key={stat.label}
-            >
+          {trustStats.map((stat) => (
+            <article className="why-us__trust-item" key={stat.label}>
               <strong>
                 <CountUpText value={stat.value} />
               </strong>
@@ -57,12 +40,10 @@ export default function WhyUs() {
           ))}
         </div>
 
-        <div className="why-us__footer reveal-on-scroll reveal-right">
+        <footer className="why-us__footer">
           <p>{footerText}</p>
-          <Button to="/iletisim" variant="secondary">
-            {footerButton}
-          </Button>
-        </div>
+          <Button variant="secondary">{footerButton}</Button>
+        </footer>
       </div>
     </section>
   )

@@ -1,4 +1,4 @@
-import Button from "../components/shared/Button"
+ï»¿import Button from "../components/shared/Button"
 import SectionTitle from "../components/shared/SectionTitle"
 import PageSeo from "../components/seo/PageSeo"
 import webDesignData from "../data/webDesignData.json"
@@ -25,11 +25,11 @@ const webDesignSeo = seoData.webDesign
 export default function WebDesign() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
-    { name: "Web Tasarým", path: webDesignSeo.path },
+    { name: "Web TasarÄ±m", path: webDesignSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({
-    name: "Web Tasarým ve Geliþtirme Hizmetleri",
+    name: "Web TasarÄ±m ve GeliÅŸtirme Hizmetleri",
     description: webDesignSeo.description,
     path: webDesignSeo.path,
   })
@@ -84,8 +84,12 @@ export default function WebDesign() {
             <div className="web-design-page__services-grid">
               {services.map((item) => (
                 <article key={item.title} className="web-design-page__service-card">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
+                  <div className="web-design-page__service-card-head">
+                    <h3>{item.title}</h3>
+                  </div>
+                  <div className="web-design-page__service-card-body">
+                    <p>{item.text}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -103,9 +107,13 @@ export default function WebDesign() {
             <div className="web-design-page__process-grid">
               {processSteps.map((item) => (
                 <article key={item.step} className="web-design-page__process-card">
-                  <span className="web-design-page__process-step"><CountUpText value={item.step} /></span>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
+                  <div className="web-design-page__process-card-head">
+                    <span className="web-design-page__process-step"><CountUpText value={item.step} /></span>
+                    <h3>{item.title}</h3>
+                  </div>
+                  <div className="web-design-page__process-card-body">
+                    <p>{item.text}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -114,7 +122,7 @@ export default function WebDesign() {
 
         <section className="section web-design-page__deliverables">
           <div className="container web-design-page__deliverables-grid">
-            <div>
+            <div className="web-design-page__deliverables-content">
               <SectionTitle
                 eyebrow={deliverablesSection.eyebrow}
                 title={deliverablesSection.title}
@@ -144,12 +152,15 @@ export default function WebDesign() {
             <div className="web-design-page__references-grid">
               {references.map((item) => (
                 <article key={item.name} className="web-design-page__reference-card">
+                  <div className="web-design-page__reference-media" aria-hidden="true" />
                   <div className="web-design-page__reference-head">
                     <h3>{item.name}</h3>
                     <span>{item.sector}</span>
                   </div>
-                  <p className="web-design-page__reference-summary">{item.summary}</p>
-                  <p>{item.detail}</p>
+                  <div className="web-design-page__reference-body">
+                    <p className="web-design-page__reference-summary">{item.summary}</p>
+                    <p>{item.detail}</p>
+                  </div>
                 </article>
               ))}
             </div>
@@ -176,4 +187,5 @@ export default function WebDesign() {
     </>
   )
 }
+
 

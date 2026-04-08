@@ -49,9 +49,9 @@ export default function Footer() {
         <section className="footer__column">
           <h4>Adres ve Menü</h4>
           <p className="footer__address">
-            Merkez Mah. Teknoloji Cad. No:12
+            xxxx Mah. yyyyy Cad. No:12
             <br />
-            Şişli / İstanbul
+            Muratpaşa / Antalya
           </p>
           <ul className="footer__list footer__list--inline">
             {quickLinks.map((link) => (

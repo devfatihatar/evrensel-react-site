@@ -1,9 +1,8 @@
 ﻿import { useEffect, useRef, useState } from "react"
 import HomeSlider from "../components/home/HomeSlider"
 import Hero from "../components/home/Hero"
-import Services from "../components/home/Services"
-import WhyUs from "../components/home/WhyUs"
-import References from "../components/home/References"
+import AboutUs from "../components/home/AboutUs"
+import ReferenceShowcase from "../components/home/ReferenceShowcase"
 import HomeBrands from "../components/home/HomeBrands"
 import CTA from "../components/home/CTA"
 import PageSeo from "../components/seo/PageSeo"
@@ -288,6 +287,8 @@ export default function Home() {
         <HomeSlider />
 
         <Hero />
+        <AboutUs />
+        <ReferenceShowcase />
 
         <div className="home-page__rocket" aria-hidden="true">
           <img src={wingsImage} alt="" className="home-page__rocket-image" />
@@ -295,10 +296,6 @@ export default function Home() {
         <div className="home-page__rocket home-page__rocket--second" aria-hidden="true">
           <img src={emojiImage} alt="" className="home-page__rocket-image" />
         </div>
-
-        <Services />
-
-        <WhyUs />
 
         <div className="home-page__social-floats" aria-label="Sosyal medya bağlantıları">
           {socialIcons.map((item, index) => (
@@ -322,8 +319,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <References />
         <HomeBrands />
 
         <CTA />
@@ -331,4 +326,8 @@ export default function Home() {
     </>
   )
 }
+
+
+
+
 

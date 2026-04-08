@@ -1,12 +1,25 @@
 ﻿{
   "links": [
     { "to": "/", "label": "Anasayfa" },
-    { "to": "/hakkimizda", "label": "Hakkımızda" },
     { "to": "/web-tasarim", "label": "Web Tasarımı" },
     { "to": "/hizmetlerimiz/web-tasarimi", "label": "Sosyal Medya" },
-    { "to": "/hizmetlerimiz/donanim-altyapisi", "label": "Drone ve Kamera" },
-    { "to": "/hizmetlerimiz/yardim-destek", "label": "Sunucu" },
-    { "to": "/donanim", "label": "Donanım" },
+    { "to": "/donanim", "label": "Bilgisayar" },
+    {
+      "to": "/hizmetlerimiz",
+      "label": "Hizmetlerimiz",
+      "children": [
+        { "to": "/hizmetlerimiz?kategori=internet-hizmetleri", "label": "İnternet Hizmetleri" },
+        { "to": "/hizmetlerimiz?kategori=bilisim-hizmetleri", "label": "Bilişim Hizmetleri" },
+        { "to": "/hizmetlerimiz?kategori=grafik-tasarim", "label": "Grafik & Tasarım" },
+        { "to": "/hizmetlerimiz?kategori=kurumsal-hizmetler", "label": "Kurumsal Hizmetler" },
+        {
+          "to": "/hizmetlerimiz?kategori=guvenlik-personel-sistemleri",
+          "label": "Güvenlik & Personel Sistemleri"
+        },
+        { "to": "/hizmetlerimiz?kategori=yazilim-hizmetleri", "label": "Yazılım Hizmetleri" }
+      ]
+    },
+    { "to": "/yardim-destek", "label": "Yardım & Destek" },
     { "to": "/iletisim", "label": "İletişim" }
   ],
   "topBar": {

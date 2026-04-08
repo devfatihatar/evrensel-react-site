@@ -1,0 +1,18 @@
+{
+  "title": "Neden Biz",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor.",
+  "reasons": [
+    {
+      "title": "Cunku hizli destek sagliyoruz",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et."
+    },
+    {
+      "title": "Cunku surecleri takip ediyoruz",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo."
+    },
+    {
+      "title": "Cunku uzun vadeli cozumler kuruyoruz",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lacinia bibendum nulla sed consectetur."
+    }
+  ]
+}

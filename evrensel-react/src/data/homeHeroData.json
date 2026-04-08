@@ -1,18 +1,18 @@
 ﻿{
   "eyebrow": "Evrensel Bilişim",
-  "title": "İşinizi hızlandıran teknoloji altyapısı",
-  "description": "Web, donanım ve teknik destek süreçlerini tek merkezden yönetiyor; işletmenizi daha hızlı, güvenli ve sürdürülebilir hale getiriyoruz.",
+  "title": "Biz kimiz?",
+  "description": "1994 yılında başladığımız bilişim serüvenimize, 15 yıldır Antalya web tasarım, e-ticaret, bilgisayar ve kurumsal hizmetler, sosyal medya yönetimi, güvenlik ve personel sistemleri çözümleri vererek devam ediyoruz.",
+  "supportText": "Bugün 500+ tamamlanan proje deneyimimizi, hafta içi 10:00 - 17:00 arası hızlı ve sürdürülebilir teknik destek yaklaşımıyla işletmelerin günlük operasyonlarına yansıtıyoruz.",
   "primaryButton": "Ücretsiz Ön Görüşme",
   "secondaryButton": "Hizmetlerimizi İncele",
-  "quickPromise": "24 saat içinde geri dönüş, net yol haritası ve ölçülebilir sonuç.",
-  "trustBadges": ["32+ yıl deneyim", "500+ tamamlanan proje", "Hafta içi canlı destek"],
+  "stats": [
+    { "label": "Yıl Tecrübe", "value": "15+" },
+    { "label": "Tamamlanan Proje", "value": "500+" },
+    { "label": "Hafta içi Destek Erişimi", "value": "10:00 - 17:00" }
+  ],
+  "trustBadges": ["15+ yıl deneyim", "250+ tamamlanan proje", "Hafta içi canlı destek"],
   "imageAriaLabel": "Görsel alanı",
   "imageAlt": "Teknik ekip çalışma görseli",
   "imagePlaceholderTitle": "Canlı Operasyon Desteği",
-  "imagePlaceholderHint": "Sistem, ağ ve destek süreçlerini tek panelden yönetiyoruz.",
-  "visualStats": [
-    { "value": "32+", "label": "Yıl Tecrübe" },
-    { "value": "500+", "label": "Proje" },
-    { "value": "10:00-17:00", "label": "Destek Saatleri" }
-  ]
+  "imagePlaceholderHint": "Sistem, ağ ve destek süreçlerini tek panelden yönetiyoruz."
 }

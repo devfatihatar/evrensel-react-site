@@ -1,4 +1,4 @@
-﻿import { NavLink } from "react-router-dom"
+﻿import { NavLink, useLocation } from "react-router-dom"
 import { useEffect, useMemo, useRef, useState } from "react"
 import Button from "../shared/Button"
 import navbarData from "../../data/navbarData.json"
@@ -7,6 +7,7 @@ import evrenselLogo from "../../assets/images/icons/evrensel-logo.png"
 const { links, topBar, menuAriaLabel } = navbarData
 
 export default function Navbar() {
+  const location = useLocation()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isPromoClosed, setIsPromoClosed] = useState(false)
   const isScrolledRef = useRef(false)
@@ -24,6 +25,9 @@ export default function Navbar() {
       return true
     })
   }, [])
+
+  const isLinkActive = (linkTo) =>
+    location.pathname === linkTo || (linkTo !== "/" && location.pathname.startsWith(linkTo))
 
   useEffect(() => {
     const applyScrollState = () => {
@@ -130,18 +134,65 @@ export default function Navbar() {
             <div className="navbar__main-right">
               <nav className="navbar__nav" aria-label={menuAriaLabel}>
                 <ul className="navbar__menu">
-                  {uniqueLinks.map((link) => (
-                    <li key={`${link.to}-${link.label}`}>
-                      <NavLink
-                        to={link.to}
-                        className={({ isActive }) =>
-                          `navbar__link ${isActive ? "navbar__link--active" : ""}`.trim()
-                        }
+                  {uniqueLinks.map((link) => {
+                    const hasChildren = Array.isArray(link.children) && link.children.length > 0
+                    const parentActive = isLinkActive(link.to)
+
+                    if (!hasChildren) {
+                      return (
+                        <li key={`${link.to}-${link.label}`}>
+                          <NavLink
+                            to={link.to}
+                            className={({ isActive }) =>
+                              `navbar__link ${isActive ? "navbar__link--active" : ""}`.trim()
+                            }
+                          >
+                            {link.label}
+                          </NavLink>
+                        </li>
+                      )
+                    }
+
+                    return (
+                      <li
+                        key={`${link.to}-${link.label}`}
+                        className={`navbar__menu-item navbar__menu-item--has-dropdown ${
+                          parentActive ? "is-active" : ""
+                        }`.trim()}
                       >
-                        {link.label}
-                      </NavLink>
-                    </li>
-                  ))}
+                        <NavLink
+                          to={link.to}
+                          className={`navbar__link ${parentActive ? "navbar__link--active" : ""}`.trim()}
+                        >
+                          <span className="navbar__link-label">{link.label}</span>
+                          <span className="navbar__link-caret" aria-hidden="true">
+                            ▾
+                          </span>
+                        </NavLink>
+
+                        <ul className="navbar__dropdown" aria-label={`${link.label} alt menü`}>
+                          {link.children.map((child) => {
+                            const childActive =
+                              location.pathname === "/hizmetlerimiz" &&
+                              location.search.includes(child.to.split("?")[1] || "")
+
+                            return (
+                              <li key={`${child.to}-${child.label}`}>
+                                <NavLink
+                                  to={child.to}
+                                  className={`navbar__dropdown-link ${
+                                    childActive ? "navbar__dropdown-link--active" : ""
+                                  }`.trim()}
+                                >
+                                  {child.label}
+                                </NavLink>
+                              </li>
+                            )
+                          })}
+                        </ul>
+                      </li>
+                    )
+                  })}
                 </ul>
               </nav>
             </div>
@@ -162,3 +213,4 @@ export default function Navbar() {
     </>
   )
 }
+
