@@ -5,10 +5,14 @@
   "supportText": "Bugün 500+ tamamlanan proje deneyimimizi, hafta içi 10:00 - 17:00 arası hızlı ve sürdürülebilir teknik destek yaklaşımıyla işletmelerin günlük operasyonlarına yansıtıyoruz.",
   "primaryButton": "Ücretsiz Ön Görüşme",
   "secondaryButton": "Hizmetlerimizi İncele",
-  "stats": [
-    { "label": "Yıl Tecrübe", "value": "15+" },
-    { "label": "Tamamlanan Proje", "value": "500+" },
-    { "label": "Hafta içi Destek Erişimi", "value": "10:00 - 17:00" }
+  "servicesHeading": "Hizmetlerimiz",
+  "services": [
+    { "label": "Web tasarim ve kurumsal site gelistirme", "href": "/web-tasarim" },
+    { "label": "E-ticaret altyapisi ve dijital donusum cozumleri", "href": "/hizmetlerimiz" },
+    { "label": "Bilgisayar, donanim ve teknik servis destegi", "href": "/donanim" },
+    { "label": "Sosyal medya yonetimi ve dijital iletisim", "href": "/hizmetlerimiz" },
+    { "label": "Guvenlik, ag ve sistem kurulumu", "href": "/donanim" },
+    { "label": "Personel takip ve kurumsal otomasyon cozumleri", "href": "/yardim-destek" }
   ],
   "trustBadges": ["15+ yıl deneyim", "250+ tamamlanan proje", "Hafta içi canlı destek"],
   "imageAriaLabel": "Görsel alanı",

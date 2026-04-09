@@ -1,18 +1,20 @@
 ﻿import { useEffect, useRef, useState } from "react"
-import HomeSlider from "../components/home/HomeSlider"
 import Hero from "../components/home/Hero"
 import AboutUs from "../components/home/AboutUs"
 import ReferenceShowcase from "../components/home/ReferenceShowcase"
 import HomeBrands from "../components/home/HomeBrands"
-import CTA from "../components/home/CTA"
 import PageSeo from "../components/seo/PageSeo"
 import seoData from "../data/seoData.json"
-import wingsImage from "../assets/images/icons/pngwing.com.png"
-import emojiImage from "../assets/images/icons/emoji.png"
+import homeSliderData from "../data/homeSliderData.json"
+import homepageImage from "../assets/images/homepage.jpg"
+import homepageWebIcon from "../assets/images/sliders/homepagewebicon.png"
+import homepageSocialIcon from "../assets/images/sliders/homepagesocialicon.png"
+import homepageSeoIcon from "../assets/images/sliders/homepageseoicon.png"
 import instagramLogo from "../assets/images/social-media/instagram.png"
 import googleLogo from "../assets/images/social-media/google.png"
 import facebookLogo from "../assets/images/social-media/facebook.png"
 
+const HOME_SLIDE_DURATION_MS = 6300
 const homeSeo = seoData.home
 const socialIcons = [
   {
@@ -37,9 +39,40 @@ const socialIcons = [
     href: "https://www.facebook.com",
   },
 ]
+const heroHighlights = [
+  {
+    key: "web",
+    imageSrc: homepageWebIcon,
+    value: 100,
+    suffix: "+",
+    label: "Web Sitesi",
+    modifier: "home-page__rocket--first",
+  },
+  {
+    key: "social",
+    imageSrc: homepageSocialIcon,
+    value: 250,
+    suffix: "+",
+    label: "Sosyal Medya Tasarimi",
+    modifier: "home-page__rocket--second",
+  },
+  {
+    key: "support",
+    imageSrc: homepageSeoIcon,
+    value: 50,
+    suffix: "+",
+    label: "SEO Yonetimi",
+    modifier: "home-page__rocket--third",
+  },
+]
 
 export default function Home() {
+  const slides = homeSliderData.slides
   const homeRef = useRef(null)
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0)
+  const [highlightCounts, setHighlightCounts] = useState(() =>
+    Object.fromEntries(heroHighlights.map((item) => [item.key, 0]))
+  )
   const [activeSocialIndex, setActiveSocialIndex] = useState(-1)
   const [hoveredSocialIndex, setHoveredSocialIndex] = useState(-1)
   const socialIndexRef = useRef(-1)
@@ -52,6 +85,43 @@ export default function Home() {
     event.stopPropagation()
     window.location.assign(href)
   }
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlideIndex((current) => (current + 1) % homeSliderData.slides.length)
+    }, HOME_SLIDE_DURATION_MS)
+
+    return () => {
+      window.clearInterval(timer)
+    }
+  }, [])
+
+  useEffect(() => {
+    let rafId = 0
+    const duration = 2200
+    const startTime = performance.now()
+
+    const tick = (now) => {
+      const progress = Math.min(1, (now - startTime) / duration)
+      const eased = 1 - Math.pow(1 - progress, 4)
+
+      setHighlightCounts(
+        Object.fromEntries(
+          heroHighlights.map((item) => [item.key, Math.round(item.value * eased)])
+        )
+      )
+
+      if (progress < 1) {
+        rafId = window.requestAnimationFrame(tick)
+      }
+    }
+
+    rafId = window.requestAnimationFrame(tick)
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId)
+    }
+  }, [])
 
   useEffect(() => {
     const root = homeRef.current
@@ -121,109 +191,6 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    const root = homeRef.current
-    if (!root) return
-
-    let rafId = 0
-
-    const applyRocketProgress = () => {
-      const whyUs = root.querySelector(".why-us")
-      const services = root.querySelector(".services")
-      const servicesFooter = root.querySelector(".services__footer")
-      const footer = document.querySelector("footer")
-      if (!whyUs) {
-        rafId = 0
-        return
-      }
-
-      const y = window.scrollY
-      const whyTop = y + whyUs.getBoundingClientRect().top
-      const vh = window.innerHeight
-      const servicesTop = services ? y + services.getBoundingClientRect().top : whyTop - vh * 0.7
-      const servicesFooterTop = servicesFooter
-        ? y + servicesFooter.getBoundingClientRect().top
-        : servicesTop + vh * 0.42
-      const footerTop = footer ? y + footer.getBoundingClientRect().top : servicesFooterTop + vh * 1.2
-
-      const rocketStart = vh * 0.22
-      const rocketEnd = whyTop - vh * 0.15
-      const rocketRaw = (y - rocketStart) / Math.max(rocketEnd - rocketStart, 1)
-      const rocketProgress = Math.min(1, Math.max(0, rocketRaw))
-
-      const rocket2DelayedStart = rocketEnd + vh * 0.08
-      const rocket2Start = Math.max(servicesTop - vh * 0.96, rocket2DelayedStart)
-      const rocket2MidA = Math.max(servicesTop - vh * 0.4, rocket2Start + vh * 0.34)
-      const rocket2MidB = Math.max(servicesFooterTop - vh * 0.12, rocket2MidA + vh * 0.34)
-      const rocket2End = Math.max(footerTop + vh * 0.08, rocket2MidB + vh * 0.36)
-
-      const entryProgress = Math.min(
-        1,
-        Math.max(0, (y - rocket2Start) / Math.max(rocket2MidA - rocket2Start, 1))
-      )
-      const driftProgress = Math.min(
-        1,
-        Math.max(0, (y - rocket2MidA) / Math.max(rocket2MidB - rocket2MidA, 1))
-      )
-      const exitProgress = Math.min(
-        1,
-        Math.max(0, (y - rocket2MidB) / Math.max(rocket2End - rocket2MidB, 1))
-      )
-
-      let rocket2X = 18
-      let rocket2Y = -12
-      let rocket2Rotate = -10
-      let rocket2Opacity = 0
-
-      if (y < rocket2Start) {
-        rocket2Opacity = 0
-      } else if (y < rocket2MidA) {
-        rocket2X = 18 + entryProgress * 10
-        rocket2Y = -12 + entryProgress * 176
-        rocket2Rotate = -10 + entryProgress * 8
-        rocket2Opacity = Math.min(1, entryProgress * 1.4)
-      } else if (y < rocket2MidB) {
-        const zigzag = Math.sin(driftProgress * Math.PI * 2.4) * 24
-        rocket2X = -34 + zigzag
-        rocket2Y = 164 + driftProgress * 254
-        rocket2Rotate = -2 + Math.sin(driftProgress * Math.PI * 1.6) * 10
-        rocket2Opacity = 1
-      } else {
-        rocket2X = -30 + exitProgress * 344
-        rocket2Y = 418 - exitProgress * 560
-        rocket2Rotate = 10 - exitProgress * 36
-        rocket2Opacity = Math.max(0, 1 - exitProgress * 1.15)
-      }
-
-      document.documentElement.style.setProperty("--rocket-progress", rocketProgress.toFixed(3))
-      document.documentElement.style.setProperty("--rocket2-x", `${rocket2X.toFixed(2)}px`)
-      document.documentElement.style.setProperty("--rocket2-y", `${rocket2Y.toFixed(2)}px`)
-      document.documentElement.style.setProperty("--rocket2-rotate", `${rocket2Rotate.toFixed(2)}deg`)
-      document.documentElement.style.setProperty("--rocket2-opacity", rocket2Opacity.toFixed(3))
-      rafId = 0
-    }
-
-    const onScrollOrResize = () => {
-      if (rafId) return
-      rafId = window.requestAnimationFrame(applyRocketProgress)
-    }
-
-    applyRocketProgress()
-    window.addEventListener("scroll", onScrollOrResize, { passive: true })
-    window.addEventListener("resize", onScrollOrResize)
-
-    return () => {
-      window.removeEventListener("scroll", onScrollOrResize)
-      window.removeEventListener("resize", onScrollOrResize)
-      if (rafId) window.cancelAnimationFrame(rafId)
-      document.documentElement.style.removeProperty("--rocket-progress")
-      document.documentElement.style.removeProperty("--rocket2-x")
-      document.documentElement.style.removeProperty("--rocket2-y")
-      document.documentElement.style.removeProperty("--rocket2-rotate")
-      document.documentElement.style.removeProperty("--rocket2-opacity")
-    }
-  }, [])
-
-  useEffect(() => {
     if (!socialIcons.length) return
 
     const visibleDurationMs = 5000
@@ -279,23 +246,76 @@ export default function Home() {
     }, 120)
   }
 
+  const previousSlide = slides[(activeSlideIndex - 1 + slides.length) % slides.length]
+  const currentSlide = slides[activeSlideIndex]
+  const nextSlide = slides[(activeSlideIndex + 1) % slides.length]
+
   return (
     <>
       <PageSeo title={homeSeo.title} description={homeSeo.description} path={homeSeo.path} />
 
       <main className="home-page" ref={homeRef}>
-        <HomeSlider />
+        <section className="home-slider section reveal-on-scroll reveal-right">
+          <div className="container">
+            <div
+              className="home-slider__frame"
+              style={{ "--home-slider-duration": `${HOME_SLIDE_DURATION_MS}ms` }}
+            >
+              <img
+                src={homepageImage}
+                alt="Evrensel Bilisim anasayfa gorseli"
+                className="home-slider__image"
+              />
+              <div className="home-slider__slide is-active" key={currentSlide.title}>
+                <div className="home-slider__overlay home-slider__overlay-stack">
+                  <article className="home-slider__copy home-slider__copy--prev" aria-hidden="true">
+                    <h2>{previousSlide.title}</h2>
+                    <p>{previousSlide.text}</p>
+                  </article>
+                  <article className="home-slider__copy home-slider__copy--current">
+                    <h2>{currentSlide.title}</h2>
+                    <p>{currentSlide.text}</p>
+                  </article>
+                  <article className="home-slider__copy home-slider__copy--next" aria-hidden="true">
+                    <h2>{nextSlide.title}</h2>
+                    <p>{nextSlide.text}</p>
+                  </article>
+                </div>
+              </div>
+              <div className="home-slider__dots">
+                {slides.map((slide, index) => (
+                  <button
+                    key={slide.title}
+                    className={`home-slider__dot ${index === activeSlideIndex ? "is-active" : ""}`.trim()}
+                    onClick={() => setActiveSlideIndex(index)}
+                    type="button"
+                    aria-label={`${index + 1}. ${homeSliderData.dotAriaSuffix}`}
+                  />
+                ))}
+              </div>
+              <div className="home-slider__highlights" aria-hidden="true">
+                {heroHighlights.map((item) => (
+                  <div
+                    key={item.key}
+                    className={`home-page__rocket ${item.modifier}`.trim()}
+                  >
+                    <div className="home-page__rocket-visual">
+                      <img src={item.imageSrc} alt="" className="home-page__rocket-image" />
+                    </div>
+                    <div className="home-page__rocket-copy">
+                      <strong>{`${highlightCounts[item.key] ?? 0}${item.suffix ?? ""}`}</strong>
+                      <span>{item.label}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
         <Hero />
         <AboutUs />
         <ReferenceShowcase />
-
-        <div className="home-page__rocket" aria-hidden="true">
-          <img src={wingsImage} alt="" className="home-page__rocket-image" />
-        </div>
-        <div className="home-page__rocket home-page__rocket--second" aria-hidden="true">
-          <img src={emojiImage} alt="" className="home-page__rocket-image" />
-        </div>
 
         <div className="home-page__social-floats" aria-label="Sosyal medya bağlantıları">
           {socialIcons.map((item, index) => (
@@ -320,8 +340,6 @@ export default function Home() {
           ))}
         </div>
         <HomeBrands />
-
-        <CTA />
       </main>
     </>
   )

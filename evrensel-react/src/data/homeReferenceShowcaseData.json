@@ -1,16 +1,16 @@
 {
   "title": "Referanslarimiz",
-  "description": "Aktif destek verdigimiz firma, sektor ve surec sayilarini bu alanda ozetliyoruz. Gercek veriler geldikce bu kutulari dogrudan guncelleyebiliriz.",
+  "description": "Birlikte çalıştığımız firmalar ve projeler.",
   "previews": [
-    { "name": "Nova Lojistik", "startColor": "#d98b73", "endColor": "#8f2f45" },
-    { "name": "Mavi Klinik", "startColor": "#b44d61", "endColor": "#5f2236" },
-    { "name": "Ahenk Otomasyon", "startColor": "#e2a56d", "endColor": "#96474c" },
-    { "name": "Delta Muhasebe", "startColor": "#c9786d", "endColor": "#7c2b43" }
+    { "name": "Talyantis"  },
+    { "name": "Rotlog Logistik"  },
+    { "name": "Ahenk Otomasyon"  },
+    { "name": "Delta Muhasebe"}
   ],
   "stats": [
-    { "value": "00+", "label": "Aktif destek verdigimiz firma" },
-    { "value": "00+", "label": "Sektor" },
-    { "value": "00+", "label": "Tamamlanan kurumsal kurulum" },
-    { "value": "00+", "label": "Surekli bakim verdigimiz sistem" }
+    { "value": "50+", "label": "Destek verdigimiz firma" },
+    { "value": "10+", "label": "Hizmet verdiğimiz sektör" },
+    { "value": "100+", "label": "Tamamlanan kurumsal kurulum" },
+    { "value": "50+", "label": "Surekli bakim verdigimiz sistem" }
   ]
 }

@@ -1,7 +1,10 @@
-import { useState } from "react"
-import CountUpText from "../shared/CountUpText"
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import homeHeroData from "../../data/homeHeroData.json"
 import heroVisual from "../../assets/images/sliders/slider1.webp"
+import serviceVisualA from "../../assets/images/sliders/slider1.jpg"
+import serviceVisualB from "../../assets/images/sliders/slider2.png"
+import serviceVisualC from "../../assets/images/sliders/slider3.jpg"
 
 const {
   eyebrow,
@@ -10,27 +13,23 @@ const {
   supportText,
   imageAriaLabel,
   imageAlt,
-  stats,
+  servicesHeading,
+  services,
 } = homeHeroData
 
 export default function Hero() {
-  const [statProgress, setStatProgress] = useState({})
-  const [statCompleted, setStatCompleted] = useState({})
+  const serviceVisuals = [serviceVisualA, serviceVisualB, serviceVisualC]
+  const [activeServiceVisual, setActiveServiceVisual] = useState(0)
 
-  const updateStatProgress = (label, progress) => {
-    setStatProgress((prev) => {
-      const next = Math.max(0, Math.min(1, progress))
-      if (prev[label] === next) return prev
-      return { ...prev, [label]: next }
-    })
-  }
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveServiceVisual((current) => (current + 1) % serviceVisuals.length)
+    }, 3200)
 
-  const markStatCompleted = (label) => {
-    setStatCompleted((prev) => {
-      if (prev[label]) return prev
-      return { ...prev, [label]: true }
-    })
-  }
+    return () => {
+      window.clearInterval(timer)
+    }
+  }, [serviceVisuals.length])
 
   return (
     <section className="hero section reveal-on-scroll reveal-right">
@@ -51,23 +50,49 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="services__stats hero__stats">
-          {stats.map((stat) => (
-            <article
-              className={`services__stat ${statCompleted[stat.label] ? "is-finished" : ""}`.trim()}
-              key={stat.label}
-              style={{ "--stat-fill": statProgress[stat.label] ?? 0 }}
-            >
-              <strong>
-                <CountUpText
-                  value={stat.value}
-                  onProgress={(progress) => updateStatProgress(stat.label, progress)}
-                  onComplete={() => markStatCompleted(stat.label)}
+        <div className="hero__services">
+          <div className="hero__services-media" aria-label="Hizmet gorselleri">
+            {serviceVisuals.map((visualSrc, index) => (
+              <div
+                className={`hero__services-media-item ${activeServiceVisual === index ? "is-active" : ""}`.trim()}
+                key={visualSrc}
+              >
+                <img
+                  src={visualSrc}
+                  alt=""
+                  className="hero__services-media-image"
+                  aria-hidden="true"
                 />
-              </strong>
-              <span>{stat.label}</span>
-            </article>
-          ))}
+                <span className="hero__services-media-badge">0{index + 1}</span>
+              </div>
+            ))}
+
+            <div className="hero__services-media-dots" aria-label="Hizmet gorseli secimi">
+              {serviceVisuals.map((visualSrc, index) => (
+                <button
+                  key={`${visualSrc}-dot`}
+                  type="button"
+                  className={`hero__services-media-dot ${activeServiceVisual === index ? "is-active" : ""}`.trim()}
+                  onClick={() => setActiveServiceVisual(index)}
+                  aria-label={`Gorsel ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div className="hero__services-content">
+            <p className="hero__services-title">{servicesHeading}</p>
+            <div className="hero__services-list" role="list" aria-label={servicesHeading}>
+              {services.map((item) => (
+                <article className="hero__services-item" key={item.label} role="listitem">
+                  <Link to={item.href} className="hero__services-link">
+                    <span className="hero__services-link-text">{item.label}</span>
+                    <span className="hero__services-link-cta">Sayfaya git</span>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

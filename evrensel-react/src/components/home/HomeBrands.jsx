@@ -2,6 +2,10 @@ import { useEffect, useMemo, useRef, useState } from "react"
 import homeReferencesData from "../../data/homeReferencesData.json"
 
 const { brandTickerTitle, brandLogos } = homeReferencesData
+const brandImages = import.meta.glob("../../assets/images/brands/*", {
+  eager: true,
+  import: "default",
+})
 
 export default function HomeBrands() {
   const tickerRef = useRef(null)
@@ -14,11 +18,23 @@ export default function HomeBrands() {
   const isStepAnimatingRef = useRef(false)
   const [isDragging, setIsDragging] = useState(false)
 
-  const loopedBrands = useMemo(() => [...brandLogos, ...brandLogos, ...brandLogos], [brandLogos])
+  const resolvedBrands = useMemo(
+    () =>
+      brandLogos.map((brand) => ({
+        ...brand,
+        imageSrc: brand.imagePath ? brandImages[`../../assets/images/${brand.imagePath}`] : null,
+      })),
+    []
+  )
+
+  const loopedBrands = useMemo(
+    () => [...resolvedBrands, ...resolvedBrands, ...resolvedBrands],
+    [resolvedBrands]
+  )
 
   useEffect(() => {
     const ticker = tickerRef.current
-    if (!ticker || !brandLogos.length) return
+    if (!ticker || !resolvedBrands.length) return
 
     const updateBlockWidth = () => {
       blockWidthRef.current = ticker.scrollWidth / 3
@@ -91,7 +107,7 @@ export default function HomeBrands() {
       if (stepAnimationRef.current) window.cancelAnimationFrame(stepAnimationRef.current)
       isStepAnimatingRef.current = false
     }
-  }, [])
+  }, [resolvedBrands.length])
 
   const startDrag = (pageX) => {
     const ticker = tickerRef.current
@@ -153,8 +169,17 @@ export default function HomeBrands() {
                 style={{ "--brand-bg": brand.bgColor, "--brand-color": brand.textColor }}
                 aria-label={brand.name}
               >
-                <span className="references__brand-logo">{brand.logo}</span>
-                <small>{brand.name}</small>
+                <span className="references__brand-logo">
+                  {brand.imageSrc ? (
+                    <img
+                      src={brand.imageSrc}
+                      alt={`${brand.name} logosu`}
+                      className="references__brand-logo-image"
+                    />
+                  ) : (
+                    brand.logo
+                  )}
+                </span>
               </article>
             ))}
           </div>

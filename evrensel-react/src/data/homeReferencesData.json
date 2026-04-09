@@ -1,30 +1,25 @@
-﻿{
-  "section": {
-    "eyebrow": "Referanslar",
-    "title": "Birlikte çalıştığımız markalar",
-    "subtitle": "Farklı sektörlerdeki firmalarla uzun vadeli dijital ve teknik iş ortaklıkları yürütüyoruz."
-  },
-  "references": [
-    { "name": "Nova Lojistik", "sector": "Lojistik", "result": "Operasyon paneli + destek", "logo": "NL" },
-    { "name": "Ahenk Otomasyon", "sector": "Endüstri", "result": "Sistem altyapısı dönüşümü", "logo": "AO" },
-    { "name": "Mavi Klinik", "sector": "Sağlık", "result": "Web sitesi + bakım süreci", "logo": "MK" },
-    { "name": "Delta Muhasebe", "sector": "Finans", "result": "Kurumsal web + teknik servis", "logo": "DM" }
-  ],
-  "trust": [
-    { "value": "40+", "label": "Aktif Referans" },
-    { "value": "8", "label": "Farklı Sektör" },
-    { "value": "%96", "label": "Memnuniyet Oranı" }
-  ],
-  "logoAriaSuffix": "logo alanı",
+﻿
+{
   "brandTickerTitle": "Çalıştığımız Markalar",
   "brandLogos": [
-    { "name": "Artemis", "logo": "AR", "bgColor": "#A53A49", "textColor": "#FFF1F2" },
-    { "name": "Vertex", "logo": "VX", "bgColor": "#B33F4F", "textColor": "#FFF1F2" },
-    { "name": "Nexa", "logo": "NX", "bgColor": "#A83958", "textColor": "#FFF0F6" },
-    { "name": "Lumio", "logo": "LU", "bgColor": "#943444", "textColor": "#FFF5F7" },
-    { "name": "Orion", "logo": "OR", "bgColor": "#8B3140", "textColor": "#FFF1F3" },
-    { "name": "Penta", "logo": "PT", "bgColor": "#9B3750", "textColor": "#FFF1F3" },
-    { "name": "Mosaic", "logo": "MO", "bgColor": "#B04563", "textColor": "#FFF0F4" },
-    { "name": "Zenit", "logo": "ZN", "bgColor": "#7F2D43", "textColor": "#FFEAF0" }
+    { "name": "Aynali", "imagePath": "brands/aynali.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "BM Terlik", "imagePath": "brands/bmterlik.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Netfile", "imagePath": "brands/netfile.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Modelin", "imagePath": "brands/modelin.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Mia", "imagePath": "brands/mia.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Iceberry", "imagePath": "brands/iceberry.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Huray Hugul", "imagePath": "brands/hurayhugul.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Gioco", "imagePath": "brands/gioco.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Dr Bio", "imagePath": "brands/drbio.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Renova", "imagePath": "brands/renova.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Yatsan", "imagePath": "brands/ref_yatsan.webp", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Otopratik", "imagePath": "brands/ref_otopratik.webp", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Otokontrol", "imagePath": "brands/otokontrol.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Sense Spa", "imagePath": "brands/sensespa.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Sare Suites", "imagePath": "brands/saresuites.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Storpark", "imagePath": "brands/storpark.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Talyantis", "imagePath": "brands/talyantis.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Sushi Hanga", "imagePath": "brands/sushihanga.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
+    { "name": "Xdream", "imagePath": "brands/xdream.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" }
   ]
 }
