@@ -26,8 +26,13 @@ export default function Navbar() {
     })
   }, [])
 
-  const isLinkActive = (linkTo) =>
-    location.pathname === linkTo || (linkTo !== "/" && location.pathname.startsWith(linkTo))
+  const isLinkActive = (linkTo) => {
+    if (linkTo === "/hizmetlerimiz") {
+      return location.pathname === "/hizmetlerimiz"
+    }
+
+    return location.pathname === linkTo || (linkTo !== "/" && location.pathname.startsWith(`${linkTo}/`))
+  }
 
   useEffect(() => {
     const applyScrollState = () => {

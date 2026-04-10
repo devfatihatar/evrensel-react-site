@@ -1,35 +1,42 @@
-﻿import Button from "../components/shared/Button"
-import SectionTitle from "../components/shared/SectionTitle"
+import Button from "../components/shared/Button"
 import PageSeo from "../components/seo/PageSeo"
-import webDesignData from "../data/webDesignData.json"
 import seoData from "../data/seoData.json"
+import webDesignData from "../data/webDesignData.json"
 import { getBreadcrumbSchema, getServiceSchema } from "../seo/schema"
-import CountUpText from "../components/shared/CountUpText"
-
-const {
-  hero,
-  highlights,
-  servicesSection,
-  services,
-  processSection,
-  processSteps,
-  deliverablesSection,
-  deliverables,
-  referencesSection,
-  references,
-  cta,
-} = webDesignData
+import devicesImage from "../assets/images/web-design/devices.png"
+import lighthouseImage from "../assets/images/web-design/lighthouse.png"
+import seoImage from "../assets/images/web-design/seo.png"
+import webArchitectureImage from "../assets/images/web-design/web-architecture.png"
+import webSlideMainImage from "../assets/images/web-design/webslidermain.png"
 
 const webDesignSeo = seoData.webDesign
+const { hero } = webDesignData
+const heroHighlights = [
+  {
+    imageSrc: lighthouseImage,
+    title: "60+",
+    text: "Performans skorlari",
+  },
+  {
+    imageSrc: seoImage,
+    title: "SEO",
+    text: "SEO uyumlu altyapi",
+  },
+  {
+    imageSrc: devicesImage,
+    title: "Responsive Tasarim",
+    text: "Tum cihazlarla uyumlu",
+  },
+]
 
 export default function WebDesign() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
-    { name: "Web Tasarım", path: webDesignSeo.path },
+    { name: "Web Tasarim", path: webDesignSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({
-    name: "Web Tasarım ve Geliştirme Hizmetleri",
+    name: "Web Tasarim ve Gelistirme Hizmetleri",
     description: webDesignSeo.description,
     path: webDesignSeo.path,
   })
@@ -44,142 +51,73 @@ export default function WebDesign() {
       />
 
       <main className="web-design-page page">
-        <section className="section web-design-page__hero">
-          <div className="container web-design-page__hero-grid">
-            <div className="web-design-page__hero-content">
-              <SectionTitle eyebrow={hero.eyebrow} title={hero.title} subtitle={hero.subtitle} />
+        <section className="web-design-main-visual section" aria-label="Web tasarim ana gorseli">
+          <div className="web-design-main-visual__frame">
+            <img
+              src={webSlideMainImage}
+              alt="Web tasarim ana slider gorseli"
+              className="web-design-main-visual__image"
+            />
 
-              <p className="web-design-page__lead">{hero.lead}</p>
+            <div className="container web-design-main-visual__overlay">
+              <div className="web-design-hero web-design-hero__inner">
+                <div className="web-design-hero__content">
+                  <h1>{hero.title}</h1>
+                  <p className="web-design-hero__lead">
+                    {hero.subtitle}
+                  </p>
 
-              <div className="web-design-page__hero-actions">
-                <Button to="/iletisim">{hero.primaryButton}</Button>
-                <Button to="/hizmetlerimiz" variant="secondary">
-                  {hero.secondaryButton}
-                </Button>
+                  <div className="web-design-hero__actions">
+                    <Button to="/iletisim">{hero.primaryButton}</Button>
+                  </div>
+                </div>
+
+                <aside className="web-design-hero__aside" aria-label={hero.panelAriaLabel}>
+                  <div className="web-design-hero__highlights" aria-label="Web tasarim avantajlari">
+                    {heroHighlights.map((item) => (
+                      <article className="web-design-hero__highlight" key={item.text}>
+                        <div className="web-design-hero__highlight-visual">
+                          <img src={item.imageSrc} alt="" className="web-design-hero__highlight-image" />
+                        </div>
+                        <div className="web-design-hero__highlight-copy">
+                          <strong>{item.title}</strong>
+                          <span>{item.text}</span>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </aside>
               </div>
             </div>
-
-            <aside className="web-design-page__hero-panel" aria-label={hero.panelAriaLabel}>
-              <ul className="web-design-page__highlight-list">
-                {highlights.map((item) => (
-                  <li key={item.label} className="web-design-page__highlight-item">
-                    <strong><CountUpText value={item.value} /></strong>
-                    <span>{item.label}</span>
-                  </li>
-                ))}
-              </ul>
-            </aside>
           </div>
         </section>
 
-        <section className="section web-design-page__services">
-          <div className="container">
-            <SectionTitle
-              eyebrow={servicesSection.eyebrow}
-              title={servicesSection.title}
-              subtitle={servicesSection.subtitle}
-              align="center"
-            />
+        <section className="web-design-showcase section" aria-label="Web tasarim liste alani">
+          <div className="container web-design-showcase__inner">
+            <div className="web-design-showcase__grid">
+              <div className="web-design-showcase__media">
+                <img
+                  src={webArchitectureImage}
+                  alt="Web mimarisi gorseli"
+                  className="web-design-showcase__image"
+                />
+              </div>
 
-            <div className="web-design-page__services-grid">
-              {services.map((item) => (
-                <article key={item.title} className="web-design-page__service-card">
-                  <div className="web-design-page__service-card-head">
-                    <h3>{item.title}</h3>
-                  </div>
-                  <div className="web-design-page__service-card-body">
-                    <p>{item.text}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+              <div className="web-design-showcase__content">
+                <h2>Lorem ipsum dolor sit amet consectetur</h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
+                  ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus
+                  auctor fringilla.
+                </p>
 
-        <section className="section web-design-page__process">
-          <div className="container">
-            <SectionTitle
-              eyebrow={processSection.eyebrow}
-              title={processSection.title}
-              subtitle={processSection.subtitle}
-            />
-
-            <div className="web-design-page__process-grid">
-              {processSteps.map((item) => (
-                <article key={item.step} className="web-design-page__process-card">
-                  <div className="web-design-page__process-card-head">
-                    <span className="web-design-page__process-step"><CountUpText value={item.step} /></span>
-                    <h3>{item.title}</h3>
-                  </div>
-                  <div className="web-design-page__process-card-body">
-                    <p>{item.text}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section web-design-page__deliverables">
-          <div className="container web-design-page__deliverables-grid">
-            <div className="web-design-page__deliverables-content">
-              <SectionTitle
-                eyebrow={deliverablesSection.eyebrow}
-                title={deliverablesSection.title}
-                subtitle={deliverablesSection.subtitle}
-              />
-            </div>
-
-            <div className="web-design-page__deliverables-box">
-              <ul className="web-design-page__deliverables-list">
-                {deliverables.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className="section web-design-page__references">
-          <div className="container">
-            <SectionTitle
-              eyebrow={referencesSection.eyebrow}
-              title={referencesSection.title}
-              subtitle={referencesSection.subtitle}
-              align="center"
-            />
-
-            <div className="web-design-page__references-grid">
-              {references.map((item) => (
-                <article key={item.name} className="web-design-page__reference-card">
-                  <div className="web-design-page__reference-media" aria-hidden="true" />
-                  <div className="web-design-page__reference-head">
-                    <h3>{item.name}</h3>
-                    <span>{item.sector}</span>
-                  </div>
-                  <div className="web-design-page__reference-body">
-                    <p className="web-design-page__reference-summary">{item.summary}</p>
-                    <p>{item.detail}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section web-design-page__cta">
-          <div className="container web-design-page__cta-box">
-            <div>
-              <p className="web-design-page__cta-eyebrow">{cta.eyebrow}</p>
-              <h2>{cta.title}</h2>
-              <p>{cta.text}</p>
-            </div>
-
-            <div className="web-design-page__cta-actions">
-              <Button to="/iletisim">{cta.primaryButton}</Button>
-              <Button href="tel:+905551112233" variant="secondary">
-                {cta.secondaryButton}
-              </Button>
+                <ul className="web-design-showcase__list" aria-label="Web tasarim liste alani">
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</li>
+                  <li>Vestibulum id ligula porta felis euismod semper.</li>
+                  <li>Donec sed odio dui, posuere consectetur est at lobortis.</li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -187,5 +125,3 @@ export default function WebDesign() {
     </>
   )
 }
-
-

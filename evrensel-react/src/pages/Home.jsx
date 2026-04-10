@@ -70,6 +70,7 @@ export default function Home() {
   const slides = homeSliderData.slides
   const homeRef = useRef(null)
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
+  const [isBlueTheme, setIsBlueTheme] = useState(false)
   const [highlightCounts, setHighlightCounts] = useState(() =>
     Object.fromEntries(heroHighlights.map((item) => [item.key, 0]))
   )
@@ -95,6 +96,14 @@ export default function Home() {
       window.clearInterval(timer)
     }
   }, [])
+
+  useEffect(() => {
+    document.body.classList.toggle("home-theme-blue", isBlueTheme)
+
+    return () => {
+      document.body.classList.remove("home-theme-blue")
+    }
+  }, [isBlueTheme])
 
   useEffect(() => {
     let rafId = 0
@@ -254,7 +263,22 @@ export default function Home() {
     <>
       <PageSeo title={homeSeo.title} description={homeSeo.description} path={homeSeo.path} />
 
-      <main className="home-page" ref={homeRef}>
+      <main
+        className={`home-page ${isBlueTheme ? "home-page--blue-theme" : ""}`.trim()}
+        ref={homeRef}
+      >
+        <button
+          type="button"
+          className="home-page__theme-toggle"
+          onClick={() => setIsBlueTheme((current) => !current)}
+          aria-label="Anasayfa renk temasını değiştir"
+        >
+          <span className="home-page__theme-toggle-label">Tema</span>
+          <span className="home-page__theme-toggle-value">
+            {isBlueTheme ? "Mavi" : "Kirmizi"}
+          </span>
+        </button>
+
         <section className="home-slider section reveal-on-scroll reveal-right">
           <div className="container">
             <div

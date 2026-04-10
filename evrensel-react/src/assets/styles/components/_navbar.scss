@@ -614,6 +614,95 @@
   }
 }
 
+body.home-theme-blue {
+  .navbar {
+    &__top {
+      background: linear-gradient(102deg, #12396e 0%, #1a4f92 48%, #2f78bc 100%);
+      border-bottom-color: rgba($color-white, 0.12);
+    }
+
+    &__top-cta.btn {
+      color: #154172;
+
+      &:hover {
+        color: color.adjust(#154172, $lightness: -4%);
+      }
+    }
+
+    &__main {
+      background: linear-gradient(180deg, rgba(240, 247, 255, 0.94) 0%, rgba(227, 238, 250, 0.92) 100%);
+      border-bottom-color: rgba(38, 88, 152, 0.18);
+      box-shadow: 0 8px 20px rgba(20, 51, 88, 0.12);
+    }
+
+    &__link {
+      color: #18467e;
+
+      &::after {
+        background: linear-gradient(90deg, #5ea9e6 0%, #246db5 100%);
+      }
+
+      &:hover {
+        color: #18467e;
+      }
+
+      &--active {
+        color: #18467e;
+      }
+    }
+
+    &__dropdown {
+      border-color: rgba(38, 88, 152, 0.18);
+      background: linear-gradient(160deg, rgba(247, 251, 255, 0.98), rgba(231, 241, 250, 0.96));
+      box-shadow: 0 16px 28px rgba(20, 51, 88, 0.14);
+    }
+
+    &__dropdown-link {
+      color: #18467e;
+
+      &:hover {
+        background: rgba(36, 109, 181, 0.12);
+        color: #12365f;
+      }
+
+      &--active {
+        background: rgba(36, 109, 181, 0.16);
+        color: #12365f;
+      }
+    }
+
+    &--scrolled {
+      .navbar__main {
+        background: linear-gradient(180deg, rgba(240, 247, 255, 0.94) 0%, rgba(227, 238, 250, 0.92) 100%);
+        border-bottom-color: rgba(38, 88, 152, 0.18);
+        box-shadow: 0 8px 20px rgba(20, 51, 88, 0.12);
+      }
+
+      .navbar__link {
+        color: #18467e;
+
+        &:hover {
+          color: #18467e;
+        }
+
+        &::after {
+          background: linear-gradient(90deg, #5ea9e6 0%, #246db5 100%);
+        }
+
+        &--active {
+          color: #18467e;
+        }
+      }
+    }
+  }
+
+  .navbar__promo-fab {
+    border-color: rgba(197, 229, 255, 0.28);
+    background: linear-gradient(145deg, rgba(24, 74, 136, 0.96), rgba(15, 47, 90, 0.96));
+    box-shadow: 0 12px 24px rgba(15, 38, 74, 0.28);
+  }
+}
+
 @keyframes navbarPromoPulse {
   0% {
     transform: scale(1);
