@@ -1,24 +1,26 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import homeHeroData from "../../data/homeHeroData.json"
-import heroVisual from "../../assets/images/sliders/slider1.webp"
-import serviceVisualA from "../../assets/images/sliders/slider1.jpg"
-import serviceVisualB from "../../assets/images/sliders/slider2.png"
-import serviceVisualC from "../../assets/images/sliders/slider3.jpg"
+import { resolveImage, resolveImageList } from "../../utils/imageResolver"
 
 const {
   eyebrow,
   title,
   description,
-  supportText,
   imageAriaLabel,
   imageAlt,
+  imagePath,
+  serviceImagePaths,
+  serviceImagesAriaLabel,
+  serviceImageDotAriaPrefix,
+  serviceLinkCta,
   servicesHeading,
   services,
 } = homeHeroData
 
 export default function Hero() {
-  const serviceVisuals = [serviceVisualA, serviceVisualB, serviceVisualC]
+  const heroVisual = resolveImage(imagePath)
+  const serviceVisuals = resolveImageList(serviceImagePaths)
   const [activeServiceVisual, setActiveServiceVisual] = useState(0)
 
   useEffect(() => {
@@ -41,17 +43,22 @@ export default function Hero() {
         <div className="hero__content">
           <h1>{title}</h1>
           <p>{description}</p>
-          {supportText ? <p>{supportText}</p> : null}
         </div>
 
         <div className="hero__image" aria-label={imageAriaLabel}>
           <div className="hero__image-shell">
-            <img src={heroVisual} alt={imageAlt} className="hero__image-media" />
+            <img
+              src={heroVisual}
+              alt={imageAlt}
+              className="hero__image-media"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
 
         <div className="hero__services">
-          <div className="hero__services-media" aria-label="Hizmet gorselleri">
+          <div className="hero__services-media" aria-label={serviceImagesAriaLabel}>
             {serviceVisuals.map((visualSrc, index) => (
               <div
                 className={`hero__services-media-item ${activeServiceVisual === index ? "is-active" : ""}`.trim()}
@@ -62,6 +69,8 @@ export default function Hero() {
                   alt=""
                   className="hero__services-media-image"
                   aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <span className="hero__services-media-badge">0{index + 1}</span>
               </div>
@@ -74,7 +83,7 @@ export default function Hero() {
                   type="button"
                   className={`hero__services-media-dot ${activeServiceVisual === index ? "is-active" : ""}`.trim()}
                   onClick={() => setActiveServiceVisual(index)}
-                  aria-label={`Gorsel ${index + 1}`}
+                  aria-label={`${serviceImageDotAriaPrefix} ${index + 1}`}
                 />
               ))}
             </div>
@@ -87,7 +96,7 @@ export default function Hero() {
                 <article className="hero__services-item" key={item.label} role="listitem">
                   <Link to={item.href} className="hero__services-link">
                     <span className="hero__services-link-text">{item.label}</span>
-                    <span className="hero__services-link-cta">Sayfaya git</span>
+                    <span className="hero__services-link-cta">{serviceLinkCta}</span>
                   </Link>
                 </article>
               ))}

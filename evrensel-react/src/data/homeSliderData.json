@@ -1,4 +1,38 @@
-﻿{
+{
+  "backgroundImagePath": "homepage.jpg",
+  "backgroundImageAlt": "Evrensel Bilişim anasayfa görseli",
+  "themeToggle": {
+    "ariaLabel": "Anasayfa renk temasını değiştir",
+    "label": "Tema",
+    "blueLabel": "Mavi",
+    "redLabel": "Kırmızı"
+  },
+  "highlights": [
+    {
+      "key": "web",
+      "imagePath": "sliders/homepagewebicon.png",
+      "value": 100,
+      "suffix": "+",
+      "label": "Web Sitesi",
+      "modifier": "home-page__rocket--first"
+    },
+    {
+      "key": "social",
+      "imagePath": "sliders/homepagesocialicon.png",
+      "value": 250,
+      "suffix": "+",
+      "label": "Sosyal Medya Tasarımı",
+      "modifier": "home-page__rocket--second"
+    },
+    {
+      "key": "support",
+      "imagePath": "sliders/homepageseoicon.png",
+      "value": 50,
+      "suffix": "+",
+      "label": "SEO Yönetimi",
+      "modifier": "home-page__rocket--third"
+    }
+  ],
   "slides": [
     {
       "title": "Web site tasarımı ve geliştirme",

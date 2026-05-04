@@ -1,4 +1,8 @@
-﻿{
+{
+  "assets": {
+    "backgroundImagePath": "homepage.jpg",
+    "highlightImagePath": "web-design/devices.png"
+  },
   "hero": {
     "eyebrow": "Donanım Hizmetleri",
     "title": "Ofisiniz için düzenli, güvenilir ve yönetilebilir sistem altyapıları kuruyoruz",

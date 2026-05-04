@@ -1,0 +1,123 @@
+{
+  "assets": {
+    "heroImagePath": "social-media-site/mainimagesm-optimized.jpg"
+  },
+  "showcase": {
+    "title": "Planlı içerik, canlı tasarım ve takip edilebilir sosyal medya akışı.",
+    "text": "Markanızın sosyal medyada sadece görünmesini değil; düzenli, karakterli ve güven veren bir dille ilerlemesini hedefliyoruz."
+  },
+  "hero": {
+    "eyebrow": "Sosyal Medya",
+    "title": "Markanızı sosyal medyada düzenli, dikkat çekici ve güven veren bir dille konumlandırıyoruz",
+    "subtitle": "İçerik planlamasından görsel düzene, paylaşım akışından reklam desteklerine kadar sosyal medya sürecini tek merkezden yönetiyoruz.",
+    "primaryButton": "Projenizi Konuşalım",
+    "panelAriaLabel": "Sosyal medya özeti"
+  },
+  "highlights": [
+    {
+      "title": "İçerik",
+      "text": "Düzenli ve planlı paylaşım akışı"
+    },
+    {
+      "title": "Tasarım",
+      "text": "Markaya uygun görsel bütünlük"
+    },
+    {
+      "title": "Rapor",
+      "text": "Takip edilebilir performans çıktıları"
+    }
+  ],
+  "scope": {
+    "eyebrow": "Hizmet Kapsamı",
+    "title": "Markanızın sosyal medya tarafında ihtiyaç duyduğu ana alanları tek akışta topluyoruz.",
+    "text": "Planlama, tasarım, video, reklam ve topluluk yönetimi gibi parçaları ayrı ayrı değil; birbirini besleyen tek bir sosyal medya sistemi olarak ele alıyoruz.",
+    "items": [
+      {
+        "label": "İçerik Takvimi",
+        "text": "Aylık paylaşım planı, gündem takibi ve içerik dağılımı."
+      },
+      {
+        "label": "Görsel Tasarım",
+        "text": "Markaya uygun post, story ve kampanya görselleri."
+      },
+      {
+        "label": "Reels ve Video",
+        "text": "Kısa video kurguları, kapak yapıları ve hareketli içerikler."
+      },
+      {
+        "label": "Reklam Desteği",
+        "text": "Hedef kitleye göre reklam kurgusu ve optimizasyon takibi."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Süreç",
+    "title": "Sosyal medya yönetimini düzenli ve ölçülebilir bir akışla ilerletiyoruz.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Brief ve hedef",
+        "text": "Markanızı, hedef kitlenizi ve iletişim tonunuzu netleştiriyoruz."
+      },
+      {
+        "number": "02",
+        "title": "Plan ve üretim",
+        "text": "İçerik takvimi, tasarım dili ve paylaşım yapısını kuruyoruz."
+      },
+      {
+        "number": "03",
+        "title": "Yayın ve reklam",
+        "text": "Paylaşımları, kampanyaları ve gerekli reklam akışlarını devreye alıyoruz."
+      },
+      {
+        "number": "04",
+        "title": "Rapor ve iyileştirme",
+        "text": "Dönüşümleri okuyup bir sonraki dönemi daha güçlü planlıyoruz."
+      }
+    ]
+  },
+  "packages": {
+    "eyebrow": "Paketler",
+    "title": "İhtiyaca göre netleşen, büyüdükçe genişleyebilen sosyal medya paketleri.",
+    "items": [
+      {
+        "name": "Başlangıç",
+        "tag": "Düzenli görünürlük",
+        "features": [
+          "Aylık 8 post tasarımı",
+          "Story akışı planlaması",
+          "Temel raporlama",
+          "Aylık 1 revize turu"
+        ]
+      },
+      {
+        "name": "Büyüme",
+        "tag": "İçerik + reklam dengesi",
+        "featured": true,
+        "features": [
+          "Aylık 12 post tasarımı",
+          "Reels ve video kapakları",
+          "Reklam yönetim desteği",
+          "Performans raporu"
+        ]
+      },
+      {
+        "name": "Marka",
+        "tag": "Daha güçlü kurumsal akış",
+        "features": [
+          "Aylık 16+ içerik planı",
+          "Kampanya dönemi kurguları",
+          "Topluluk yönetim desteği",
+          "Detaylı aylık strateji notu"
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "eyebrow": "İletişim",
+    "title": "Markanız için daha düzenli, daha dikkat çekici bir sosyal medya akışı kuralım.",
+    "text": "İçerik, tasarım, reklam ve raporlama sürecini tek merkezden yönetmek için bizimle iletişime geçebilirsiniz.",
+    "primaryButton": "Teklif Al",
+    "secondaryButton": "İletişime Geç"
+  }
+}

@@ -1,4 +1,15 @@
-﻿{
+{
+  "showcaseImagePaths": [
+    "web-design/webslidermain.png",
+    "brands/modelin.jpg",
+    "homepage.jpg"
+  ],
+  "labels": {
+    "homeBreadcrumb": "Ana Sayfa",
+    "servicesBreadcrumb": "Hizmetlerimiz",
+    "relatedTitle": "Bu kategoriyle ilişkili hizmetler",
+    "relatedText": "Detay sayfalarından kapsam, süreç ve teslim başlıklarını inceleyebilirsiniz."
+  },
   "hero": {
     "eyebrow": "Hizmetlerimiz",
     "title": "İşletmeniz için uçtan uca teknoloji hizmetleri",

@@ -1,4 +1,4 @@
-﻿{
+{
   "eyebrow": "Evrensel Bilişim",
   "title": "Biz kimiz?",
   "description": "1994 yılında başladığımız bilişim serüvenimize, 15 yıldır Antalya web tasarım, e-ticaret, bilgisayar ve kurumsal hizmetler, sosyal medya yönetimi, güvenlik ve personel sistemleri çözümleri vererek devam ediyoruz.",
@@ -7,16 +7,21 @@
   "secondaryButton": "Hizmetlerimizi İncele",
   "servicesHeading": "Hizmetlerimiz",
   "services": [
-    { "label": "Web tasarim ve kurumsal site gelistirme", "href": "/web-tasarim" },
-    { "label": "E-ticaret altyapisi ve dijital donusum cozumleri", "href": "/hizmetlerimiz" },
-    { "label": "Bilgisayar, donanim ve teknik servis destegi", "href": "/donanim" },
-    { "label": "Sosyal medya yonetimi ve dijital iletisim", "href": "/hizmetlerimiz" },
-    { "label": "Guvenlik, ag ve sistem kurulumu", "href": "/donanim" },
-    { "label": "Personel takip ve kurumsal otomasyon cozumleri", "href": "/yardim-destek" }
+    { "label": "Web tasarım ve kurumsal site geliştirme", "href": "/web-tasarim" },
+    { "label": "E-ticaret altyapısı ve dijital dönüşüm çözümleri", "href": "/hizmetlerimiz" },
+    { "label": "Bilgisayar, donanım ve teknik servis desteği", "href": "/donanim" },
+    { "label": "Sosyal medya yönetimi ve dijital iletişim", "href": "/hizmetlerimiz" },
+    { "label": "Güvenlik, ağ ve sistem kurulumu", "href": "/donanim" },
+    { "label": "Personel takip ve kurumsal otomasyon çözümleri", "href": "/yardim-destek" }
   ],
   "trustBadges": ["15+ yıl deneyim", "250+ tamamlanan proje", "Hafta içi canlı destek"],
   "imageAriaLabel": "Görsel alanı",
   "imageAlt": "Teknik ekip çalışma görseli",
+  "imagePath": "sliders/slider1.webp",
+  "serviceImagePaths": ["sliders/slider1.jpg", "sliders/slider2.png", "sliders/slider3.jpg"],
+  "serviceImagesAriaLabel": "Hizmet görselleri",
+  "serviceImageDotAriaPrefix": "Görsel",
+  "serviceLinkCta": "Sayfaya git",
   "imagePlaceholderTitle": "Canlı Operasyon Desteği",
   "imagePlaceholderHint": "Sistem, ağ ve destek süreçlerini tek panelden yönetiyoruz."
 }

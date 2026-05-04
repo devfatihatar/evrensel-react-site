@@ -1,4 +1,55 @@
-﻿{
+{
+  "assets": {
+    "heroImagePath": "web-design/webslidermain-optimized.jpg",
+    "showcaseImagePath": "web-design/web-architecture.png",
+    "highlightImagePaths": {
+      "lighthouse": "web-design/lighthouse.png",
+      "seo": "web-design/seo.png",
+      "devices": "web-design/devices.png"
+    },
+    "socialIconPaths": {
+      "instagram": "social-media-icon/instagram.png",
+      "google": "social-media-icon/google.png",
+      "facebook": "social-media-icon/facebook.png"
+    }
+  },
+  "message": {
+    "eyebrow": "Antalya Merkezli Destek",
+    "title": "Firmamız Antalya'da kurulmuş, markaların web ihtiyaçlarına uçtan uca destek vermiştir.",
+    "staticPrefix": "Web sitenizin",
+    "staticSuffix": "para almıyoruz.",
+    "rotatingWords": [
+      "içerik girmekten",
+      "güncellemelerden",
+      "bakımından"
+    ]
+  },
+  "socialLinks": {
+    "followText": "Bizi Takip Et",
+    "items": [
+      {
+        "key": "instagram",
+        "text": "Instagram",
+        "handle": "@evrenselbilisim",
+        "logoKey": "instagram",
+        "href": "https://www.instagram.com"
+      },
+      {
+        "key": "google",
+        "text": "Google",
+        "handle": "google.com/maps",
+        "logoKey": "google",
+        "href": "https://www.google.com/maps"
+      },
+      {
+        "key": "facebook",
+        "text": "Facebook",
+        "handle": "/evrenselbilisim",
+        "logoKey": "facebook",
+        "href": "https://www.facebook.com"
+      }
+    ]
+  },
   "hero": {
     "eyebrow": "Web Tasarımı",
     "title": "Kurumsal görünümü güçlü, kullanımı net web deneyimleri tasarlıyoruz",
@@ -66,7 +117,9 @@
   "deliverablesSection": {
     "eyebrow": "Teslim Kapsamı",
     "title": "Projede hangi başlıkları ele alıyoruz?",
-    "subtitle": "İhtiyaca göre değişebilmekle birlikte çoğu projede aşağıdaki kapsam başlıklarını birlikte yürütüyoruz."
+    "subtitle": "İhtiyaca göre değişebilmekle birlikte çoğu projede aşağıdaki kapsam başlıklarını birlikte yürütüyoruz.",
+    "itemTag": "Dahil",
+    "listAriaLabel": "Teslim kapsamı maddeleri"
   },
   "deliverables": [
     "Ana sayfa ve iç sayfa tasarım sistemi",

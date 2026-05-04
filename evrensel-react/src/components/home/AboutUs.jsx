@@ -1,6 +1,6 @@
 import homeAboutUsData from "../../data/homeAboutUsData.json"
 
-const { title, description, highlightTitle, highlightText, highlights, reasons } =
+const { title, description, descriptionSecondary, highlightTitle, highlightText, highlights, reasons } =
   homeAboutUsData
 
 export default function AboutUs() {
@@ -8,6 +8,12 @@ export default function AboutUs() {
     <section className="about-us section reveal-on-scroll reveal-right">
       <div className="container about-us__inner">
         <div className="about-us__content">
+          <div className="about-us__header">
+            <h2>{title}</h2>
+            <p>{description}</p>
+            {descriptionSecondary ? <p>{descriptionSecondary}</p> : null}
+          </div>
+
           <article className="about-us__spotlight">
             <div className="about-us__spotlight-shell">
               <h3>{highlightTitle}</h3>
@@ -23,23 +29,18 @@ export default function AboutUs() {
             </div>
           </article>
 
-          <div className="about-us__header">
-            <h2>{title}</h2>
-            <p>{description}</p>
-
-            <div className="about-us__list" role="list" aria-label="Neden biz detaylari">
-              {reasons.map((reason, index) => (
-                <article key={reason.title} className="about-us__item" role="listitem">
-                  <div className="about-us__item-line">
-                    <span className="about-us__item-index">{String(index + 1).padStart(2, "0")}</span>
-                    <div className="about-us__item-copy">
-                      <h3>{reason.title}</h3>
-                      <p>{reason.text}</p>
-                    </div>
+          <div className="about-us__list" role="list" aria-label="Neden biz detaylari">
+            {reasons.map((reason, index) => (
+              <article key={reason.title} className="about-us__item" role="listitem">
+                <div className="about-us__item-line">
+                  <span className="about-us__item-index">{String(index + 1).padStart(2, "0")}</span>
+                  <div className="about-us__item-copy">
+                    <h3>{reason.title}</h3>
+                    <p>{reason.text}</p>
                   </div>
-                </article>
-              ))}
-            </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </div>

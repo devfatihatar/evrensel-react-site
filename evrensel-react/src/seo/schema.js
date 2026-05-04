@@ -1,4 +1,14 @@
-﻿import { SITE_NAME, SITE_URL } from "./config"
+import {
+  BUSINESS_ADDRESS_COUNTRY,
+  BUSINESS_ADDRESS_LOCALITY,
+  BUSINESS_ADDRESS_REGION,
+  BUSINESS_EMAIL,
+  BUSINESS_PHONE_DISPLAY,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+  toAbsoluteUrl,
+} from "./config"
 
 export function getOrganizationSchema() {
   return {
@@ -6,9 +16,10 @@ export function getOrganizationSchema() {
     "@type": "Organization",
     name: SITE_NAME,
     url: SITE_URL,
-    telephone: "+90 555 111 22 33",
-    email: "info@evrenselbilisim.com",
-    sameAs: [],
+    logo: toAbsoluteUrl(DEFAULT_OG_IMAGE),
+    image: toAbsoluteUrl(DEFAULT_OG_IMAGE),
+    telephone: BUSINESS_PHONE_DISPLAY,
+    email: BUSINESS_EMAIL,
   }
 }
 
@@ -18,15 +29,26 @@ export function getLocalBusinessSchema() {
     "@type": "LocalBusiness",
     name: SITE_NAME,
     url: SITE_URL,
-    telephone: "+90 555 111 22 33",
-    email: "info@evrenselbilisim.com",
+    image: toAbsoluteUrl(DEFAULT_OG_IMAGE),
+    telephone: BUSINESS_PHONE_DISPLAY,
+    email: BUSINESS_EMAIL,
+    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Merkez Mah. Teknoloji Cad. No:12",
-      addressLocality: "Şişli",
-      addressRegion: "İstanbul",
-      addressCountry: "TR",
+      addressLocality: BUSINESS_ADDRESS_LOCALITY,
+      addressRegion: BUSINESS_ADDRESS_REGION,
+      addressCountry: BUSINESS_ADDRESS_COUNTRY,
     },
+    areaServed: [
+      {
+        "@type": "City",
+        name: "Antalya",
+      },
+      {
+        "@type": "Country",
+        name: "Türkiye",
+      },
+    ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -45,6 +67,11 @@ export function getWebsiteSchema() {
     name: SITE_NAME,
     url: SITE_URL,
     inLanguage: "tr-TR",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/hizmetlerimiz?kategori={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   }
 }
 
@@ -63,7 +90,7 @@ export function getServiceSchema({ name, description, path }) {
     },
     areaServed: {
       "@type": "Country",
-      name: "Turkey",
+      name: "Türkiye",
     },
   }
 }

@@ -1,6 +1,9 @@
-﻿{
+{
   "primaryButton": "Görüşme Planla",
   "secondaryButton": "Tüm Hizmetlere Dön",
   "includesTitle": "Hizmet Kapsamı",
-  "processTitle": "Çalışma Akışı"
+  "processTitle": "Çalışma Akışı",
+  "includesEyebrow": "Kapsam",
+  "processEyebrow": "Süreç",
+  "homeBreadcrumb": "Ana Sayfa"
 }

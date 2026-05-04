@@ -1,4 +1,4 @@
-﻿{
+{
   "home": {
     "title": "Evrensel Bilişim | Web, Donanım ve Teknik Destek",
     "description": "Web tasarımı, donanım altyapısı ve teknik destek süreçlerini tek merkezden yöneten kurumsal teknoloji partneriniz.",
@@ -24,6 +24,11 @@
     "description": "Kurumsal görünümü güçlendiren, hızlı ve yönetilebilir web tasarım ve geliştirme çözümleri.",
     "path": "/web-tasarim"
   },
+  "socialMedia": {
+    "title": "Sosyal Medya Hizmetleri | Evrensel Bilişim",
+    "description": "Markanızı sosyal medyada planlı içerik, tasarım ve performans odaklı yönetimle güçlendiren sosyal medya hizmetleri.",
+    "path": "/sosyal-medya"
+  },
   "hardware": {
     "title": "Donanım ve Altyapı | Evrensel Bilişim",
     "description": "Ofisiniz için güvenilir ağ, cihaz ve altyapı kurulumlarını planlı şekilde yönetin.",
@@ -42,6 +47,9 @@
   "notFound": {
     "title": "Sayfa Bulunamadı | Evrensel Bilişim",
     "description": "Aradığınız sayfa bulunamadı. Ana sayfaya dönerek hizmetlerimize göz atabilirsiniz.",
-    "path": "/404"
+    "path": "/404",
+    "heading": "Sayfa Bulunamadı",
+    "text": "Aradığınız sayfa taşınmış veya kaldırılmış olabilir.",
+    "button": "Ana Sayfaya Dön"
   }
 }

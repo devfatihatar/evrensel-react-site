@@ -3,12 +3,15 @@ import { Suspense, lazy, useEffect } from "react"
 
 import Navbar from "../components/layout/Navbar"
 import Footer from "../components/layout/Footer"
+import FloatingContacts from "../components/layout/FloatingContacts"
+import CookieBanner from "../components/layout/CookieBanner"
 import SiteSeo from "../components/seo/SiteSeo"
 import Home from "../pages/Home"
 import NotFound from "../pages/NotFound"
 
 const About = lazy(() => import("../pages/About"))
 const WebDesign = lazy(() => import("../pages/WebDesign"))
+const SocialMedia = lazy(() => import("../pages/SocialMedia"))
 const Hardware = lazy(() => import("../pages/Hardware"))
 const Services = lazy(() => import("../pages/Services"))
 const ServiceDetail = lazy(() => import("../pages/ServiceDetail"))
@@ -46,12 +49,15 @@ function RouterContent() {
     <>
       <SiteSeo />
       <Navbar />
+      <FloatingContacts />
+      <CookieBanner />
 
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/hakkimizda" element={<About />} />
           <Route path="/web-tasarim" element={<WebDesign />} />
+          <Route path="/sosyal-medya" element={<SocialMedia />} />
           <Route path="/donanim" element={<Hardware />} />
           <Route path="/hizmetlerimiz" element={<Services />} />
           <Route path="/hizmetlerimiz/:slug" element={<ServiceDetail />} />

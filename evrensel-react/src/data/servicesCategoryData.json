@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "internet-hizmetleri",
+    "label": "İnternet Hizmetleri",
+    "eyebrow": "Kategori",
+    "title": "İnternet tarafındaki görünürlük ve erişim ihtiyaçları",
+    "description": "Web sitesi, alan adı, hosting, kurumsal e-posta ve temel dijital görünürlük başlıklarını birlikte planlıyoruz.",
+    "items": [
+      "Kurumsal web sitesi planlama",
+      "Alan adı, hosting ve e-posta yönlendirme",
+      "SEO uyumlu teknik kurulum",
+      "Google harita ve temel görünürlük düzeni"
+    ],
+    "relatedServices": ["web-tasarimi", "yardim-destek"]
+  },
+  {
+    "slug": "bilisim-hizmetleri",
+    "label": "Bilişim Hizmetleri",
+    "eyebrow": "Kategori",
+    "title": "İşletmenin günlük teknoloji düzenini yöneten hizmetler",
+    "description": "Bilgisayar, ağ, yazıcı, kullanıcı hesabı ve teknik destek ihtiyaçlarını işletme akışını aksatmadan ele alıyoruz.",
+    "items": [
+      "Bilgisayar ve çevre birimi kurulumu",
+      "Ağ ve ofis altyapısı düzenleme",
+      "Uzaktan ve yerinde teknik destek",
+      "Bakım, kontrol ve iyileştirme önerileri"
+    ],
+    "relatedServices": ["donanim-altyapisi", "yardim-destek"]
+  },
+  {
+    "slug": "grafik-tasarim",
+    "label": "Grafik & Tasarım",
+    "eyebrow": "Kategori",
+    "title": "Markanın dijital yüzünü düzenleyen tasarım desteği",
+    "description": "Web arayüzleri, sosyal medya görselleri ve kurumsal kullanım alanları için tutarlı bir görsel dil oluşturuyoruz.",
+    "items": [
+      "Web arayüz tasarımı",
+      "Sosyal medya görsel setleri",
+      "Kurumsal banner ve kampanya görselleri",
+      "Temel marka uyarlama çalışmaları"
+    ],
+    "relatedServices": ["web-tasarimi"]
+  },
+  {
+    "slug": "kurumsal-hizmetler",
+    "label": "Kurumsal Hizmetler",
+    "eyebrow": "Kategori",
+    "title": "Kurumsal işleyişi sadeleştiren bütünlüklü destek",
+    "description": "Web, altyapı ve destek başlıklarını tek merkezden planlayarak daha takip edilebilir bir hizmet modeli kuruyoruz.",
+    "items": [
+      "İhtiyaç analizi ve kapsam çıkarımı",
+      "Teknik süreç planlama",
+      "Kurumsal web ve altyapı koordinasyonu",
+      "Süreç sonrası destek ve bakım"
+    ],
+    "relatedServices": ["web-tasarimi", "donanim-altyapisi", "yardim-destek"]
+  },
+  {
+    "slug": "guvenlik-personel-sistemleri",
+    "label": "Güvenlik & Personel Sistemleri",
+    "eyebrow": "Kategori",
+    "title": "Güvenlik ve personel takip altyapılarına hazırlık",
+    "description": "Kamera, geçiş, personel takip ve ağ bağlantısı gerektiren sistemlerde altyapı tarafını planlı şekilde ele alıyoruz.",
+    "items": [
+      "Ağ ve bağlantı uygunluk kontrolü",
+      "Cihaz yerleşimi için altyapı planı",
+      "Personel takip sistemleri için teknik hazırlık",
+      "Kurulum sonrası test ve erişim kontrolleri"
+    ],
+    "relatedServices": ["donanim-altyapisi", "yardim-destek"]
+  },
+  {
+    "slug": "yazilim-hizmetleri",
+    "label": "Yazılım Hizmetleri",
+    "eyebrow": "Kategori",
+    "title": "İhtiyaca göre şekillenen web ve yazılım çözümleri",
+    "description": "Hazır kalıplar yerine işletmenin ihtiyacına göre yönetilebilir web arayüzleri ve dijital iş akışları geliştiriyoruz.",
+    "items": [
+      "Özel web arayüz geliştirme",
+      "İçerik yönetimi kurgusu",
+      "Form, talep ve iletişim akışları",
+      "Yayın sonrası geliştirme ve bakım"
+    ],
+    "relatedServices": ["web-tasarimi", "yardim-destek"]
+  }
+]

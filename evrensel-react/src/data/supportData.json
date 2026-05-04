@@ -1,4 +1,9 @@
-﻿{
+{
+  "assets": {
+    "heroImagePath": "sliders/slider2.png",
+    "heroImageAlt": "Yardım ve destek ana slider görseli",
+    "heroAriaLabel": "Yardım ve destek ana görseli"
+  },
   "hero": {
     "eyebrow": "Yardım ve Destek",
     "title": "Sorun çıktığında ulaşılabilen değil, süreci yöneten destek yapısı kuruyoruz",
@@ -101,5 +106,34 @@
     "text": "Uzaktan mı çalışıyorsunuz, yerinde destek veriyor musunuz, bakım anlaşması var mı gibi detaylar netleştikçe bu sayfayı çok daha güçlü hale getirebiliriz.",
     "primaryButton": "Destek İçin Ulaş",
     "secondaryButton": "Donanım Hizmetine Geç"
-  }
+  },
+  "downloadsSection": {
+    "eyebrow": "İndirilebilir Araçlar",
+    "title": "Sık kullandığımız programları tek yerden indirin",
+    "subtitle": "WinRAR, uzaktan destek yazılımları veya temel araçları burada listeleyebiliriz. Şu an aşağıda örnek bir kurulum gösterdim.",
+    "listAriaLabel": "İndirilebilir programlar listesi"
+  },
+  "downloadItems": [
+    {
+      "name": "WinRAR",
+      "description": "Sıkıştırılmış dosyaları açmak ve arşiv oluşturmak için kullandığımız temel araç.",
+      "logoText": "WR",
+      "accent": "#8f1f37",
+      "downloadUrl": "#"
+    },
+    {
+      "name": "AnyDesk",
+      "description": "Uzaktan bağlantı ve teknik destek sürecinde hızlı erişim için kullanılabilir.",
+      "logoText": "AD",
+      "accent": "#c53d33",
+      "downloadUrl": "#"
+    },
+    {
+      "name": "Google Chrome",
+      "description": "Tarayıcı kurulumu veya uzantı testleri için en çok kullandığımız alternatiflerden biri.",
+      "logoText": "GC",
+      "accent": "#d67a28",
+      "downloadUrl": "#"
+    }
+  ]
 }

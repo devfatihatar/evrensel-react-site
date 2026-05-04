@@ -15,14 +15,14 @@ $color-surface: #ffffff;
 $font-primary: "Inter", Arial, sans-serif;
 $font-secondary: "Poppins", Arial, sans-serif;
 
-$container-width: 1200px;
-$container-padding: 16px;
+$container-width: 1460px;
+$container-padding: clamp(20px, 2.4vw, 32px);
 
 $radius-sm: 8px;
-$radius-md: 12px;
-$radius-lg: 20px;
+$radius-md: 16px;
+$radius-lg: 28px;
 
 $shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-$shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+$shadow-md: 0 18px 44px rgba(0, 0, 0, 0.14);
 
 $transition-base: all 0.3s ease;

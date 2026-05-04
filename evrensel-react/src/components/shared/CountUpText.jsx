@@ -31,7 +31,6 @@ export default function CountUpText({ value, duration = 4800, onProgress, onComp
 
   useEffect(() => {
     if (!parsed) {
-      setDisplay(String(value ?? ""))
       onProgressRef.current?.(1)
       onCompleteRef.current?.()
       return
@@ -92,5 +91,5 @@ export default function CountUpText({ value, duration = 4800, onProgress, onComp
     }
   }, [duration, parsed])
 
-  return <span ref={ref}>{display}</span>
+  return <span ref={ref}>{parsed ? display : String(value ?? "")}</span>
 }

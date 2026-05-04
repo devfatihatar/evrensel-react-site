@@ -175,6 +175,8 @@ export default function HomeBrands() {
                       src={brand.imageSrc}
                       alt={`${brand.name} logosu`}
                       className="references__brand-logo-image"
+                      loading="lazy"
+                      decoding="async"
                     />
                   ) : (
                     brand.logo

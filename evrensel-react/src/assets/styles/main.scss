@@ -15,10 +15,14 @@
 @use "./components/footer";
 @use "./components/button";
 @use "./components/section-title";
+@use "./components/floating-contacts";
+@use "./components/cookie-banner";
+@use "./components/homepage-shared";
 
 @use "./pages/home";
 @use "./pages/about";
 @use "./pages/web-design";
+@use "./pages/social-media";
 @use "./pages/hardware";
 @use "./pages/services";
 @use "./pages/support";

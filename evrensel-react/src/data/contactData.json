@@ -1,4 +1,4 @@
-﻿{
+{
   "hero": {
     "eyebrow": "İletişim",
     "title": "İhtiyacınızı paylaşın, size uygun yolu birlikte netleştirelim",
@@ -11,22 +11,48 @@
   "contactCards": [
     {
       "title": "Telefon",
-      "value": "+90 555 111 22 33",
+      "value": "+90 506 241 77 35",
       "detail": "Hafta içi çalışma saatlerinde doğrudan ulaşabilirsiniz.",
-      "href": "tel:+905551112233"
+      "href": "tel:+905062417735"
     },
     {
       "title": "E-posta",
-      "value": "info@evrenselbilisim.com",
+      "value": "info@evrenselbilisim.net",
       "detail": "Taleplerinizi kısa bir özetle e-posta üzerinden iletebilirsiniz.",
-      "href": "mailto:info@evrenselbilisim.com"
+      "href": "mailto:info@evrenselbilisim.net"
     },
     {
       "title": "Adres",
-      "value": "Şişli / İstanbul",
-      "detail": "Merkez Mah. Teknoloji Cad. No:12 adresinde hizmet veriyoruz."
+      "value": "Çaybaşı Mah. 1357 Sok. Palm Sitesi N:16 D:2 Muratpaşa / Antalya",
+      "detail": "Antalya merkezli olarak web, donanım ve teknik destek hizmetleri veriyoruz."
     }
   ],
+  "splitPanels": {
+    "reachTitle": "Biz size ulaşalım",
+    "callTitle": "Siz bize ulaşın",
+    "intro": "Kısa bir bilgi bırakın, size en uygun çözüm için hızlı şekilde dönelim.",
+    "submitButton": "Gönder",
+    "fields": [
+      {
+        "name": "name",
+        "type": "text",
+        "label": "Adınız ve Soyadınız",
+        "placeholder": "Adınızı ve soyadınızı yazın"
+      },
+      {
+        "name": "email",
+        "type": "email",
+        "label": "E-posta",
+        "placeholder": "E-posta adresinizi yazın"
+      },
+      {
+        "name": "phone",
+        "type": "tel",
+        "label": "Telefon Numarası",
+        "placeholder": "Telefon numaranızı yazın"
+      }
+    ]
+  },
   "formSection": {
     "eyebrow": "İletişim Formu",
     "title": "Kısa bir ön bilgi bırakın",

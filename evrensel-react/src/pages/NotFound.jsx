@@ -11,9 +11,9 @@ export default function NotFound() {
 
       <main className="page section">
         <div className="container" style={{ paddingBlock: "4rem" }}>
-          <h1>Sayfa Bulunamadı</h1>
-          <p>Aradığınız sayfa taşınmış veya kaldırılmış olabilir.</p>
-          <Button to="/">Ana Sayfaya Dön</Button>
+          <h1>{notFound.heading}</h1>
+          <p>{notFound.text}</p>
+          <Button to="/">{notFound.button}</Button>
         </div>
       </main>
     </>

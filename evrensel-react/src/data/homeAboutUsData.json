@@ -1,29 +1,30 @@
 {
   "title": "Neden Biz",
-  "description": "Markanizi yalnizca teslim edilen bir projeyle degil, sureci sahiplenen bir is ortagiyla bulusturuyoruz. Tasarim, operasyon ve destek tarafini tek cizgide yonetiyoruz.",
-  "highlightTitle": "Sureci sade, sonucu guclu hale getiriyoruz",
-  "highlightText": "Her projede ihtiyaci analiz ediyor, uygulanabilir bir yol haritasi kuruyor ve sonrasinda destegi surduruyoruz. Bu sayede sadece iyi gorunen degil, gercekten calisan bir dijital yapi ortaya cikiyor.",
+  "description": "Markanızı yalnızca teslim edilen bir projeyle değil, süreci sahiplenen bir iş ortağıyla buluşturuyoruz. Tasarım, operasyon ve destek tarafını tek çizgide yönetiyoruz.",
+  "descriptionSecondary": "Projeyi teslim edip ayrılan bir ekip değil; süreci izleyen, teknik destek veren ve markanızın büyüme ihtiyacına göre yapınızı geliştiren uzun vadeli bir iş ortağı olarak çalışıyoruz.",
+  "highlightTitle": "Süreci sade, sonucu güçlü hale getiriyoruz",
+  "highlightText": "Her projede ihtiyacı analiz ediyor, uygulanabilir bir yol haritası kuruyor ve sonrasında desteği sürdürüyoruz. Bu sayede sadece iyi görünen değil, gerçekten çalışan bir dijital yapı ortaya çıkıyor.",
   "highlights": [
-    "Tek noktadan iletisim ve koordinasyon",
-    "Tasarimdan destege uzanan butunluk",
-    "Uzun vadeli takip ve hizli geri donus"
+    "Tek noktadan iletişim ve koordinasyon",
+    "Tasarımdan desteğe uzanan bütünlük",
+    "Uzun vadeli takip ve hızlı geri dönüş"
   ],
   "reasons": [
     {
-      "title": "Hizli destek ve net iletisim",
-      "text": "Ihtiyac aninda gecikmeden donus sagliyor, sureci teknik dille degil anlasilir ve hizli bir iletisimle yurutüyoruz."
+      "title": "Hızlı destek ve net iletişim",
+      "text": "İhtiyaç anında gecikmeden dönüş sağlıyor, süreci teknik dille değil anlaşılır ve hızlı bir iletişimle yürütüyoruz."
     },
     {
-      "title": "Takip edilen surecler",
-      "text": "Kurulum, yayinlama ve sonraki gelisim adimlarini planli sekilde takip ederek isleri dagilmadan ilerletiyoruz."
+      "title": "Takip edilen süreçler",
+      "text": "Kurulum, yayınlama ve sonraki gelişim adımlarını planlı şekilde takip ederek işleri dağılmadan ilerletiyoruz."
     },
     {
-      "title": "Uzun vadeli dijital cozumler",
-      "text": "Sadece bugunu kurtaran degil, markanizin buyume ritmine uyum saglayacak kalici ve olceklenebilir yapilar kuruyoruz."
+      "title": "Uzun vadeli dijital çözümler",
+      "text": "Sadece bugünü kurtaran değil, markanızın büyüme ritmine uyum sağlayacak kalıcı ve ölçeklenebilir yapılar kuruyoruz."
     },
     {
-      "title": "Tasarim ve performans dengesi",
-      "text": "Gorsel kaliteyi teknik performansla dengeleyerek hem guclu gorunen hem akici calisan deneyimler uretiyoruz."
+      "title": "Tasarım ve performans dengesi",
+      "text": "Görsel kaliteyi teknik performansla dengeleyerek hem güçlü görünen hem akıcı çalışan deneyimler üretiyoruz."
     }
   ]
 }

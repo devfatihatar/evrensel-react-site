@@ -1,16 +1,14 @@
 {
   "title": "Referanslarimiz",
-  "description": "Birlikte çalıştığımız firmalar ve projeler.",
+  "description": "Birlikte calistigimiz firmalar ve projeler.",
   "previews": [
-    { "name": "Talyantis"  },
-    { "name": "Rotlog Logistik"  },
-    { "name": "Ahenk Otomasyon"  },
-    { "name": "Delta Muhasebe"}
-  ],
-  "stats": [
-    { "value": "50+", "label": "Destek verdigimiz firma" },
-    { "value": "10+", "label": "Hizmet verdiğimiz sektör" },
-    { "value": "100+", "label": "Tamamlanan kurumsal kurulum" },
-    { "value": "50+", "label": "Surekli bakim verdigimiz sistem" }
+    { "name": "Talyantis", "imagePath": "referances/talyantis.jpg" },
+    { "name": "Rotlog Logistik", "imagePath": "referances/rotlog.jpg" },
+    { "name": "Renova", "imagePath": "referances/renova.jpg" },
+    { "name": "Yatsan", "imagePath": "referances/ref_yatsan.webp" },
+    { "name": "Storpark", "imagePath": "brands/storpark.jpg" },
+    { "name": "Sense Spa", "imagePath": "brands/sensespa.jpg" },
+    { "name": "Sare Suites", "imagePath": "brands/saresuites.jpg" },
+    { "name": "XDream", "imagePath": "brands/xdream.jpg" }
   ]
 }

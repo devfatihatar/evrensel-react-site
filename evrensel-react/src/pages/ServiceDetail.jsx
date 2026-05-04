@@ -1,13 +1,21 @@
-﻿import { Link, Navigate, useParams } from "react-router-dom"
+import { Navigate, useParams } from "react-router-dom"
 import Button from "../components/shared/Button"
-import SectionTitle from "../components/shared/SectionTitle"
+import BreadcrumbTrail from "../components/shared/BreadcrumbTrail"
 import PageSeo from "../components/seo/PageSeo"
 import services from "../data/servicesData.json"
 import serviceDetailData from "../data/serviceDetailData.json"
 import seoData from "../data/seoData.json"
 import { getBreadcrumbSchema, getServiceSchema } from "../seo/schema"
 
-const { primaryButton, secondaryButton, includesTitle, processTitle } = serviceDetailData
+const {
+  primaryButton,
+  secondaryButton,
+  includesTitle,
+  processTitle,
+  includesEyebrow,
+  processEyebrow,
+  homeBreadcrumb,
+} = serviceDetailData
 const serviceDetailSeo = seoData.serviceDetail
 
 export default function ServiceDetail() {
@@ -36,55 +44,89 @@ export default function ServiceDetail() {
 
   return (
     <>
-      <PageSeo title={title} description={description} path={path} type="article" jsonLd={[breadcrumbSchema, serviceSchema]} />
+      <PageSeo
+        title={title}
+        description={description}
+        path={path}
+        type="article"
+        jsonLd={[breadcrumbSchema, serviceSchema]}
+      />
 
       <main className="services-page page">
-        <section className="section services-page__hero">
-          <div className="container services-page__detail-hero">
-            <nav aria-label="Breadcrumb">
-              <p style={{ marginBottom: "0.75rem", fontSize: "0.95rem" }}>
-                <Link to="/">Ana Sayfa</Link> {" / "}
-                <Link to="/hizmetlerimiz">Hizmetlerimiz</Link> {" / "}
-                <span>{service.title}</span>
-              </p>
-            </nav>
+        <section className="section services-page__detail-hero-section reveal-on-scroll">
+          <div className="container services-page__catalog-inner">
+            <div className="services-page__detail-hero homepage-shared-shell">
+              <BreadcrumbTrail
+                items={[
+                  { label: homeBreadcrumb, to: "/" },
+                  { label: serviceDetailSeo.breadcrumbServices, to: "/hizmetlerimiz" },
+                  { label: service.title },
+                ]}
+              />
 
-            <SectionTitle
-              eyebrow={service.eyebrow}
-              title={service.title}
-              subtitle={service.shortDescription}
-            />
+              <div className="services-page__detail-hero-grid">
+                <div className="services-page__detail-header homepage-shared-header">
+                  <p className="services-page__eyebrow homepage-shared-eyebrow">{service.eyebrow}</p>
+                  <h1>{service.title}</h1>
+                  <p>{service.shortDescription}</p>
+                  <p>{service.summary}</p>
+                </div>
 
-            <p className="services-page__lead">{service.summary}</p>
+                <aside className="services-page__detail-highlights" aria-label="Hizmet öne çıkanları">
+                  {service.highlights.map((item, index) => (
+                    <div key={item} className="services-page__detail-highlight homepage-shared-card">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      <p>{item}</p>
+                    </div>
+                  ))}
+                </aside>
+              </div>
 
-            <div className="services-page__hero-actions">
-              <Button to="/iletisim">{primaryButton}</Button>
-              <Button to="/hizmetlerimiz" variant="secondary">
-                {secondaryButton}
-              </Button>
+              <div className="services-page__hero-actions">
+                <Button to="/iletisim">{primaryButton}</Button>
+                <Button to="/hizmetlerimiz" variant="secondary">
+                  {secondaryButton}
+                </Button>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="section services-page__detail-body">
-          <div className="container services-page__detail-grid">
-            <article className="services-page__detail-box">
-              <h3>{includesTitle}</h3>
-              <ul className="services-page__detail-list">
-                {service.includes.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </article>
+        <section className="section services-page__detail-body reveal-on-scroll">
+          <div className="container services-page__catalog-inner">
+            <div className="services-page__detail-grid">
+              <article className="services-page__detail-box homepage-shared-shell">
+                <div className="services-page__detail-box-header homepage-shared-header">
+                  <p className="services-page__eyebrow homepage-shared-eyebrow">{includesEyebrow}</p>
+                  <h2>{includesTitle}</h2>
+                </div>
 
-            <article className="services-page__detail-box">
-              <h3>{processTitle}</h3>
-              <ol className="services-page__detail-steps">
-                {service.process.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ol>
-            </article>
+                <ul className="services-page__detail-list">
+                  {service.includes.map((item, index) => (
+                    <li key={item} className="homepage-shared-card">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+
+              <article className="services-page__detail-box homepage-shared-shell">
+                <div className="services-page__detail-box-header homepage-shared-header">
+                  <p className="services-page__eyebrow homepage-shared-eyebrow">{processEyebrow}</p>
+                  <h2>{processTitle}</h2>
+                </div>
+
+                <ol className="services-page__detail-steps">
+                  {service.process.map((item, index) => (
+                    <li key={item} className="homepage-shared-card">
+                      <span>{String(index + 1).padStart(2, "0")}</span>
+                      {item}
+                    </li>
+                  ))}
+                </ol>
+              </article>
+            </div>
           </div>
         </section>
       </main>

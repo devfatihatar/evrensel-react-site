@@ -1,108 +1,64 @@
-﻿import Button from "../components/shared/Button"
-import SectionTitle from "../components/shared/SectionTitle"
+import { useSearchParams } from "react-router-dom"
 import PageSeo from "../components/seo/PageSeo"
+import ServicesCatalog from "../components/services/ServicesCatalog"
 import services from "../data/servicesData.json"
+import servicesCategoryData from "../data/servicesCategoryData.json"
 import servicesPageData from "../data/servicesPageData.json"
+import navbarData from "../data/navbarData.json"
 import seoData from "../data/seoData.json"
 import { getBreadcrumbSchema } from "../seo/schema"
+import { resolveImageList } from "../utils/imageResolver"
 
-const { hero, catalog, benefitsSection, benefits } = servicesPageData
 const servicesSeo = seoData.services
+const serviceDropdownItems =
+  navbarData.links.find((link) => link.to === "/hizmetlerimiz")?.children ?? []
 
 export default function ServicesPage() {
+  const [searchParams] = useSearchParams()
+const activeCategorySlug = searchParams.get("kategori")
+  const activeDropdownItem = serviceDropdownItems.find((item) => {
+    const query = item.to.split("?")[1] ?? ""
+    return new URLSearchParams(query).get("kategori") === activeCategorySlug
+  })
+  const activeCategory = servicesCategoryData.find((item) => item.slug === activeCategorySlug)
+  const activeCategoryWithNav =
+    activeCategory && activeDropdownItem
+      ? { ...activeCategory, to: activeDropdownItem.to, label: activeDropdownItem.label }
+      : null
+  const pageTitle = activeCategoryWithNav
+    ? `${activeCategoryWithNav.label} | Hizmetlerimiz | Evrensel Bilişim`
+    : servicesSeo.title
+  const pageDescription = activeCategoryWithNav?.description ?? servicesSeo.description
+  const pagePath = activeCategoryWithNav?.to ?? servicesSeo.path
+
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
     { name: "Hizmetlerimiz", path: servicesSeo.path },
+    ...(activeCategoryWithNav
+      ? [{ name: activeCategoryWithNav.label, path: activeCategoryWithNav.to }]
+      : []),
   ])
 
   return (
     <>
       <PageSeo
-        title={servicesSeo.title}
-        description={servicesSeo.description}
-        path={servicesSeo.path}
+        title={pageTitle}
+        description={pageDescription}
+        path={pagePath}
         jsonLd={[breadcrumbSchema]}
       />
 
-      <main className="services-page page">
-        <section className="section services-page__hero">
-          <div className="container services-page__hero-grid">
-            <div className="services-page__hero-content">
-              <SectionTitle eyebrow={hero.eyebrow} title={hero.title} subtitle={hero.subtitle} />
-
-              <p className="services-page__lead">{hero.lead}</p>
-
-              <div className="services-page__hero-actions">
-                <Button to="/iletisim">{hero.primaryButton}</Button>
-                <Button href="tel:+905551112233" variant="secondary">
-                  {hero.secondaryButton}
-                </Button>
-              </div>
-            </div>
-
-            <aside className="services-page__hero-panel" aria-label={hero.panelAriaLabel}>
-              <ul className="services-page__hero-list">
-                {services.map((service) => (
-                  <li key={service.slug} className="services-page__hero-item">
-                    <strong>{service.eyebrow}</strong>
-                    <span>{service.shortDescription}</span>
-                  </li>
-                ))}
-              </ul>
-            </aside>
-          </div>
-        </section>
-
-        <section className="section services-page__catalog">
-          <div className="container">
-            <SectionTitle
-              eyebrow={catalog.eyebrow}
-              title={catalog.title}
-              subtitle={catalog.subtitle}
-              align="center"
-            />
-
-            <div className="services-page__grid">
-              {services.map((service) => (
-                <article key={service.slug} className="services-page__card">
-                  <p className="services-page__card-eyebrow">{service.eyebrow}</p>
-                  <h3>{service.title}</h3>
-                  <p>{service.summary}</p>
-
-                  <ul className="services-page__card-list">
-                    {service.highlights.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-
-                  <Button to={`/hizmetlerimiz/${service.slug}`} variant="secondary">
-                    {catalog.detailButton}
-                  </Button>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section services-page__benefits">
-          <div className="container">
-            <SectionTitle
-              eyebrow={benefitsSection.eyebrow}
-              title={benefitsSection.title}
-              subtitle={benefitsSection.subtitle}
-              align="center"
-            />
-
-            <div className="services-page__benefits-grid">
-              {benefits.map((item) => (
-                <article key={item.title} className="services-page__benefit-card">
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+      <main className={`services-page page${activeCategoryWithNav ? " services-page--category-view" : ""}`}>
+        <ServicesCatalog
+          activeCategory={activeCategoryWithNav}
+          benefits={servicesPageData.benefits}
+          benefitsSection={servicesPageData.benefitsSection}
+          catalog={servicesPageData.catalog}
+          hero={servicesPageData.hero}
+          labels={servicesPageData.labels}
+          services={services}
+          serviceShowcaseImages={resolveImageList(servicesPageData.showcaseImagePaths)}
+        />
       </main>
     </>
   )

@@ -2,14 +2,14 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import Button from "../shared/Button"
 import navbarData from "../../data/navbarData.json"
-import evrenselLogo from "../../assets/images/icons/evrensel-logo.png"
+import { resolveImage } from "../../utils/imageResolver"
 
-const { links, topBar, menuAriaLabel } = navbarData
+const { links, topBar, brand, menuAriaLabel } = navbarData
 
 export default function Navbar() {
   const location = useLocation()
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isPromoClosed, setIsPromoClosed] = useState(false)
+  const [isCampaignModalOpen, setIsCampaignModalOpen] = useState(false)
   const isScrolledRef = useRef(false)
   const rafRef = useRef(0)
   const lastYRef = useRef(0)
@@ -77,16 +77,34 @@ export default function Navbar() {
     }
   }, [])
 
-  const headerClasses = `navbar ${isScrolled ? "navbar--scrolled" : ""} ${
-    isPromoClosed ? "navbar--promo-closed" : ""
-  }`.trim()
+  const headerClasses = `navbar ${isScrolled ? "navbar--scrolled" : ""}`.trim()
 
-  const spacerClasses = `navbar-spacer ${isScrolled ? "navbar-spacer--scrolled" : ""} ${
-    isPromoClosed ? "navbar-spacer--promo-closed" : ""
-  }`.trim()
+  const spacerClasses = `navbar-spacer ${isScrolled ? "navbar-spacer--scrolled" : ""}`.trim()
+
+  const closeCampaignModal = () => setIsCampaignModalOpen(false)
+
+  const openCampaignModal = () => {
+    setIsCampaignModalOpen(true)
+  }
 
   return (
     <>
+      {isCampaignModalOpen ? (
+        <div className="navbar__campaign-modal" role="dialog" aria-modal="true" aria-label={topBar.fabLabel}>
+          <div className="navbar__campaign-backdrop" onClick={closeCampaignModal} />
+          <div className="navbar__campaign-panel">
+            <button
+              type="button"
+              className="navbar__campaign-close"
+              aria-label={topBar.closeAriaLabel}
+              onClick={closeCampaignModal}
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      ) : null}
+
       <header className={headerClasses}>
         <div className="navbar__top">
           <div className="container navbar__top-inner">
@@ -117,14 +135,6 @@ export default function Navbar() {
               </Button>
             </div>
 
-            <button
-              type="button"
-              className="navbar__top-close"
-              aria-label={topBar.closeAriaLabel}
-              onClick={() => setIsPromoClosed(true)}
-            >
-              ×
-            </button>
           </div>
         </div>
 
@@ -132,7 +142,13 @@ export default function Navbar() {
           <div className="container navbar__inner">
             <div className="navbar__main-left">
               <NavLink to="/" className="navbar__brand">
-                <img src={evrenselLogo} alt="Evrensel Bilişim" className="navbar__brand-logo" />
+                <img
+                  src={resolveImage(brand.logoPath)}
+                  alt={brand.logoAlt}
+                  className="navbar__brand-logo"
+                  loading="eager"
+                  decoding="async"
+                />
               </NavLink>
             </div>
 
@@ -207,8 +223,8 @@ export default function Navbar() {
 
       <button
         type="button"
-        className={`navbar__promo-fab ${isPromoClosed ? "is-visible" : ""}`.trim()}
-        onClick={() => setIsPromoClosed(false)}
+        className="navbar__promo-fab is-visible"
+        onClick={openCampaignModal}
         aria-label={topBar.openAriaLabel}
       >
         <span>{topBar.fabLabel}</span>

@@ -1,42 +1,217 @@
-import Button from "../components/shared/Button"
+import { useEffect, useRef, useState } from "react"
 import PageSeo from "../components/seo/PageSeo"
+import WebDesignHero from "../components/web-design/WebDesignHero"
+import WebDesignMessage from "../components/web-design/WebDesignMessage"
+import WebDesignShowcase from "../components/web-design/WebDesignShowcase"
+import WebDesignProcess from "../components/web-design/WebDesignProcess"
+import WebDesignDeliverables from "../components/web-design/WebDesignDeliverables"
+import WebDesignSocialLinks from "../components/web-design/WebDesignSocialLinks"
 import seoData from "../data/seoData.json"
 import webDesignData from "../data/webDesignData.json"
 import { getBreadcrumbSchema, getServiceSchema } from "../seo/schema"
-import devicesImage from "../assets/images/web-design/devices.png"
-import lighthouseImage from "../assets/images/web-design/lighthouse.png"
-import seoImage from "../assets/images/web-design/seo.png"
-import webArchitectureImage from "../assets/images/web-design/web-architecture.png"
-import webSlideMainImage from "../assets/images/web-design/webslidermain.png"
+import { resolveImage } from "../utils/imageResolver"
 
 const webDesignSeo = seoData.webDesign
-const { hero } = webDesignData
+const {
+  hero,
+  servicesSection,
+  services,
+  deliverablesSection,
+  deliverables,
+  processSection,
+  processSteps,
+  assets,
+  message,
+  socialLinks,
+} = webDesignData
+const rotatingWords = message.rotatingWords
+const ROTATOR_TRANSITION_MS = 560
+const ROTATOR_INTERVAL_MS = 2400
+const socialIcons = socialLinks.items.map((item) => ({
+  ...item,
+  logoSrc: resolveImage(assets.socialIconPaths[item.logoKey]),
+}))
+const processBoardSteps = [
+  ...processSteps,
+  {
+    step: "04",
+    title: "Yayin ve Destek",
+    text: "Yayina alma, son kontroller ve sonraki surecte ihtiyac duyulan teknik destegi planli sekilde surduruyoruz.",
+  },
+]
 const heroHighlights = [
   {
-    imageSrc: lighthouseImage,
+    imageSrc: resolveImage(assets.highlightImagePaths.lighthouse),
     title: "60+",
     text: "Performans skorlari",
   },
   {
-    imageSrc: seoImage,
+    imageSrc: resolveImage(assets.highlightImagePaths.seo),
     title: "SEO",
     text: "SEO uyumlu altyapi",
   },
   {
-    imageSrc: devicesImage,
-    title: "Responsive Tasarim",
+    imageSrc: resolveImage(assets.highlightImagePaths.devices),
+    title: "Responsive Tasarım",
     text: "Tum cihazlarla uyumlu",
   },
 ]
 
 export default function WebDesign() {
+  const webDesignRef = useRef(null)
+  const [activeWordIndex, setActiveWordIndex] = useState(0)
+  const [isRotatorTransitionEnabled, setIsRotatorTransitionEnabled] = useState(true)
+  const [activeSocialIndex, setActiveSocialIndex] = useState(-1)
+  const [hoveredSocialIndex, setHoveredSocialIndex] = useState(-1)
+  const socialIndexRef = useRef(-1)
+  const hoveredSocialRef = useRef(-1)
+  const activeTimeoutRef = useRef(null)
+  const hoverLeaveTimeoutRef = useRef(null)
+
+  const handleSocialClick = (event, href) => {
+    event.preventDefault()
+    event.stopPropagation()
+    window.location.assign(href)
+  }
+
+  useEffect(() => {
+    if (activeWordIndex === rotatingWords.length) {
+      const resetTimer = window.setTimeout(() => {
+        setIsRotatorTransitionEnabled(false)
+        setActiveWordIndex(0)
+
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            setIsRotatorTransitionEnabled(true)
+          })
+        })
+      }, ROTATOR_TRANSITION_MS)
+
+      return () => window.clearTimeout(resetTimer)
+    }
+
+    const timer = window.setTimeout(() => {
+      setIsRotatorTransitionEnabled(true)
+      setActiveWordIndex((current) => current + 1)
+    }, ROTATOR_INTERVAL_MS)
+
+    return () => window.clearTimeout(timer)
+  }, [activeWordIndex])
+
+  useEffect(() => {
+    const root = webDesignRef.current
+    if (!root) return
+
+    const sections = Array.from(root.querySelectorAll(":scope > section"))
+    let rafId = 0
+
+    const applySectionFocus = () => {
+      if (!sections.length) return
+
+      const targetY = window.innerHeight * 0.52
+      let active = sections[0]
+      let minDist = Number.POSITIVE_INFINITY
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        const centerY = rect.top + rect.height / 2
+        const dist = Math.abs(centerY - targetY)
+        if (dist < minDist) {
+          minDist = dist
+          active = section
+        }
+      })
+
+      root.classList.add("has-section-focus")
+      sections.forEach((section) => {
+        const isActive = section === active
+        section.classList.toggle("is-active-section", isActive)
+        section.classList.toggle("is-dim-section", !isActive)
+      })
+    }
+
+    const onScrollOrResize = () => {
+      if (rafId) return
+      rafId = window.requestAnimationFrame(() => {
+        applySectionFocus()
+        rafId = 0
+      })
+    }
+
+    applySectionFocus()
+    window.addEventListener("scroll", onScrollOrResize, { passive: true })
+    window.addEventListener("resize", onScrollOrResize)
+
+    return () => {
+      window.removeEventListener("scroll", onScrollOrResize)
+      window.removeEventListener("resize", onScrollOrResize)
+      if (rafId) window.cancelAnimationFrame(rafId)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!socialIcons.length) return
+
+    const visibleDurationMs = 5000
+    const cycleDurationMs = 7600
+
+    const runCycle = () => {
+      if (hoveredSocialRef.current >= 0) return
+      socialIndexRef.current = (socialIndexRef.current + 1) % socialIcons.length
+      setActiveSocialIndex(socialIndexRef.current)
+
+      if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
+      activeTimeoutRef.current = window.setTimeout(() => {
+        if (hoveredSocialRef.current < 0) setActiveSocialIndex(-1)
+      }, visibleDurationMs)
+    }
+
+    runCycle()
+    const cycleTimer = window.setInterval(runCycle, cycleDurationMs)
+
+    return () => {
+      window.clearInterval(cycleTimer)
+      if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
+      if (hoverLeaveTimeoutRef.current) window.clearTimeout(hoverLeaveTimeoutRef.current)
+    }
+  }, [])
+
+  const openNextSocialCard = () => {
+    socialIndexRef.current = (socialIndexRef.current + 1) % socialIcons.length
+    setActiveSocialIndex(socialIndexRef.current)
+
+    if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
+    activeTimeoutRef.current = window.setTimeout(() => {
+      if (hoveredSocialRef.current < 0) setActiveSocialIndex(-1)
+    }, 5000)
+  }
+
+  const handleSocialEnter = (index) => {
+    if (hoverLeaveTimeoutRef.current) {
+      window.clearTimeout(hoverLeaveTimeoutRef.current)
+      hoverLeaveTimeoutRef.current = null
+    }
+    hoveredSocialRef.current = index
+    setHoveredSocialIndex(index)
+    setActiveSocialIndex(-1)
+    if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
+  }
+
+  const handleSocialLeave = () => {
+    hoverLeaveTimeoutRef.current = window.setTimeout(() => {
+      hoveredSocialRef.current = -1
+      setHoveredSocialIndex(-1)
+      openNextSocialCard()
+    }, 120)
+  }
+
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Ana Sayfa", path: "/" },
-    { name: "Web Tasarim", path: webDesignSeo.path },
+    { name: "Web Tasarım", path: webDesignSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({
-    name: "Web Tasarim ve Gelistirme Hizmetleri",
+    name: "Web Tasarım ve Geliştirme Hizmetleri",
     description: webDesignSeo.description,
     path: webDesignSeo.path,
   })
@@ -50,77 +225,37 @@ export default function WebDesign() {
         jsonLd={[breadcrumbSchema, serviceSchema]}
       />
 
-      <main className="web-design-page page">
-        <section className="web-design-main-visual section" aria-label="Web tasarim ana gorseli">
-          <div className="web-design-main-visual__frame">
-            <img
-              src={webSlideMainImage}
-              alt="Web tasarim ana slider gorseli"
-              className="web-design-main-visual__image"
-            />
-
-            <div className="container web-design-main-visual__overlay">
-              <div className="web-design-hero web-design-hero__inner">
-                <div className="web-design-hero__content">
-                  <h1>{hero.title}</h1>
-                  <p className="web-design-hero__lead">
-                    {hero.subtitle}
-                  </p>
-
-                  <div className="web-design-hero__actions">
-                    <Button to="/iletisim">{hero.primaryButton}</Button>
-                  </div>
-                </div>
-
-                <aside className="web-design-hero__aside" aria-label={hero.panelAriaLabel}>
-                  <div className="web-design-hero__highlights" aria-label="Web tasarim avantajlari">
-                    {heroHighlights.map((item) => (
-                      <article className="web-design-hero__highlight" key={item.text}>
-                        <div className="web-design-hero__highlight-visual">
-                          <img src={item.imageSrc} alt="" className="web-design-hero__highlight-image" />
-                        </div>
-                        <div className="web-design-hero__highlight-copy">
-                          <strong>{item.title}</strong>
-                          <span>{item.text}</span>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                </aside>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="web-design-showcase section" aria-label="Web tasarim liste alani">
-          <div className="container web-design-showcase__inner">
-            <div className="web-design-showcase__grid">
-              <div className="web-design-showcase__media">
-                <img
-                  src={webArchitectureImage}
-                  alt="Web mimarisi gorseli"
-                  className="web-design-showcase__image"
-                />
-              </div>
-
-              <div className="web-design-showcase__content">
-                <h2>Lorem ipsum dolor sit amet consectetur</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                  ante venenatis dapibus posuere velit aliquet. Donec ullamcorper nulla non metus
-                  auctor fringilla.
-                </p>
-
-                <ul className="web-design-showcase__list" aria-label="Web tasarim liste alani">
-                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</li>
-                  <li>Vestibulum id ligula porta felis euismod semper.</li>
-                  <li>Donec sed odio dui, posuere consectetur est at lobortis.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+      <main className="web-design-page page" ref={webDesignRef}>
+        <WebDesignHero
+          hero={hero}
+          heroHighlights={heroHighlights}
+          webSlideMainImage={resolveImage(assets.heroImagePath)}
+        />
+        <WebDesignMessage
+          message={message}
+          isRotatorTransitionEnabled={isRotatorTransitionEnabled}
+          activeWordIndex={activeWordIndex}
+          rotatingWords={rotatingWords}
+        />
+        <WebDesignShowcase
+          servicesSection={servicesSection}
+          services={services}
+          webArchitectureImage={resolveImage(assets.showcaseImagePath)}
+        />
+        <WebDesignProcess processSection={processSection} processBoardSteps={processBoardSteps} />
+        <WebDesignDeliverables
+          deliverablesSection={deliverablesSection}
+          deliverables={deliverables}
+        />
+        <WebDesignSocialLinks
+          socialIcons={socialIcons}
+          activeSocialIndex={activeSocialIndex}
+          hoveredSocialIndex={hoveredSocialIndex}
+          followText={socialLinks.followText}
+          handleSocialClick={handleSocialClick}
+          handleSocialEnter={handleSocialEnter}
+          handleSocialLeave={handleSocialLeave}
+        />
       </main>
     </>
   )

@@ -6,65 +6,14 @@ import HomeBrands from "../components/home/HomeBrands"
 import PageSeo from "../components/seo/PageSeo"
 import seoData from "../data/seoData.json"
 import homeSliderData from "../data/homeSliderData.json"
-import homepageImage from "../assets/images/homepage.jpg"
-import homepageWebIcon from "../assets/images/sliders/homepagewebicon.png"
-import homepageSocialIcon from "../assets/images/sliders/homepagesocialicon.png"
-import homepageSeoIcon from "../assets/images/sliders/homepageseoicon.png"
-import instagramLogo from "../assets/images/social-media/instagram.png"
-import googleLogo from "../assets/images/social-media/google.png"
-import facebookLogo from "../assets/images/social-media/facebook.png"
+import { resolveImage } from "../utils/imageResolver"
 
 const HOME_SLIDE_DURATION_MS = 6300
 const homeSeo = seoData.home
-const socialIcons = [
-  {
-    key: "instagram",
-    text: "Instagram",
-    handle: "@evrenselbilisim",
-    logoSrc: instagramLogo,
-    href: "https://www.instagram.com",
-  },
-  {
-    key: "google",
-    text: "Google",
-    handle: "google.com/maps",
-    logoSrc: googleLogo,
-    href: "https://www.google.com/maps",
-  },
-  {
-    key: "facebook",
-    text: "Facebook",
-    handle: "/evrenselbilisim",
-    logoSrc: facebookLogo,
-    href: "https://www.facebook.com",
-  },
-]
-const heroHighlights = [
-  {
-    key: "web",
-    imageSrc: homepageWebIcon,
-    value: 100,
-    suffix: "+",
-    label: "Web Sitesi",
-    modifier: "home-page__rocket--first",
-  },
-  {
-    key: "social",
-    imageSrc: homepageSocialIcon,
-    value: 250,
-    suffix: "+",
-    label: "Sosyal Medya Tasarimi",
-    modifier: "home-page__rocket--second",
-  },
-  {
-    key: "support",
-    imageSrc: homepageSeoIcon,
-    value: 50,
-    suffix: "+",
-    label: "SEO Yonetimi",
-    modifier: "home-page__rocket--third",
-  },
-]
+const heroHighlights = homeSliderData.highlights.map((item) => ({
+  ...item,
+  imageSrc: resolveImage(item.imagePath),
+}))
 
 export default function Home() {
   const slides = homeSliderData.slides
@@ -74,18 +23,6 @@ export default function Home() {
   const [highlightCounts, setHighlightCounts] = useState(() =>
     Object.fromEntries(heroHighlights.map((item) => [item.key, 0]))
   )
-  const [activeSocialIndex, setActiveSocialIndex] = useState(-1)
-  const [hoveredSocialIndex, setHoveredSocialIndex] = useState(-1)
-  const socialIndexRef = useRef(-1)
-  const hoveredSocialRef = useRef(-1)
-  const activeTimeoutRef = useRef(null)
-  const hoverLeaveTimeoutRef = useRef(null)
-
-  const handleSocialClick = (event, href) => {
-    event.preventDefault()
-    event.stopPropagation()
-    window.location.assign(href)
-  }
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -199,65 +136,10 @@ export default function Home() {
     }
   }, [])
 
-  useEffect(() => {
-    if (!socialIcons.length) return
-
-    const visibleDurationMs = 5000
-    const cycleDurationMs = 7600
-
-    const runCycle = () => {
-      if (hoveredSocialRef.current >= 0) return
-      socialIndexRef.current = (socialIndexRef.current + 1) % socialIcons.length
-      setActiveSocialIndex(socialIndexRef.current)
-
-      if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
-      activeTimeoutRef.current = window.setTimeout(() => {
-        if (hoveredSocialRef.current < 0) setActiveSocialIndex(-1)
-      }, visibleDurationMs)
-    }
-
-    runCycle()
-    const cycleTimer = window.setInterval(runCycle, cycleDurationMs)
-
-    return () => {
-      window.clearInterval(cycleTimer)
-      if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
-      if (hoverLeaveTimeoutRef.current) window.clearTimeout(hoverLeaveTimeoutRef.current)
-    }
-  }, [])
-
-  const openNextSocialCard = () => {
-    socialIndexRef.current = (socialIndexRef.current + 1) % socialIcons.length
-    setActiveSocialIndex(socialIndexRef.current)
-
-    if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
-    activeTimeoutRef.current = window.setTimeout(() => {
-      if (hoveredSocialRef.current < 0) setActiveSocialIndex(-1)
-    }, 5000)
-  }
-
-  const handleSocialEnter = (index) => {
-    if (hoverLeaveTimeoutRef.current) {
-      window.clearTimeout(hoverLeaveTimeoutRef.current)
-      hoverLeaveTimeoutRef.current = null
-    }
-    hoveredSocialRef.current = index
-    setHoveredSocialIndex(index)
-    setActiveSocialIndex(-1)
-    if (activeTimeoutRef.current) window.clearTimeout(activeTimeoutRef.current)
-  }
-
-  const handleSocialLeave = () => {
-    hoverLeaveTimeoutRef.current = window.setTimeout(() => {
-      hoveredSocialRef.current = -1
-      setHoveredSocialIndex(-1)
-      openNextSocialCard()
-    }, 120)
-  }
-
   const previousSlide = slides[(activeSlideIndex - 1 + slides.length) % slides.length]
   const currentSlide = slides[activeSlideIndex]
   const nextSlide = slides[(activeSlideIndex + 1) % slides.length]
+  const themeToggle = homeSliderData.themeToggle
 
   return (
     <>
@@ -271,11 +153,11 @@ export default function Home() {
           type="button"
           className="home-page__theme-toggle"
           onClick={() => setIsBlueTheme((current) => !current)}
-          aria-label="Anasayfa renk temasını değiştir"
+          aria-label={themeToggle.ariaLabel}
         >
-          <span className="home-page__theme-toggle-label">Tema</span>
+          <span className="home-page__theme-toggle-label">{themeToggle.label}</span>
           <span className="home-page__theme-toggle-value">
-            {isBlueTheme ? "Mavi" : "Kirmizi"}
+            {isBlueTheme ? themeToggle.blueLabel : themeToggle.redLabel}
           </span>
         </button>
 
@@ -286,9 +168,12 @@ export default function Home() {
               style={{ "--home-slider-duration": `${HOME_SLIDE_DURATION_MS}ms` }}
             >
               <img
-                src={homepageImage}
-                alt="Evrensel Bilisim anasayfa gorseli"
+                src={resolveImage(homeSliderData.backgroundImagePath)}
+                alt={homeSliderData.backgroundImageAlt}
                 className="home-slider__image"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
               <div className="home-slider__slide is-active" key={currentSlide.title}>
                 <div className="home-slider__overlay home-slider__overlay-stack">
@@ -324,7 +209,13 @@ export default function Home() {
                     className={`home-page__rocket ${item.modifier}`.trim()}
                   >
                     <div className="home-page__rocket-visual">
-                      <img src={item.imageSrc} alt="" className="home-page__rocket-image" />
+                      <img
+                        src={item.imageSrc}
+                        alt=""
+                        className="home-page__rocket-image"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </div>
                     <div className="home-page__rocket-copy">
                       <strong>{`${highlightCounts[item.key] ?? 0}${item.suffix ?? ""}`}</strong>
@@ -340,29 +231,6 @@ export default function Home() {
         <Hero />
         <AboutUs />
         <ReferenceShowcase />
-
-        <div className="home-page__social-floats" aria-label="Sosyal medya bağlantıları">
-          {socialIcons.map((item, index) => (
-            <div key={item.key} className="home-page__social-item">
-              <a
-                className={`home-page__social-icon home-page__social-icon--${item.key} ${activeSocialIndex === index || hoveredSocialIndex === index ? "is-active" : ""}`.trim()}
-                href={item.href}
-                onClick={(event) => handleSocialClick(event, item.href)}
-                onMouseEnter={() => handleSocialEnter(index)}
-                onMouseLeave={handleSocialLeave}
-                aria-label={`${item.text} sayfasına git`}
-              >
-                <span className="home-page__social-logo">
-                  <img src={item.logoSrc} alt="" className="home-page__social-logo-image" />
-                </span>
-                <span className="home-page__social-content">
-                  <span className="home-page__social-text">Bizi Takip Et</span>
-                  <span className="home-page__social-handle">{item.handle}</span>
-                </span>
-              </a>
-            </div>
-          ))}
-        </div>
         <HomeBrands />
       </main>
     </>

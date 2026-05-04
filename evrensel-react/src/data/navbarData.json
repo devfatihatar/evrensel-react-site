@@ -1,8 +1,8 @@
-﻿{
+{
   "links": [
     { "to": "/", "label": "Anasayfa" },
     { "to": "/web-tasarim", "label": "Web Tasarımı" },
-    { "to": "/hizmetlerimiz/web-tasarimi", "label": "Sosyal Medya" },
+    { "to": "/sosyal-medya", "label": "Sosyal Medya" },
     { "to": "/donanim", "label": "Bilgisayar" },
     {
       "to": "/hizmetlerimiz",
@@ -32,6 +32,8 @@
     "fabLabel": "Kampanya"
   },
   "brand": {
+    "logoPath": "icons/evrensel-logo.png",
+    "logoAlt": "Evrensel Bilişim",
     "mark": "EB",
     "title": "Evrensel Bilişim",
     "subtitle": "Web | Donanım | Destek"

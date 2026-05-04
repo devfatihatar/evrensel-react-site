@@ -15,6 +15,7 @@ export default function PageSeo({
   description,
   path,
   image = DEFAULT_OG_IMAGE,
+  imageAlt = SITE_NAME,
   type = "website",
   noindex = false,
   jsonLd = [],
@@ -32,6 +33,8 @@ export default function PageSeo({
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
       <meta name="robots" content={robots} />
+      <meta name="author" content={SITE_NAME} />
+      <meta name="language" content="tr-TR" />
 
       <link rel="canonical" href={canonicalUrl} />
       <link rel="alternate" hrefLang="tr-TR" href={canonicalUrl} />
@@ -44,11 +47,16 @@ export default function PageSeo({
       <meta property="og:description" content={pageDescription} />
       <meta property="og:url" content={canonicalUrl} />
       {imageUrl ? <meta property="og:image" content={imageUrl} /> : null}
+      {imageUrl ? <meta property="og:image:secure_url" content={imageUrl} /> : null}
+      {imageUrl ? <meta property="og:image:width" content="1200" /> : null}
+      {imageUrl ? <meta property="og:image:height" content="630" /> : null}
+      {imageUrl ? <meta property="og:image:alt" content={imageAlt} /> : null}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
       {imageUrl ? <meta name="twitter:image" content={imageUrl} /> : null}
+      {imageUrl ? <meta name="twitter:image:alt" content={imageAlt} /> : null}
 
       <meta property="article:publisher" content={SITE_URL} />
 

@@ -1,89 +1,62 @@
 import { Link } from "react-router-dom"
-
-const quickLinks = [
-  { to: "/", label: "Anasayfa" },
-  { to: "/hakkimizda", label: "Hakkımızda" },
-  { to: "/hizmetlerimiz", label: "Hizmetlerimiz" },
-  { to: "/iletisim", label: "İletişim" },
-]
-
-const serviceLinks = [
-  { to: "/web-tasarim", label: "Web Tasarımı" },
-  { to: "/donanim", label: "Donanım Altyapısı" },
-  { to: "/yardim-destek", label: "Yardım ve Destek" },
-]
-
-const socialLinks = [
-  { href: "#", label: "Instagram" },
-  { href: "#", label: "LinkedIn" },
-  { href: "#", label: "YouTube" },
-]
+import layoutData from "../../data/layoutData.json"
+import contactData from "../../data/contactData.json"
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const { footer } = layoutData
+  const addressCard = contactData.contactCards.find((card) => card.title === "Adres")
+  const address = addressCard?.value ?? footer.addressFallback
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`
 
   return (
     <footer className="footer">
       <div className="container footer__inner">
         <section className="footer__column footer__brand">
-          <h3>Evrensel Bilişim</h3>
-          <p>
-            İşletmeler için web, sistem ve teknik destek süreçlerini uçtan uca
-            yöneten teknoloji partneri.
-          </p>
+          <h3>{footer.brand.title}</h3>
+          <p>{footer.brand.text}</p>
+          <nav className="footer__services" aria-label={footer.servicesAriaLabel}>
+            {footer.serviceLinks.map((link) => (
+              <Link key={link.href} to={link.href}>
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </section>
 
         <section className="footer__column">
-          <h4>İletişim</h4>
+          <h4>{footer.contactTitle}</h4>
           <ul className="footer__list">
-            <li>
-              <a href="tel:+905551112233">+90 555 111 22 33</a>
-            </li>
-            <li>
-              <a href="mailto:info@evrenselbilisim.com">info@evrenselbilisim.com</a>
-            </li>
-            <li>Hafta içi 09:00 - 18:30</li>
+            {footer.contactItems.map((item) => (
+              <li key={item.label}>
+                {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+              </li>
+            ))}
           </ul>
+          <Link className="footer__contact-button" to={footer.contactButton.href}>
+            {footer.contactButton.label}
+          </Link>
         </section>
 
         <section className="footer__column">
-          <h4>Adres ve Menü</h4>
-          <p className="footer__address">
-            xxxx Mah. yyyyy Cad. No:12
-            <br />
-            Muratpaşa / Antalya
-          </p>
-          <ul className="footer__list footer__list--inline">
-            {quickLinks.map((link) => (
-              <li key={link.to}>
-                <Link to={link.to}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="footer__column">
-          <h4>Hizmet ve Sosyal</h4>
-          <ul className="footer__list">
-            {serviceLinks.map((link) => (
-              <li key={link.to}>
-                <Link to={link.to}>{link.label}</Link>
-              </li>
-            ))}
-          </ul>
-          <ul className="footer__social">
-            {socialLinks.map((social) => (
-              <li key={social.label}>
-                <a href={social.href}>{social.label}</a>
-              </li>
-            ))}
-          </ul>
+          <h4>{footer.addressTitle}</h4>
+          <p className="footer__address">{address}</p>
+          <div className="footer__map" aria-label={`${address} harita konumu`}>
+            <iframe
+              title="Evrensel Bilişim adres haritası"
+              src={mapSrc}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </section>
       </div>
 
       <div className="footer__bottom">
         <div className="container">
-          <p>Evrensel Bilişim © {year} | Tüm hakları saklıdır.</p>
+          <p>
+            {footer.copyrightPrefix} {year} | {footer.copyrightSuffix}
+          </p>
         </div>
       </div>
     </footer>

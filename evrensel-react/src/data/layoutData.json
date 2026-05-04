@@ -1,0 +1,112 @@
+{
+  "footer": {
+    "brand": {
+      "title": "Evrensel Bilişim",
+      "text": "İşletmeler için web, sistem ve teknik destek süreçlerini uçtan uca yöneten teknoloji partneri."
+    },
+    "contactTitle": "İletişim",
+    "contactItems": [
+      {
+        "label": "+90 506 241 77 35",
+        "href": "tel:+905062417735"
+      },
+      {
+        "label": "info@evrenselbilisim.com",
+        "href": "mailto:info@evrenselbilisim.com"
+      },
+      {
+        "label": "Hafta içi 09:00 - 18:30"
+      }
+    ],
+    "addressTitle": "Adres",
+    "copyrightPrefix": "Evrensel Bilişim ©",
+    "copyrightSuffix": "Tüm hakları saklıdır.",
+    "addressFallback": "Çaybaşı Mah. 1357 Sok. Palm Sitesi N:16 D:2 Muratpaşa / Antalya",
+    "servicesAriaLabel": "Footer hizmet bağlantıları",
+    "serviceLinks": [
+      {
+        "href": "/web-tasarim",
+        "label": "Web Tasarımı"
+      },
+      {
+        "href": "/sosyal-medya",
+        "label": "Sosyal Medya"
+      },
+      {
+        "href": "/donanim",
+        "label": "Donanım"
+      },
+      {
+        "href": "/yardim-destek",
+        "label": "Teknik Destek"
+      }
+    ],
+    "contactButton": {
+      "href": "/iletisim",
+      "label": "İletişime Geç"
+    }
+  },
+  "floatingContacts": {
+    "whatsapp": {
+      "href": "https://wa.me/905303665883",
+      "ariaLabel": "WhatsApp iletişime geç",
+      "logoPath": "social-media-icon/wpicon.png"
+    },
+    "ariaLabel": "Sosyal medya bağlantıları",
+    "followText": "Bizi Takip Et",
+    "items": [
+      {
+        "key": "instagram",
+        "text": "Instagram",
+        "handle": "@evrenselbilisim",
+        "logoPath": "social-media-icon/instagram.png",
+        "href": "https://www.instagram.com"
+      },
+      {
+        "key": "google",
+        "text": "Google",
+        "handle": "google.com/maps",
+        "logoPath": "social-media-icon/google.png",
+        "href": "https://www.google.com/maps"
+      },
+      {
+        "key": "facebook",
+        "text": "Facebook",
+        "handle": "/evrenselbilisim",
+        "logoPath": "social-media-icon/facebook.png",
+        "href": "https://www.facebook.com"
+      }
+    ]
+  },
+  "cookieBanner": {
+    "storageKey": "evrensel-cookie-consent",
+    "ariaLabel": "Çerez kullanımı bildirimi",
+    "settingsTitle": "Çerez Yönetimi",
+    "eyebrow": "Çerez Kullanımı",
+    "title": "Site deneyimini iyileştirmek için çerez kullanıyoruz.",
+    "text": "Zorunlu çerezlere ek olarak analiz ve performans amaçlı çerezleri kullanmak için onayınızı isteyebiliriz.",
+    "manageButton": "Çerez Ayarlarını Yönet",
+    "laterButton": "Sonra",
+    "acceptButton": "Kabul Et",
+    "saveButton": "Tercihlerimi Kaydet ve Devam Et",
+    "settings": [
+      {
+        "key": "necessary",
+        "title": "Zorunlu Çerezler",
+        "text": "Bu çerezler, web sitesinin çalışması için gereklidir ve sistemlerimizde kapatılamaz.",
+        "ariaLabel": "Zorunlu çerezler her zaman açık",
+        "locked": true
+      },
+      {
+        "key": "analytics",
+        "title": "İstatistiki Çerezler",
+        "text": "Bu çerezler, hizmetimizi tüm kullanıcılarımıza nasıl geliştirebileceğimiz konusunda fikir vermek ve anonim bir kullanıcı olarak web sitemizle nasıl etkileşim kurduğunuzu anlamak için kullanılır."
+      },
+      {
+        "key": "targeting",
+        "title": "Hedefleme Çerezleri",
+        "text": "Bu çerezler, profilinizi oluşturmak ve ilgi alanlarınıza uygun reklamlar sağlamak için kullanılır. Ayrıca, bir reklamı görme sayınızı sınırlandırmak ve reklam kampanyasının etkinliğini ölçmeye yardımcı olmak için kullanılır."
+      }
+    ]
+  }
+}
