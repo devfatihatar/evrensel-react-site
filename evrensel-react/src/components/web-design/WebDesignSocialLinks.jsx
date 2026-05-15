@@ -1,3 +1,6 @@
+import { useLanguage } from "../../i18n/LanguageContext"
+import { translateText } from "../../i18n/translations"
+
 export default function WebDesignSocialLinks({
   socialIcons,
   activeSocialIndex,
@@ -7,8 +10,11 @@ export default function WebDesignSocialLinks({
   handleSocialEnter,
   handleSocialLeave,
 }) {
+  const { lang } = useLanguage()
+  const t = (value) => translateText(value, lang)
+
   return (
-    <div className="web-design-page__social-floats" aria-label="Sosyal medya baglantilari">
+    <div key={lang} className="web-design-page__social-floats" aria-label={t("Sosyal medya bağlantıları")}>
       {socialIcons.map((item, index) => (
         <div key={item.key} className="web-design-page__social-item">
           <a
@@ -17,7 +23,7 @@ export default function WebDesignSocialLinks({
             onClick={(event) => handleSocialClick(event, item.href)}
             onMouseEnter={() => handleSocialEnter(index)}
             onMouseLeave={handleSocialLeave}
-            aria-label={`${item.text} sayfasina git`}
+            aria-label={t(`${item.text} sayfasına git`)}
           >
             <span className="web-design-page__social-logo">
               <img
@@ -29,7 +35,7 @@ export default function WebDesignSocialLinks({
               />
             </span>
             <span className="web-design-page__social-content">
-              <span className="web-design-page__social-text">{followText}</span>
+              <span className="web-design-page__social-text">{t(followText)}</span>
               <span className="web-design-page__social-handle">{item.handle}</span>
             </span>
           </a>

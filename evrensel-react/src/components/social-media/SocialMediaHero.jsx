@@ -2,15 +2,14 @@ import Button from "../shared/Button"
 
 export default function SocialMediaHero({ hero, socialMediaMainImage }) {
   return (
-    <section className="social-media-main-visual section reveal-on-scroll reveal-right" aria-label="Sosyal medya ana gorseli">
+    <section className="social-media-main-visual section reveal-on-scroll reveal-right" aria-label="Sosyal medya ana görseli">
       <div className="social-media-main-visual__frame">
         <img
           src={socialMediaMainImage}
-          alt="Sosyal medya ana slider gorseli"
+          alt="Sosyal medya ana slider görseli"
           className="social-media-main-visual__image"
           loading="eager"
           decoding="async"
-          fetchPriority="high"
         />
 
         <div className="container social-media-main-visual__overlay">

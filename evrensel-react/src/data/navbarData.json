@@ -1,32 +1,69 @@
 {
   "links": [
-    { "to": "/", "label": "Anasayfa" },
-    { "to": "/web-tasarim", "label": "Web Tasarımı" },
-    { "to": "/sosyal-medya", "label": "Sosyal Medya" },
-    { "to": "/donanim", "label": "Bilgisayar" },
+    {
+      "to": "/",
+      "label": "Anasayfa"
+    },
+    {
+      "to": "/web-tasarim",
+      "label": "Web Tasarımı"
+    },
+    {
+      "to": "/sosyal-medya",
+      "label": "Sosyal Medya"
+    },
+    {
+      "to": "/donanim",
+      "label": "Bilgisayar"
+    },
     {
       "to": "/hizmetlerimiz",
       "label": "Hizmetlerimiz",
       "children": [
-        { "to": "/hizmetlerimiz?kategori=internet-hizmetleri", "label": "İnternet Hizmetleri" },
-        { "to": "/hizmetlerimiz?kategori=bilisim-hizmetleri", "label": "Bilişim Hizmetleri" },
-        { "to": "/hizmetlerimiz?kategori=grafik-tasarim", "label": "Grafik & Tasarım" },
-        { "to": "/hizmetlerimiz?kategori=kurumsal-hizmetler", "label": "Kurumsal Hizmetler" },
+        {
+          "to": "/hizmetlerimiz?kategori=internet-hizmetleri",
+          "label": "İnternet Hizmetleri"
+        },
+        {
+          "to": "/hizmetlerimiz?kategori=bilisim-hizmetleri",
+          "label": "Bilişim Hizmetleri"
+        },
+        {
+          "to": "/hizmetlerimiz?kategori=grafik-tasarim",
+          "label": "Grafik & Tasarım"
+        },
+        {
+          "to": "/hizmetlerimiz?kategori=kurumsal-hizmetler",
+          "label": "Kurumsal Hizmetler"
+        },
         {
           "to": "/hizmetlerimiz?kategori=guvenlik-personel-sistemleri",
           "label": "Güvenlik & Personel Sistemleri"
         },
-        { "to": "/hizmetlerimiz?kategori=yazilim-hizmetleri", "label": "Yazılım Hizmetleri" }
+        {
+          "to": "/hizmetlerimiz?kategori=yazilim-hizmetleri",
+          "label": "Yazılım Hizmetleri"
+        }
       ]
     },
-    { "to": "/yardim-destek", "label": "Yardım & Destek" },
-    { "to": "/iletisim", "label": "İletişim" }
+    {
+      "to": "/yardim-destek",
+      "label": "Yardım & Destek"
+    },
+    {
+      "to": "/iletisim",
+      "label": "İletişim"
+    }
   ],
   "topBar": {
     "leftLabel": "Avantajlı Paket",
-    "features": ["Sosyal Medya", "Web Sitesi", "Drone ve Kamera Çekimleri"],
-    "ctaLabel": "Kampanyayı Görüntüle",
-    "ctaTo": "/iletisim",
+    "features": [
+      "Sosyal Medya",
+      "Web Sitesi",
+      "Drone ve Kamera Çekimleri"
+    ],
+    "ctaLabel": "TIKLA VE YAZ",
+    "ctaTo": "https://wa.me/905062417735",
     "closeAriaLabel": "Kampanya barını kapat",
     "openAriaLabel": "Kampanya barını aç",
     "fabLabel": "Kampanya"

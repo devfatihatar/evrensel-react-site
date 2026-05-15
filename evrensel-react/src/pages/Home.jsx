@@ -8,7 +8,6 @@ import seoData from "../data/seoData.json"
 import homeSliderData from "../data/homeSliderData.json"
 import { resolveImage } from "../utils/imageResolver"
 
-const HOME_SLIDE_DURATION_MS = 6300
 const homeSeo = seoData.home
 const heroHighlights = homeSliderData.highlights.map((item) => ({
   ...item,
@@ -20,19 +19,6 @@ export default function Home() {
   const homeRef = useRef(null)
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
   const [isBlueTheme, setIsBlueTheme] = useState(false)
-  const [highlightCounts, setHighlightCounts] = useState(() =>
-    Object.fromEntries(heroHighlights.map((item) => [item.key, 0]))
-  )
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveSlideIndex((current) => (current + 1) % homeSliderData.slides.length)
-    }, HOME_SLIDE_DURATION_MS)
-
-    return () => {
-      window.clearInterval(timer)
-    }
-  }, [])
 
   useEffect(() => {
     document.body.classList.toggle("home-theme-blue", isBlueTheme)
@@ -43,38 +29,20 @@ export default function Home() {
   }, [isBlueTheme])
 
   useEffect(() => {
-    let rafId = 0
-    const duration = 2200
-    const startTime = performance.now()
-
-    const tick = (now) => {
-      const progress = Math.min(1, (now - startTime) / duration)
-      const eased = 1 - Math.pow(1 - progress, 4)
-
-      setHighlightCounts(
-        Object.fromEntries(
-          heroHighlights.map((item) => [item.key, Math.round(item.value * eased)])
-        )
-      )
-
-      if (progress < 1) {
-        rafId = window.requestAnimationFrame(tick)
-      }
-    }
-
-    rafId = window.requestAnimationFrame(tick)
+    const slideTimer = window.setTimeout(() => {
+      setActiveSlideIndex((currentIndex) => (currentIndex + 1) % slides.length)
+    }, 4200)
 
     return () => {
-      if (rafId) window.cancelAnimationFrame(rafId)
+      window.clearTimeout(slideTimer)
     }
-  }, [])
+  }, [activeSlideIndex, slides.length])
 
   useEffect(() => {
     const root = homeRef.current
     if (!root) return
 
     const items = root.querySelectorAll(".reveal-on-scroll")
-    const sections = Array.from(root.querySelectorAll(":scope > section"))
 
     const revealObserver = new IntersectionObserver(
       (entries) => {
@@ -88,51 +56,10 @@ export default function Home() {
       { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
     )
 
-    let rafId = 0
-
-    const applySectionFocus = () => {
-      if (!sections.length) return
-
-      const targetY = window.innerHeight * 0.52
-      let active = sections[0]
-      let minDist = Number.POSITIVE_INFINITY
-
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect()
-        const centerY = rect.top + rect.height / 2
-        const dist = Math.abs(centerY - targetY)
-        if (dist < minDist) {
-          minDist = dist
-          active = section
-        }
-      })
-
-      root.classList.add("has-section-focus")
-      sections.forEach((section) => {
-        const isActive = section === active
-        section.classList.toggle("is-active-section", isActive)
-        section.classList.toggle("is-dim-section", !isActive)
-      })
-    }
-
-    const onScrollOrResize = () => {
-      if (rafId) return
-      rafId = window.requestAnimationFrame(() => {
-        applySectionFocus()
-        rafId = 0
-      })
-    }
-
     items.forEach((item) => revealObserver.observe(item))
-    applySectionFocus()
-    window.addEventListener("scroll", onScrollOrResize, { passive: true })
-    window.addEventListener("resize", onScrollOrResize)
 
     return () => {
       revealObserver.disconnect()
-      window.removeEventListener("scroll", onScrollOrResize)
-      window.removeEventListener("resize", onScrollOrResize)
-      if (rafId) window.cancelAnimationFrame(rafId)
     }
   }, [])
 
@@ -163,17 +90,13 @@ export default function Home() {
 
         <section className="home-slider section reveal-on-scroll reveal-right">
           <div className="container">
-            <div
-              className="home-slider__frame"
-              style={{ "--home-slider-duration": `${HOME_SLIDE_DURATION_MS}ms` }}
-            >
+            <div className="home-slider__frame">
               <img
                 src={resolveImage(homeSliderData.backgroundImagePath)}
                 alt={homeSliderData.backgroundImageAlt}
                 className="home-slider__image"
                 loading="eager"
                 decoding="async"
-                fetchPriority="high"
               />
               <div className="home-slider__slide is-active" key={currentSlide.title}>
                 <div className="home-slider__overlay home-slider__overlay-stack">
@@ -218,8 +141,8 @@ export default function Home() {
                       />
                     </div>
                     <div className="home-page__rocket-copy">
-                      <strong>{`${highlightCounts[item.key] ?? 0}${item.suffix ?? ""}`}</strong>
                       <span>{item.label}</span>
+                      <small>{item.description}</small>
                     </div>
                   </div>
                 ))}

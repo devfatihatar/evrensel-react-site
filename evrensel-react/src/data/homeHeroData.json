@@ -7,21 +7,47 @@
   "secondaryButton": "Hizmetlerimizi İncele",
   "servicesHeading": "Hizmetlerimiz",
   "services": [
-    { "label": "Web tasarım ve kurumsal site geliştirme", "href": "/web-tasarim" },
-    { "label": "E-ticaret altyapısı ve dijital dönüşüm çözümleri", "href": "/hizmetlerimiz" },
-    { "label": "Bilgisayar, donanım ve teknik servis desteği", "href": "/donanim" },
-    { "label": "Sosyal medya yönetimi ve dijital iletişim", "href": "/hizmetlerimiz" },
-    { "label": "Güvenlik, ağ ve sistem kurulumu", "href": "/donanim" },
-    { "label": "Personel takip ve kurumsal otomasyon çözümleri", "href": "/yardim-destek" }
+    {
+      "label": "Web tasarım ve kurumsal site geliştirme",
+      "href": "/web-tasarim"
+    },
+    {
+      "label": "E-ticaret altyapısı ve dijital dönüşüm çözümleri",
+      "href": "/hizmetlerimiz"
+    },
+    {
+      "label": "Bilgisayar, donanım ve teknik servis desteği",
+      "href": "/donanim"
+    },
+    {
+      "label": "Sosyal medya yönetimi ve dijital iletişim",
+      "href": "/hizmetlerimiz"
+    },
+    {
+      "label": "Güvenlik, ağ ve sistem kurulumu",
+      "href": "/donanim"
+    },
+    {
+      "label": "Personel takip ve kurumsal otomasyon çözümleri",
+      "href": "/yardim-destek"
+    }
   ],
-  "trustBadges": ["15+ yıl deneyim", "250+ tamamlanan proje", "Hafta içi canlı destek"],
+  "trustBadges": [
+    "15+ yıl deneyim",
+    "250+ tamamlanan proje",
+    "Hafta içi canlı destek"
+  ],
   "imageAriaLabel": "Görsel alanı",
   "imageAlt": "Teknik ekip çalışma görseli",
   "imagePath": "sliders/slider1.webp",
-  "serviceImagePaths": ["sliders/slider1.jpg", "sliders/slider2.png", "sliders/slider3.jpg"],
+  "serviceImagePaths": [
+    "sliders/slider1.jpg",
+    "sliders/slider2.png",
+    "sliders/slider3.jpg"
+  ],
   "serviceImagesAriaLabel": "Hizmet görselleri",
   "serviceImageDotAriaPrefix": "Görsel",
-  "serviceLinkCta": "Sayfaya git",
+  "serviceLinkCta": "Bilgi al",
   "imagePlaceholderTitle": "Canlı Operasyon Desteği",
   "imagePlaceholderHint": "Sistem, ağ ve destek süreçlerini tek panelden yönetiyoruz."
 }

@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import homeHeroData from "../../data/homeHeroData.json"
-import { resolveImage, resolveImageList } from "../../utils/imageResolver"
+import { resolveImage } from "../../utils/imageResolver"
 
 const {
   eyebrow,
@@ -10,9 +9,6 @@ const {
   imageAriaLabel,
   imageAlt,
   imagePath,
-  serviceImagePaths,
-  serviceImagesAriaLabel,
-  serviceImageDotAriaPrefix,
   serviceLinkCta,
   servicesHeading,
   services,
@@ -20,18 +16,6 @@ const {
 
 export default function Hero() {
   const heroVisual = resolveImage(imagePath)
-  const serviceVisuals = resolveImageList(serviceImagePaths)
-  const [activeServiceVisual, setActiveServiceVisual] = useState(0)
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveServiceVisual((current) => (current + 1) % serviceVisuals.length)
-    }, 3200)
-
-    return () => {
-      window.clearInterval(timer)
-    }
-  }, [serviceVisuals.length])
 
   return (
     <section className="hero section reveal-on-scroll reveal-right">
@@ -58,37 +42,6 @@ export default function Hero() {
         </div>
 
         <div className="hero__services">
-          <div className="hero__services-media" aria-label={serviceImagesAriaLabel}>
-            {serviceVisuals.map((visualSrc, index) => (
-              <div
-                className={`hero__services-media-item ${activeServiceVisual === index ? "is-active" : ""}`.trim()}
-                key={visualSrc}
-              >
-                <img
-                  src={visualSrc}
-                  alt=""
-                  className="hero__services-media-image"
-                  aria-hidden="true"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <span className="hero__services-media-badge">0{index + 1}</span>
-              </div>
-            ))}
-
-            <div className="hero__services-media-dots" aria-label="Hizmet gorseli secimi">
-              {serviceVisuals.map((visualSrc, index) => (
-                <button
-                  key={`${visualSrc}-dot`}
-                  type="button"
-                  className={`hero__services-media-dot ${activeServiceVisual === index ? "is-active" : ""}`.trim()}
-                  onClick={() => setActiveServiceVisual(index)}
-                  aria-label={`${serviceImageDotAriaPrefix} ${index + 1}`}
-                />
-              ))}
-            </div>
-          </div>
-
           <div className="hero__services-content">
             <p className="hero__services-title">{servicesHeading}</p>
             <div className="hero__services-list" role="list" aria-label={servicesHeading}>

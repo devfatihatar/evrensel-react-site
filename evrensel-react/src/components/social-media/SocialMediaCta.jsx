@@ -10,9 +10,8 @@ export default function SocialMediaCta({ cta }) {
           <p>{cta.text}</p>
 
           <div className="social-media-cta__actions">
-            <Button to="/iletisim">{cta.primaryButton}</Button>
-            <Button to="/iletisim" variant="secondary">
-              {cta.secondaryButton}
+            <Button to="/iletisim" className="social-media-cta__primary-btn">
+              {cta.primaryButton}
             </Button>
           </div>
         </div>

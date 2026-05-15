@@ -3,6 +3,7 @@
 
 .hardware-page {
   --hardware-header-offset: 144px;
+  --section-gap: 40px;
   min-height: 100svh;
   padding-top: 0;
   position: relative;
@@ -38,7 +39,7 @@
     width: clamp(180px, 22vw, 360px);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    filter: blur(2px);
+    filter: none;
     pointer-events: none;
     z-index: 0;
     opacity: 0.34;
@@ -49,14 +50,14 @@
     left: clamp(-60px, -5vw, -20px);
     top: clamp(110px, 18vh, 220px);
     background: radial-gradient(circle, rgba(137, 34, 57, 0.34) 0%, rgba(137, 34, 57, 0) 68%);
-    animation: hardwareBlobDriftLeft 24s ease-in-out infinite alternate;
+    animation: none;
   }
 
   &::after {
     right: clamp(-70px, -6vw, -24px);
     top: clamp(220px, 34vh, 460px);
     background: radial-gradient(circle, rgba(183, 58, 48, 0.32) 0%, rgba(183, 58, 48, 0) 70%);
-    animation: hardwareBlobDriftRight 28s ease-in-out infinite alternate;
+    animation: none;
   }
 
   > .section {
@@ -64,11 +65,78 @@
     isolation: isolate;
     opacity: 1;
     transform: none;
+    --section-bg: radial-gradient(circle at 32% 30%, rgba($color-primary, 0.12), transparent 55%);
+
+    > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 10px 3% auto;
+      height: min(55%, 260px);
+      border-radius: $radius-lg;
+      background: var(--section-bg);
+      opacity: 0.16;
+      transform: scale(0.98);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &.is-visible::after {
+      opacity: 0.36;
+      transform: scale(1);
+    }
+  }
+
+  > .section:not(:first-of-type) {
+    margin-top: var(--section-gap);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: calc(var(--section-gap) * -0.5);
+      width: min(532px, calc(100% - 50px));
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba($color-primary, 0.48) 16%,
+        rgba($color-accent, 0.56) 50%,
+        rgba($color-primary, 0.48) 84%,
+        transparent 100%
+      );
+      box-shadow: 0 0 8px rgba($color-primary, 0.16);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 3;
+    }
+  }
+
+  > .hardware-page__services {
+    margin-top: clamp(72px, 7vw, 110px);
   }
 
   &__services {
-    margin-top: clamp(72px, 7vw, 110px);
+    --section-bg: radial-gradient(circle at 18% 38%, rgba($color-primary, 0.16), transparent 58%);
     padding-top: 0;
+  }
+
+  &__process {
+    --section-bg: radial-gradient(circle at 78% 34%, rgba($color-accent, 0.16), transparent 58%);
+  }
+
+  &__deliverables {
+    --section-bg: radial-gradient(circle at 22% 48%, rgba($color-primary, 0.14), transparent 60%);
+  }
+
+  &__cases {
+    --section-bg: radial-gradient(circle at 72% 42%, rgba($color-primary, 0.16), transparent 58%);
   }
 
   &__services,
@@ -101,7 +169,7 @@
     box-shadow:
       0 30px 70px rgba(20, 10, 12, 0.22),
       inset 0 1px 0 rgba($color-white, 0.06);
-    backdrop-filter: blur(12px);
+    backdrop-filter: none;
     overflow: hidden;
 
     &::before {
@@ -383,13 +451,15 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(8, 8, 10, 0.72) 0%,
-        rgba(8, 8, 10, 0.5) 28%,
-        rgba(8, 8, 10, 0.24) 56%,
-        rgba(8, 8, 10, 0.12) 100%
-      );
+      background:
+        radial-gradient(circle at 38% 42%, rgba(8, 8, 10, 0.36) 0%, rgba(8, 8, 10, 0) 42%),
+        linear-gradient(
+          90deg,
+          rgba(8, 8, 10, 0.78) 0%,
+          rgba(8, 8, 10, 0.58) 30%,
+          rgba(8, 8, 10, 0.34) 58%,
+          rgba(8, 8, 10, 0.16) 100%
+        );
       pointer-events: none;
     }
   }
@@ -429,7 +499,7 @@
     width: min(1080px, 100%);
     padding: clamp(20px, 3vw, 28px) clamp(18px, 2.4vw, 24px);
     margin-left: clamp(18px, 5vw, 72px);
-    animation: homeSliderCopyFloat 5.2s ease-in-out infinite;
+    animation: none;
   }
 
   &__content {
@@ -437,9 +507,19 @@
     padding: 0;
     justify-self: start;
     align-self: center;
-    transform: translateY(28px);
+    transform: none;
     margin-left: calc(clamp(-46px, -3vw, -18px) - 170px);
     text-align: left;
+  }
+
+  &__content.homepage-shared-header {
+    h1 {
+      color: $color-white !important;
+    }
+
+    .hardware-hero__lead {
+      color: rgba($color-white, 0.95) !important;
+    }
   }
 
   h1 {
@@ -462,8 +542,9 @@
     font-size: clamp(18px, 1.45vw, 24px);
     line-height: 1.72;
     text-shadow:
-      0 18px 36px rgba(10, 8, 12, 0.32),
-      0 6px 16px rgba(10, 8, 12, 0.24);
+      0 22px 42px rgba(10, 8, 12, 0.58),
+      0 10px 22px rgba(10, 8, 12, 0.48),
+      0 2px 8px rgba(10, 8, 12, 0.4);
   }
 
   &__actions {
@@ -476,7 +557,7 @@
     display: flex;
     justify-content: flex-end;
     align-self: center;
-    transform: translate(60px, 28px);
+    transform: translateX(60px);
     padding-top: clamp(8px, 1.5vw, 16px);
 
     .hardware-hero__highlights {
@@ -500,7 +581,7 @@
     background: linear-gradient(145deg, rgba($color-white, 0.16), rgba($color-white, 0.08));
     border: 1px solid rgba($color-white, 0.2);
     box-shadow: 0 14px 32px rgba(38, 14, 18, 0.16);
-    backdrop-filter: blur(10px);
+    backdrop-filter: none;
   }
 
   &__highlight-visual {
@@ -727,5 +808,81 @@
         justify-content: center;
       }
     }
+  }
+}
+
+@include respond(sm) {
+  .hardware-main-visual {
+    &__frame,
+    &__image {
+      min-height: calc(620px + var(--hardware-header-offset));
+    }
+  }
+
+  .hardware-hero {
+    &__inner {
+      padding: 18px 14px 22px;
+    }
+
+    h1 {
+      max-width: 12ch;
+      font-size: clamp(30px, 11vw, 38px);
+    }
+
+    &__lead {
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    &__highlight {
+      min-height: auto;
+      gap: 12px;
+    }
+
+    &__highlight-visual {
+      width: 58px;
+      height: 58px;
+      flex-basis: 58px;
+    }
+  }
+}
+
+.hardware-page {
+  .hardware-hero__content,
+  &__section-header,
+  &__cta-content {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .hardware-hero__content h1,
+  .hardware-hero__lead,
+  &__section-header h2,
+  &__section-header p,
+  &__cta-content h2,
+  &__cta-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hardware-hero__actions,
+  &__cta-actions {
+    justify-content: center;
+  }
+
+  .hardware-hero__aside,
+  &__services-grid,
+  &__process-grid,
+  &__cases-grid,
+  &__deliverables-list {
+    justify-items: center;
+  }
+
+  .hardware-hero__highlight,
+  &__service-card,
+  &__process-card,
+  &__case-card,
+  &__deliverables-list li {
+    width: 100%;
   }
 }

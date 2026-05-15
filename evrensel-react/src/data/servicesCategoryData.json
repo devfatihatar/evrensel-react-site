@@ -2,85 +2,521 @@
   {
     "slug": "internet-hizmetleri",
     "label": "İnternet Hizmetleri",
-    "eyebrow": "Kategori",
-    "title": "İnternet tarafındaki görünürlük ve erişim ihtiyaçları",
-    "description": "Web sitesi, alan adı, hosting, kurumsal e-posta ve temel dijital görünürlük başlıklarını birlikte planlıyoruz.",
+    "eyebrow": "",
+    "title": "İnternet Hizmetleri",
+    "description": "Antalya'nın hızlı gelişen yapısına ayak uydurarak \"kısa sürede, hızlı çözüm\" prensibi ile Web Sitelerinizi tasarlıyoruz. Web tasarım çalışmalarımızda özgün olmaya, işinizi iyi ifade etmeye, kullanımının kolay olmasına dikkat ediyoruz.",
     "items": [
       "Kurumsal web sitesi planlama",
       "Alan adı, hosting ve e-posta yönlendirme",
       "SEO uyumlu teknik kurulum",
       "Google harita ve temel görünürlük düzeni"
     ],
-    "relatedServices": ["web-tasarimi", "yardim-destek"]
+    "relatedServices": [
+      "web-tasarimi",
+      "yardim-destek"
+    ],
+    "paragraphs": [
+      "Sitenizi teknik analizin yanı sıra; Google tarafından sektörünüze özel önerilerle tasarlıyoruz. Metin editörümüz ile sitenizin içeriklerini siz yorulmadan tamamlıyoruz.",
+      "Müşterileriniz sitenize girdiklerinde karışık menüler ve başlıklar içerisinde kaybolmak yerine hızlı ve kolayca istediklerine ulaşabiliyorlar."
+    ],
+    "freeNote": {
+      "title": "Siteniz bittikten sonra",
+      "items": [
+        "güncellemeden",
+        "içerik girmekten",
+        "bakımından"
+      ],
+      "suffix": "ücret almıyoruz"
+    },
+    "groups": [
+      {
+        "title": "Web Tasarım",
+        "items": [
+          "Kullanım Kolaylığı Tasarımı",
+          "Yönetici Arayüzü ve Yönetim Paneli",
+          "Rakip Analizi ve Örnek İncelemeleri",
+          "Google ile Kurumsal Analiz",
+          "Dijital Trendlere Uygun Tasarım",
+          "Profesyonel Telifsiz Görseller",
+          "Kullanımı Kolay İçerik Yönetim Sistemi",
+          "Kolaylıkla Genişletilebilir Alt Yapı",
+          "Easy Builder ile Tüm Cihazlara Uyumlu Tasarım"
+        ]
+      },
+      {
+        "title": "E-Ticaret Sitesi",
+        "items": [
+          "B2C, E-Ticaret Uygulaması",
+          "1 Günde Teslim",
+          "Banka ve Aracı Kurum Sanal Pos Entegrasyonu",
+          "Kolay Ürün ve Kategori Ekleme",
+          "Özel ve Değiştirilebilir Tasarım",
+          "Kolay Sipariş Takibi",
+          "Genişletilebilir Alt Yapı",
+          "Otomatik ve Kolay Seo Alt Yapısı",
+          "Sınırsız Ürün ve Kategori",
+          "Çok Dilli Entegrasyon"
+        ]
+      },
+      {
+        "title": "Alan Adı Tescili ve Barındırma Hizmetleri",
+        "items": [
+          "com, net, org ve com.tr Alan Adı Tescili",
+          "Yurtdışı Alan Adı Tescili",
+          "Aero Alan Adı Tescili",
+          "Bireysel ve Kurumsal Barındırma Hizmeti",
+          "Cloud ve VPS Sunucu Kiralama",
+          "Joomla, Wordpress Gibi Evrensel Altyapılara Uyumluluk",
+          "Çift Güvenlik Katmanlı Kurumsal E-Posta Hizmeti",
+          "Profesyonel DNS Yönetimi",
+          "Whois Kimlik Koruma",
+          "SSL Güvenlik Sertifikası",
+          "Antispam ve Antivirüs Koruması"
+        ]
+      },
+      {
+        "title": "Sosyal Medya ve Google Reklamları",
+        "items": [
+          "Facebook, Instagram, Youtube ve Google Business Sosyal Medya Takibi",
+          "Sosyal Medya ve Google Reklamları",
+          "Rakip Analizi ve Etkileşim",
+          "Fotoğraf ve Video Çekimi",
+          "Çekiliş ve Kampanya Takibi",
+          "Optimizasyon ve Raporlama",
+          "Marka Bilinirliği ve Etkileşim"
+        ]
+      }
+    ]
   },
   {
     "slug": "bilisim-hizmetleri",
     "label": "Bilişim Hizmetleri",
-    "eyebrow": "Kategori",
-    "title": "İşletmenin günlük teknoloji düzenini yöneten hizmetler",
-    "description": "Bilgisayar, ağ, yazıcı, kullanıcı hesabı ve teknik destek ihtiyaçlarını işletme akışını aksatmadan ele alıyoruz.",
+    "eyebrow": "",
+    "title": "Bilişim Hizmetleri",
+    "description": "Bilgisayar satış, servis, tamir; ağ, kablosuz sistemler, kablolama; kurumsal bakım anlaşmaları, antivirüs ve güvenlik duvarı, yazıcı ve benzeri çevre birimleri, notebook tamiri, güvenlik sistemleri, personel takip ve geçiş kontrol sistemleri satış ve entegrasyonunu bünyemizde sunuyoruz.",
     "items": [
-      "Bilgisayar ve çevre birimi kurulumu",
-      "Ağ ve ofis altyapısı düzenleme",
-      "Uzaktan ve yerinde teknik destek",
-      "Bakım, kontrol ve iyileştirme önerileri"
+      "bilgisayar",
+      "bakım anlaşması",
+      "notebook",
+      "ağ/kablosuz",
+      "güvenlik"
     ],
-    "relatedServices": ["donanim-altyapisi", "yardim-destek"]
+    "relatedServices": [
+      "donanim-altyapisi",
+      "yardim-destek"
+    ],
+    "paragraphs": [],
+    "freeNote": {
+      "title": "Bilişim alanında",
+      "items": [
+        "bilgisayar",
+        "bakım anlaşması",
+        "notebook",
+        "ağ/kablosuz",
+        "güvenlik"
+      ],
+      "suffix": "işleri yapıyoruz"
+    },
+    "groups": [
+      {
+        "title": "Bilgisayar",
+        "items": [
+          "Bilgisayar Satış ve Servis",
+          "Kurumsal Bakım Anlaşması",
+          "Notebook Tamir ve Yedek Parça",
+          "Server Kurulum ve Yapılandırma",
+          "Yazıcı ve Çevre Birimleri",
+          "Güvenlik Duvarı/Firewall",
+          "Antivirüs Entegrasyonu",
+          "Yedekleme ve Veri Güvenliği"
+        ]
+      },
+      {
+        "title": "Network&Ağ Sistemleri",
+        "items": [
+          "Kablolu Ağ Sistemleri",
+          "Kablosuz Ağ Sistemleri",
+          "Noktadan Noktaya Kablosuz Veri Aktarımı",
+          "Cat5, Cat6 ve Fiber Altyapı",
+          "Access Point Kablosuz Ağ Genişletme",
+          "Site, Otel, Apartman Wifi Sistemleri",
+          "Güvenlik Duvarı (Firewall)",
+          "Intranet/Extranet Dosya Paylaşımı",
+          "Kablolama"
+        ]
+      },
+      {
+        "title": "Kurumsal Hizmetler",
+        "items": [
+          "Periyodik Bakım Anlaşmaları",
+          "Sistem Odası Kurulumu ve Bakımı",
+          "Sistem Analizi",
+          "Dosya ve Veritabanı Yedekleme",
+          "Güvenlik Duvarı, Ağ Koruma",
+          "Güvenlik Katmanlı Dosya Paylaşım Sistemi",
+          "Antivirus Hizmetleri, Güncelleme, Tarama ve Teknik Destek İşlemleri",
+          "Active Directory Kurulumu ve Yapılandırma",
+          "Local, Uzak ve Cloud Yedekleme",
+          "Server Kurulumu",
+          "Lisans Kontrolü ve Lisanslama"
+        ]
+      },
+      {
+        "title": "Güvenlik, Personel ve Geçiş Kontrol",
+        "items": [
+          "Güvenlik Kamera Sistemleri",
+          "Personel Devam Kontrol ve Takip Sistemleri",
+          "Parmak İzi, Şifre, Kart, Yüz Okuma Sistemleri",
+          "Mağaza Ürün Koruma ve Alarm Sistemleri",
+          "Turnike, Kapı ve Bariyer Sistemleri",
+          "Optimizasyon ve Raporlama",
+          "Marka Bilinirliği ve Etkileşim",
+          "Öğrenci Kart Sistemleri",
+          "Ön Ödeme Kart Sistemleri"
+        ]
+      }
+    ]
   },
   {
     "slug": "grafik-tasarim",
     "label": "Grafik & Tasarım",
-    "eyebrow": "Kategori",
-    "title": "Markanın dijital yüzünü düzenleyen tasarım desteği",
-    "description": "Web arayüzleri, sosyal medya görselleri ve kurumsal kullanım alanları için tutarlı bir görsel dil oluşturuyoruz.",
+    "eyebrow": "",
+    "title": "Grafik&Tasarım",
+    "description": "Facebook, Instagram, Youtube ve Google Business sayfalarınızı takip ediyor, rakip analizi ve etkileşim için çalışıyoruz. Aynı zamanda sosyal medya platformları ve Google üzerinden reklamlarınızı yönetiyoruz.",
     "items": [
-      "Web arayüz tasarımı",
-      "Sosyal medya görsel setleri",
-      "Kurumsal banner ve kampanya görselleri",
-      "Temel marka uyarlama çalışmaları"
+      "sosyal medya takibi",
+      "internet reklamları",
+      "kurumsal kimlik çalışması",
+      "katalog/broşür/logo"
     ],
-    "relatedServices": ["web-tasarimi"]
+    "relatedServices": [
+      "web-tasarimi"
+    ],
+    "paragraphs": [],
+    "freeNote": {
+      "title": "Grafik ve sosyal medya alanında",
+      "items": [
+        "sosyal medya takibi",
+        "internet reklamları",
+        "kurumsal kimlik çalışması",
+        "katalog/broşür/logo"
+      ],
+      "suffix": "çalışmaları yapıyoruz."
+    },
+    "groups": [
+      {
+        "title": "Sosyal Medya Takibi",
+        "items": [
+          "Facebook ve Instagram Takibi",
+          "Youtube Kanal Oluşturma ve Takibi",
+          "Google Kurumsal Sayfa Yönetimi",
+          "Yorum ve Kriz Yönetimi",
+          "Periyodik Paylaşımlar",
+          "Etkileşim, Kitle Oluşturma",
+          "Kurumsal Sayfa Oluşturma ve Entegrasyon"
+        ]
+      },
+      {
+        "title": "Kurumsal Kimlik Çalışması",
+        "items": [
+          "Logo Tasarımı",
+          "Kurumsal Renk Konsepti",
+          "Kurumsal Materyaller",
+          "Resmi Evrak Tasarımı ve Basımı",
+          "Şirket Materyalleri Tasarımı ve Basımı",
+          "Afiş, Branda, Billboard Tasarımı",
+          "İnteraktif TV"
+        ]
+      },
+      {
+        "title": "Matbaa İşleri",
+        "items": [
+          "Kartvizit Basımı",
+          "Fatura, Tahsilat, Tediye Makbuzu",
+          "Zarf, Antetli Kağıt Basımı",
+          "Katalog Tasarımı ve Basımı",
+          "Broşür ve El İlanı Basımı",
+          "Promosyon Ürünleri",
+          "Restaurant&Cafe Ürünleri",
+          "Tek Kullanımlık Ürünler",
+          "Roll-up, Afiş, Branda Baskı",
+          "İç ve Dış Mekan Baskı"
+        ]
+      },
+      {
+        "title": "İnternet Reklamları",
+        "items": [
+          "Google Adwords Reklamları",
+          "Facebook ve Instagram Reklamları",
+          "Youtube Reklamları",
+          "Reklam Takibi ve Analizi",
+          "Detaylı Raporlama",
+          "Rakip Analizi",
+          "Reklam Rotasyonu"
+        ]
+      }
+    ]
   },
   {
     "slug": "kurumsal-hizmetler",
     "label": "Kurumsal Hizmetler",
-    "eyebrow": "Kategori",
-    "title": "Kurumsal işleyişi sadeleştiren bütünlüklü destek",
-    "description": "Web, altyapı ve destek başlıklarını tek merkezden planlayarak daha takip edilebilir bir hizmet modeli kuruyoruz.",
+    "eyebrow": "",
+    "title": "Kurumsal Hizmetler",
+    "description": "Firma ve kurumunuzun periyodik bakımlarını üstleniyoruz. Sistem odası kurulumu, güvenlik duvarı, server kurulumu, yedekleme ve lisanslama hizmetleri veriyoruz.",
     "items": [
-      "İhtiyaç analizi ve kapsam çıkarımı",
-      "Teknik süreç planlama",
-      "Kurumsal web ve altyapı koordinasyonu",
-      "Süreç sonrası destek ve bakım"
+      "periyodik bakım",
+      "lisanslama",
+      "güvenlik duvarı",
+      "server"
     ],
-    "relatedServices": ["web-tasarimi", "donanim-altyapisi", "yardim-destek"]
+    "relatedServices": [
+      "web-tasarimi",
+      "donanim-altyapisi",
+      "yardim-destek"
+    ],
+    "paragraphs": [
+      "Sistem destek hizmeti bütünleşik alınması gereken bir hizmettir. Bu nedenle sisteminizde oluşabilecek her türlü senaryoya karşı bilgili ve hazırlıklıyız. Bunun en büyük nedenlerinden bir tanesi tecrübeli ve Microsoft, IBM, HP, Comptia ve Lenovo sertifikalı mühendislerden oluşan, teknoloji ve ürünler doğrultusunda kendini sürekli geliştiren kadromuzdur. Bu sayede, sisteminiz ile ilgili tüm çözümleri kendi bünyemizde çözebiliyoruz. Dolayısı ile müşterilerimiz, bilgisayarcı firmaların sorunları birbirlerine yönlendirmesi neticesinde sorunun çözülememesi gibi bir durumla karşı karşıya kalmıyorlar.",
+      "Bakım anlaşması sayesinde sisteminizde meydana gelen arızalara hızla müdahale ediyoruz ve kısa süre içerisinde ekstra bir harcama gerekmeden çözüm üretiyoruz. Bakım anlaşmaları ile ilgili detayları öğrenmek için bizi arayabilirsiniz."
+    ],
+    "freeNote": {
+      "title": "Kurumsal hizmetlerde",
+      "items": [
+        "periyodik bakım",
+        "lisanslama",
+        "güvenlik duvarı",
+        "server"
+      ],
+      "suffix": "hizmetleri veriyoruz."
+    },
+    "groups": [
+      {
+        "title": "Periyodik Bakım",
+        "items": [
+          "Aylık, Yıllık ve Çağrı Üzerine Bakım Anlaşmaları",
+          "Periyodik Server ve Server Odası Bakımı",
+          "Periyodik Bilgisayar ve Yazdırma Sistemleri Bakımı",
+          "Periyodik Network Bakımı ve Testleri",
+          "Ana ve Alt Ürünlerin İç ve Dış Temizliği",
+          "Bağlantı Kontrolleri",
+          "Fonksiyon Testleri",
+          "Disk Temizleme",
+          "Virüs Kontrolü",
+          "Verimi Artırmaya Yönelik Ayarlamalar"
+        ]
+      },
+      {
+        "title": "Server Sistemleri",
+        "items": [
+          "Server Kurulum ve Yönetimi",
+          "Active Directory Kurulumu",
+          "Group Policy ile Gelişmiş Yetkilendirme",
+          "Detaylı Yetkilendirme ile Dosya Paylaşımı",
+          "Güvenlik Duvarı",
+          "Yedekleme Sistemleri",
+          "Sistem Odası Kurulumu",
+          "Uzak Bağlantı, VPN Bağlantıları",
+          "Sanallaştırma, VMWare, Microsoft Sanal Server"
+        ]
+      },
+      {
+        "title": "Lisanslama",
+        "items": [
+          "Microsoft Lisanslama",
+          "Bireysel ve Kurumsal Lisanslama",
+          "Adobe Ürünleri Lisanslama",
+          "Antivirüs Lisanslama",
+          "Lisans Kontrolü ve Envanter"
+        ]
+      },
+      {
+        "title": "Güvenlik",
+        "items": [
+          "Güvenlik Duvarı Kurma ve Yapılandırma",
+          "Antivirüs Hizmetleri",
+          "Departman Bazında Güvenlik Duvarı Yapılandırma",
+          "Ortak İnternet Güvenliği",
+          "Misafir Ağı",
+          "Ağ Güvenliği",
+          "Detaylı Yetkilendirme ile Dosya Erişimi"
+        ]
+      }
+    ]
   },
   {
     "slug": "guvenlik-personel-sistemleri",
     "label": "Güvenlik & Personel Sistemleri",
-    "eyebrow": "Kategori",
-    "title": "Güvenlik ve personel takip altyapılarına hazırlık",
-    "description": "Kamera, geçiş, personel takip ve ağ bağlantısı gerektiren sistemlerde altyapı tarafını planlı şekilde ele alıyoruz.",
+    "eyebrow": "",
+    "title": "Güvenlik&Personel Sistemleri",
+    "description": "Güvenlik kamera sistemleri, personel takip ve turnike geçiş sistemleri entegrasyonu yapıyoruz. Parmak izi sistemleri, ürün koruma, öğrenci ve ön ödemeli sistemler üzerinde çalışıyoruz.",
     "items": [
-      "Ağ ve bağlantı uygunluk kontrolü",
-      "Cihaz yerleşimi için altyapı planı",
-      "Personel takip sistemleri için teknik hazırlık",
-      "Kurulum sonrası test ve erişim kontrolleri"
+      "kamera",
+      "personel takip",
+      "turnike",
+      "kartlı geçiş",
+      "bekçi kontrol"
     ],
-    "relatedServices": ["donanim-altyapisi", "yardim-destek"]
+    "relatedServices": [
+      "donanim-altyapisi",
+      "yardim-destek"
+    ],
+    "paragraphs": [
+      "Evrensel Bilişim; güvenlik kamera, ürün güvenlik, geçiş kontrol, personel takip, turnike, kartlı geçiş sistemleri alanlarında hizmet vermektedir. Güvenlik kamera sistemlerinde kapalı devre/açık devre ve IP kamera sistemleri ile kablosuz görüntü aktarımı teknolojisi ile işyerlerinizin güvenliğini sağlıyoruz.",
+      "Aynı zamanda personel takip sistemi, parmak izi okuyucu, parmak izi okuma sistemleri, yüz tanıma sistemleri, pdks, turnike sistemi, bariyer sistemi, kapı tipi metal üst arama dedektörü, metal el dedektörü, kart yazıcı, mağaza ürün koruma sistemi, ogs ve hgs otopark geçiş antenleri, gece bekçisi tur kontrol sistemi, parmak izi okuma, turnike, kapı dedektörü, biyometrik sistemler, kartlı geçiş sistemi, elektronik kilit, elektrikli kilit ve otel kapı kilitleri de firmamız bünyesinde hizmeti verilen diğer alanlardır."
+    ],
+    "freeNote": {
+      "title": "Güvenlik alanında",
+      "items": [
+        "kamera",
+        "personel takip",
+        "turnike",
+        "kartlı geçiş",
+        "bekçi kontrol"
+      ],
+      "suffix": "işleri yapıyoruz"
+    },
+    "groups": [
+      {
+        "title": "Kamera Sistemleri",
+        "items": [
+          "Açık ve Kapalı Devre Kamera Sistemleri",
+          "IP Kamera",
+          "Kablosuz Kamera",
+          "Kablosuz Görüntü Aktarımı",
+          "Plaka Tanıma Sistemleri",
+          "Hibrit Kamera Sistemleri",
+          "Kamera Görüntü Veri Depolama"
+        ]
+      },
+      {
+        "title": "Personel Takip",
+        "items": [
+          "Parmak İzi, Şifre, Kartlı Geçiş",
+          "Personel Devam Kontrol Yazılımı",
+          "Kapı Açma Sistemleri",
+          "Yüz ve Retina Tanıma Sistemleri",
+          "Elektronik ve Manyetik Kilitler",
+          "Site, Otel, Apartman Kapı Açma",
+          "Bekçi Tur Kontrol ve Takip Yazılımı"
+        ]
+      },
+      {
+        "title": "Turnike, Kartlı Geçiş",
+        "items": [
+          "Kartlı/Kartsız Turnike Geçiş",
+          "Yemekhane Kontrol Sistemi",
+          "Ön Ödemeli Kart Sistemi",
+          "X-Ray Güvenlik Kapıları",
+          "Otopark Bariyer Sistemi",
+          "Otopark Hızlı Geçiş Sistemleri",
+          "Metal Üst Arama Dedektörleri",
+          "Üye ve Öğrenci Takip Sistemleri"
+        ]
+      },
+      {
+        "title": "Mağaza ve Ürün Koruma",
+        "items": [
+          "Ürün Alarm Etiketleri",
+          "Ürün Koruma Alarm Antenleri",
+          "Mağaza Güvenlik Kapı Sistemleri",
+          "Etiket Sökücüler"
+        ]
+      }
+    ]
   },
   {
     "slug": "yazilim-hizmetleri",
     "label": "Yazılım Hizmetleri",
-    "eyebrow": "Kategori",
-    "title": "İhtiyaca göre şekillenen web ve yazılım çözümleri",
-    "description": "Hazır kalıplar yerine işletmenin ihtiyacına göre yönetilebilir web arayüzleri ve dijital iş akışları geliştiriyoruz.",
+    "eyebrow": "",
+    "title": "Yazılım Hizmetleri",
+    "description": "Müşterilerimizden gelen istekleri hızlı bir şekilde karşılayıp, programlarımızı daha iyi hale getiriyoruz. Türkiye'nin önde gelen güzellik merkezleri, restoranları ve fabrikaları yazılımlarımızı kullanıyorlar.",
     "items": [
-      "Özel web arayüz geliştirme",
-      "İçerik yönetimi kurgusu",
-      "Form, talep ve iletişim akışları",
-      "Yayın sonrası geliştirme ve bakım"
+      "muhasebe",
+      "restaurant pos",
+      "e-ticaret",
+      "güzellik merkezi",
+      "doktor"
     ],
-    "relatedServices": ["web-tasarimi", "yardim-destek"]
+    "relatedServices": [
+      "web-tasarimi",
+      "yardim-destek"
+    ],
+    "paragraphs": [
+      "Bayisi olduğumuz paket programlar olan; bakım yönetim sistemi, restaurant ve cafe adisyon programı, güzellik merkezi programı, muhasebe entegrasyonlu e-ticaret programı, üretim ve mali müşavir yazılımları ile müşterilerimize hizmet veriyoruz."
+    ],
+    "freeNote": {
+      "title": "Yazılım alanında",
+      "items": [
+        "muhasebe",
+        "restaurant pos",
+        "e-ticaret",
+        "güzellik merkezi",
+        "doktor"
+      ],
+      "suffix": "paket programları satıyoruz."
+    },
+    "groups": [
+      {
+        "title": "Muhasebe Yazılımı",
+        "items": [
+          "Küçük ve Orta Ölçekli İşletmeler İçin Ön Muhasebe",
+          "Perakende Sektör İçin Sıcak Satış ve Hızlı Satış Entegrasyonu",
+          "Pazaryeri Entegrasyonu",
+          "Kargo Entegrasyonu",
+          "E-Ticaret B2C, B2B ve B2P Entegrasyonu",
+          "Stok, Cari, Fatura, Kasa, Banka, Üretim",
+          "E-Arşiv ve E-Fatura Entegrasyonu",
+          "E-Ticaret Bağlantılı Muhasebe Yazılımı"
+        ]
+      },
+      {
+        "title": "Restaurant Pos Yazılımı",
+        "items": [
+          "Kolay Sipariş Alma",
+          "Telefon ve Tablet Modülü",
+          "Stok, Üretim, Reçetelendirme",
+          "Canlı Sipariş İzleme",
+          "Patron Modülü İle Telefondan Satış Takip",
+          "Yemeksepeti, Getir, Trendyol Yemek Entegrasyonu",
+          "Caller-id İle Paket Sipariş",
+          "Cari Takip ve Sipariş",
+          "Çok Fonksiyonlu Yetkilendirme",
+          "Franchise Sistemine Uygun Altyapı",
+          "Merkez-Şube Entegrasyonu"
+        ]
+      },
+      {
+        "title": "Randevu&Hasta Takip Programı",
+        "items": [
+          "Gelişmiş Randevu Takip",
+          "Detaylı Kullanıcı Yetkilendirmesi",
+          "Merkez-Şube Entegrasyonu",
+          "Detaylı Raporlama",
+          "Bulut Sunucu Desteği",
+          "Mobil Uygulama İle Sipariş ve Salon Takibi",
+          "Detaylı Hasta Kartı",
+          "Hasta/Müşteri Gruplandırma",
+          "Özel İndirim ve Kupon Tanımı",
+          "Hemşire, Doktor, Diyetisyen veya Personel Tanımı",
+          "Sms Entegrasyonu"
+        ]
+      },
+      {
+        "title": "Bakım Yönetim Sistemi",
+        "items": [
+          "Makine Duruş Maliyetlerini En Aza İndirir",
+          "Bakım Hizmetlerini Periyodunda Takip Etmenizi Sağlar",
+          "İş Emri Atama ve Takibi Yapabilirsiniz",
+          "Stok ve Yedek Parça Takibi",
+          "Personel Tanımlama, Ekipman Oluşturma",
+          "Ekipleri Sınıflandırma",
+          "Depo ve Raf Sistemi",
+          "Kullanıcı Yetkilendirme",
+          "Kapsamlı Raporlama",
+          "Fiziksel Sayım",
+          "Etiket Yazdırma",
+          "Depolararası Transfer"
+        ]
+      }
+    ]
   }
 ]

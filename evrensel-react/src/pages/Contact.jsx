@@ -8,8 +8,8 @@ const contactSeo = seoData.contact
 
 export default function Contact() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Ana Sayfa", path: "/" },
-    { name: "İletişim", path: contactSeo.path },
+    { name: "Home", path: "/" },
+    { name: "Contact", path: contactSeo.path },
   ])
 
   return (
@@ -28,8 +28,8 @@ export default function Contact() {
             <div
               className="contact-page__split"
             >
-              <ContactReachUsPanel />
               <ContactCallUsPanel />
+              <ContactReachUsPanel />
             </div>
           </div>
         </section>

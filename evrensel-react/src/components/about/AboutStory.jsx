@@ -1,5 +1,4 @@
 import SectionTitle from "../shared/SectionTitle"
-import CountUpText from "../shared/CountUpText"
 
 export default function AboutStory({ story, timeline }) {
   return (
@@ -21,7 +20,7 @@ export default function AboutStory({ story, timeline }) {
           {timeline.map((item) => (
             <article key={`${item.year}-${item.title}`} className="about-page__timeline-item homepage-shared-card">
               <span className="about-page__timeline-year">
-                <CountUpText value={item.year} />
+                {item.year}
               </span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>

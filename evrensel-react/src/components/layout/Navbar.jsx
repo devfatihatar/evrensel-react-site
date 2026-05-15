@@ -2,14 +2,22 @@
 import { useEffect, useMemo, useRef, useState } from "react"
 import Button from "../shared/Button"
 import navbarData from "../../data/navbarData.json"
+import layoutData from "../../data/layoutData.json"
 import { resolveImage } from "../../utils/imageResolver"
+import { useLanguage } from "../../i18n/LanguageContext"
+import { availableLanguages } from "../../i18n/translations"
 
 const { links, topBar, brand, menuAriaLabel } = navbarData
+const { floatingContacts } = layoutData
+const whatsappIcon = resolveImage(floatingContacts.whatsapp.logoPath)
 
 export default function Navbar() {
   const location = useLocation()
+  const { lang, setLang } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isCampaignModalOpen, setIsCampaignModalOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [openSubmenuLabel, setOpenSubmenuLabel] = useState("")
   const isScrolledRef = useRef(false)
   const rafRef = useRef(0)
   const lastYRef = useRef(0)
@@ -26,6 +34,15 @@ export default function Navbar() {
     })
   }, [])
 
+  const mobileSocialLinks = useMemo(
+    () =>
+      floatingContacts.items.map((item) => ({
+        ...item,
+        logoSrc: resolveImage(item.logoPath),
+      })),
+    [],
+  )
+
   const isLinkActive = (linkTo) => {
     if (linkTo === "/hizmetlerimiz") {
       return location.pathname === "/hizmetlerimiz"
@@ -37,6 +54,18 @@ export default function Navbar() {
   useEffect(() => {
     const applyScrollState = () => {
       const y = window.scrollY
+
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        if (isScrolledRef.current) {
+          isScrolledRef.current = false
+          setIsScrolled(false)
+        }
+
+        lastYRef.current = y
+        rafRef.current = 0
+        return
+      }
+
       const wasScrolled = isScrolledRef.current
       const isGoingDown = y > lastYRef.current
       const isGoingUp = y < lastYRef.current
@@ -77,7 +106,9 @@ export default function Navbar() {
     }
   }, [])
 
-  const headerClasses = `navbar ${isScrolled ? "navbar--scrolled" : ""}`.trim()
+  const headerClasses = `navbar ${isScrolled ? "navbar--scrolled" : ""} ${
+    isMenuOpen ? "navbar--menu-open" : ""
+  }`.trim()
 
   const spacerClasses = `navbar-spacer ${isScrolled ? "navbar-spacer--scrolled" : ""}`.trim()
 
@@ -86,6 +117,19 @@ export default function Navbar() {
   const openCampaignModal = () => {
     setIsCampaignModalOpen(true)
   }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+    setOpenSubmenuLabel("")
+  }
+
+  useEffect(() => {
+    document.body.classList.toggle("is-mobile-menu-open", isMenuOpen)
+
+    return () => {
+      document.body.classList.remove("is-mobile-menu-open")
+    }
+  }, [isMenuOpen])
 
   return (
     <>
@@ -130,7 +174,20 @@ export default function Navbar() {
             </div>
 
             <div className="navbar__top-right">
-              <Button to={topBar.ctaTo} variant="secondary" className="navbar__top-cta">
+              <Button
+                to={topBar.ctaTo.startsWith("http") ? undefined : topBar.ctaTo}
+                href={topBar.ctaTo.startsWith("http") ? topBar.ctaTo : undefined}
+                variant="secondary"
+                className="navbar__top-cta"
+              >
+                <img
+                  src={whatsappIcon}
+                  alt=""
+                  className="navbar__top-cta-icon"
+                  aria-hidden="true"
+                  loading="lazy"
+                  decoding="async"
+                />
                 {topBar.ctaLabel}
               </Button>
             </div>
@@ -141,7 +198,7 @@ export default function Navbar() {
         <div className="navbar__main">
           <div className="container navbar__inner">
             <div className="navbar__main-left">
-              <NavLink to="/" className="navbar__brand">
+              <NavLink to="/" className="navbar__brand" onClick={closeMenu}>
                 <img
                   src={resolveImage(brand.logoPath)}
                   alt={brand.logoAlt}
@@ -150,20 +207,58 @@ export default function Navbar() {
                   decoding="async"
                 />
               </NavLink>
+              <div className="navbar__mobile-social" aria-label="Sosyal medya bağlantıları">
+                {mobileSocialLinks.map((item) => (
+                  <a
+                    key={item.key}
+                    className={`navbar__mobile-social-link navbar__mobile-social-link--${item.key}`.trim()}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={item.text}
+                  >
+                    <img
+                      src={item.logoSrc}
+                      alt=""
+                      className="navbar__mobile-social-image"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </a>
+                ))}
+              </div>
+              <button
+                type="button"
+                className="navbar__menu-toggle"
+                aria-label={isMenuOpen ? "Menüyü kapat" : "Menüyü aç"}
+                aria-controls="primary-navigation"
+                aria-expanded={isMenuOpen}
+                onClick={() => setIsMenuOpen((current) => !current)}
+              >
+                <span className="navbar__menu-toggle-line" aria-hidden="true" />
+                <span className="navbar__menu-toggle-line" aria-hidden="true" />
+                <span className="navbar__menu-toggle-line" aria-hidden="true" />
+              </button>
             </div>
 
             <div className="navbar__main-right">
-              <nav className="navbar__nav" aria-label={menuAriaLabel}>
+              <nav
+                id="primary-navigation"
+                className={`navbar__nav ${isMenuOpen ? "is-menu-open" : ""}`.trim()}
+                aria-label={menuAriaLabel}
+              >
                 <ul className="navbar__menu">
                   {uniqueLinks.map((link) => {
                     const hasChildren = Array.isArray(link.children) && link.children.length > 0
                     const parentActive = isLinkActive(link.to)
+                    const submenuOpen = openSubmenuLabel === link.label
 
                     if (!hasChildren) {
                       return (
                         <li key={`${link.to}-${link.label}`}>
                           <NavLink
                             to={link.to}
+                            onClick={closeMenu}
                             className={({ isActive }) =>
                               `navbar__link ${isActive ? "navbar__link--active" : ""}`.trim()
                             }
@@ -179,19 +274,36 @@ export default function Navbar() {
                         key={`${link.to}-${link.label}`}
                         className={`navbar__menu-item navbar__menu-item--has-dropdown ${
                           parentActive ? "is-active" : ""
+                        } ${submenuOpen ? "is-submenu-open" : ""
                         }`.trim()}
                       >
-                        <NavLink
-                          to={link.to}
-                          className={`navbar__link ${parentActive ? "navbar__link--active" : ""}`.trim()}
-                        >
-                          <span className="navbar__link-label">{link.label}</span>
-                          <span className="navbar__link-caret" aria-hidden="true">
-                            ▾
-                          </span>
-                        </NavLink>
+                        <div className="navbar__link-row">
+                          <NavLink
+                            to={link.to}
+                            onClick={closeMenu}
+                            className={`navbar__link ${parentActive ? "navbar__link--active" : ""}`.trim()}
+                          >
+                            <span className="navbar__link-label">{link.label}</span>
+                          </NavLink>
+                          <button
+                            type="button"
+                            className="navbar__submenu-toggle"
+                            aria-label={`${link.label} alt menüsünü ${submenuOpen ? "kapat" : "aç"}`}
+                            aria-expanded={submenuOpen}
+                            onClick={() => setOpenSubmenuLabel((current) => (current === link.label ? "" : link.label))}
+                          >
+                            <span className="navbar__link-caret" aria-hidden="true">
+                              ▾
+                            </span>
+                          </button>
+                        </div>
 
-                        <ul className="navbar__dropdown" aria-label={`${link.label} alt menü`}>
+                        <ul
+                          className={`navbar__dropdown ${
+                            submenuOpen ? "navbar__dropdown--mobile-open" : ""
+                          }`.trim()}
+                          aria-label={`${link.label} alt menü`}
+                        >
                           {link.children.map((child) => {
                             const childActive =
                               location.pathname === "/hizmetlerimiz" &&
@@ -201,6 +313,7 @@ export default function Navbar() {
                               <li key={`${child.to}-${child.label}`}>
                                 <NavLink
                                   to={child.to}
+                                  onClick={closeMenu}
                                   className={`navbar__dropdown-link ${
                                     childActive ? "navbar__dropdown-link--active" : ""
                                   }`.trim()}
@@ -216,6 +329,19 @@ export default function Navbar() {
                   })}
                 </ul>
               </nav>
+              <div className="navbar__language" aria-label="Dil seçimi">
+                {Object.entries(availableLanguages).map(([item, language]) => (
+                  <button
+                    key={item}
+                    type="button"
+                    className={`navbar__language-option ${lang === item ? "is-active" : ""}`.trim()}
+                    onClick={() => setLang(item)}
+                    aria-pressed={lang === item}
+                  >
+                    {language.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>

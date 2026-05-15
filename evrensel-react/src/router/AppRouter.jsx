@@ -6,7 +6,9 @@ import Footer from "../components/layout/Footer"
 import FloatingContacts from "../components/layout/FloatingContacts"
 import CookieBanner from "../components/layout/CookieBanner"
 import SiteSeo from "../components/seo/SiteSeo"
+import { LanguageProvider } from "../i18n/LanguageContext"
 import Home from "../pages/Home"
+import Contact from "../pages/Contact"
 import NotFound from "../pages/NotFound"
 
 const About = lazy(() => import("../pages/About"))
@@ -16,7 +18,6 @@ const Hardware = lazy(() => import("../pages/Hardware"))
 const Services = lazy(() => import("../pages/Services"))
 const ServiceDetail = lazy(() => import("../pages/ServiceDetail"))
 const Support = lazy(() => import("../pages/Support"))
-const Contact = lazy(() => import("../pages/Contact"))
 
 function RouterContent() {
   const location = useLocation()
@@ -75,7 +76,9 @@ function RouterContent() {
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      <RouterContent />
+      <LanguageProvider>
+        <RouterContent />
+      </LanguageProvider>
     </BrowserRouter>
   )
 }

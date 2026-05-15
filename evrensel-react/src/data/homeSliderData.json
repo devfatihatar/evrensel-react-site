@@ -11,25 +11,22 @@
     {
       "key": "web",
       "imagePath": "sliders/homepagewebicon.png",
-      "value": 100,
-      "suffix": "+",
       "label": "Web Sitesi",
+      "description": "Kurumsal ve mobil uyumlu web deneyimleri",
       "modifier": "home-page__rocket--first"
     },
     {
       "key": "social",
-      "imagePath": "sliders/homepagesocialicon.png",
-      "value": 250,
-      "suffix": "+",
+      "imagePath": "sliders/homepagesocialicon-optimized.png",
       "label": "Sosyal Medya Tasarımı",
+      "description": "Marka diline uygun sosyal medya tasarımları",
       "modifier": "home-page__rocket--second"
     },
     {
       "key": "support",
       "imagePath": "sliders/homepageseoicon.png",
-      "value": 50,
-      "suffix": "+",
       "label": "SEO Yönetimi",
+      "description": "Arama görünürlüğü ve performans odaklı altyapı",
       "modifier": "home-page__rocket--third"
     }
   ],

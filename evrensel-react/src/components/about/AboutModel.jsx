@@ -1,5 +1,4 @@
 import SectionTitle from "../shared/SectionTitle"
-import CountUpText from "../shared/CountUpText"
 
 export default function AboutModel({ modelSection, workModel }) {
   return (
@@ -15,7 +14,7 @@ export default function AboutModel({ modelSection, workModel }) {
           {workModel.map((item) => (
             <article key={item.step} className="about-page__model-card homepage-shared-card">
               <span className="about-page__model-step">
-                <CountUpText value={item.step} />
+                {item.step}
               </span>
               <h3>{item.title}</h3>
               <p>{item.text}</p>

@@ -1,6 +1,5 @@
 import PageSeo from "../components/seo/PageSeo"
 import HardwareCasesSection from "../components/hardware/HardwareCasesSection"
-import HardwareCtaSection from "../components/hardware/HardwareCtaSection"
 import HardwareDeliverablesSection from "../components/hardware/HardwareDeliverablesSection"
 import HardwareHero from "../components/hardware/HardwareHero"
 import HardwareProcessSection from "../components/hardware/HardwareProcessSection"
@@ -21,15 +20,14 @@ const {
   deliverables,
   casesSection,
   useCases,
-  cta,
   assets,
 } = hardwareData
 const hardwareSeo = seoData.hardware
 
 export default function Hardware() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Ana Sayfa", path: "/" },
-    { name: "Donanım", path: hardwareSeo.path },
+    { name: "Home", path: "/" },
+    { name: "Hardware", path: hardwareSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({
@@ -61,7 +59,6 @@ export default function Hardware() {
           deliverables={deliverables}
         />
         <HardwareCasesSection casesSection={casesSection} useCases={useCases} />
-        <HardwareCtaSection cta={cta} />
       </main>
     </>
   )

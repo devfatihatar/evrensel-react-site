@@ -11,8 +11,8 @@
         "href": "tel:+905062417735"
       },
       {
-        "label": "info@evrenselbilisim.com",
-        "href": "mailto:info@evrenselbilisim.com"
+        "label": "mail@evrenselbilisim.net",
+        "href": "mailto:mail@evrenselbilisim.net"
       },
       {
         "label": "Hafta içi 09:00 - 18:30"
@@ -48,7 +48,7 @@
   },
   "floatingContacts": {
     "whatsapp": {
-      "href": "https://wa.me/905303665883",
+      "href": "https://wa.me/905062417735",
       "ariaLabel": "WhatsApp iletişime geç",
       "logoPath": "social-media-icon/wpicon.png"
     },
@@ -59,22 +59,22 @@
         "key": "instagram",
         "text": "Instagram",
         "handle": "@evrenselbilisim",
-        "logoPath": "social-media-icon/instagram.png",
-        "href": "https://www.instagram.com"
+        "logoPath": "social-media-icon/instagram-optimized.png",
+        "href": "https://www.instagram.com/evrenselbilisim/"
       },
       {
         "key": "google",
         "text": "Google",
         "handle": "google.com/maps",
         "logoPath": "social-media-icon/google.png",
-        "href": "https://www.google.com/maps"
+        "href": "https://share.google/Y3hWtA32F0gaLCsdC"
       },
       {
         "key": "facebook",
         "text": "Facebook",
         "handle": "/evrenselbilisim",
         "logoPath": "social-media-icon/facebook.png",
-        "href": "https://www.facebook.com"
+        "href": "https://www.facebook.com/evrenselbilisim/?locale=tr_TR"
       }
     ]
   },

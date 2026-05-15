@@ -1,14 +1,14 @@
 {
   "assets": {
-    "heroImagePath": "web-design/webslidermain-optimized.jpg",
-    "showcaseImagePath": "web-design/web-architecture.png",
+    "heroImagePath": "web-design/webslidermain-optimized-sm.jpg",
+    "showcaseImagePath": "web-design/web-architecture-optimized.jpg",
     "highlightImagePaths": {
-      "lighthouse": "web-design/lighthouse.png",
+      "lighthouse": "web-design/lighthouse-optimized.jpg",
       "seo": "web-design/seo.png",
       "devices": "web-design/devices.png"
     },
     "socialIconPaths": {
-      "instagram": "social-media-icon/instagram.png",
+      "instagram": "social-media-icon/instagram-optimized.png",
       "google": "social-media-icon/google.png",
       "facebook": "social-media-icon/facebook.png"
     }
@@ -32,21 +32,21 @@
         "text": "Instagram",
         "handle": "@evrenselbilisim",
         "logoKey": "instagram",
-        "href": "https://www.instagram.com"
+        "href": "https://www.instagram.com/evrenselbilisim/"
       },
       {
         "key": "google",
         "text": "Google",
         "handle": "google.com/maps",
         "logoKey": "google",
-        "href": "https://www.google.com/maps"
+        "href": "https://share.google/Y3hWtA32F0gaLCsdC"
       },
       {
         "key": "facebook",
         "text": "Facebook",
         "handle": "/evrenselbilisim",
         "logoKey": "facebook",
-        "href": "https://www.facebook.com"
+        "href": "https://www.facebook.com/evrenselbilisim/?locale=tr_TR"
       }
     ]
   },

@@ -1,5 +1,7 @@
 import { useState } from "react"
 import layoutData from "../../data/layoutData.json"
+import { useLanguage } from "../../i18n/LanguageContext"
+import { translateText } from "../../i18n/translations"
 
 const defaultPreferences = {
   necessary: true,
@@ -52,7 +54,9 @@ const readInitialCookieState = (storageKey) => {
 }
 
 export default function CookieBanner() {
+  const { lang } = useLanguage()
   const { cookieBanner } = layoutData
+  const t = (value) => translateText(value, lang)
   const initialState = useState(() => readInitialCookieState(cookieBanner.storageKey))[0]
   const [isVisible, setIsVisible] = useState(initialState.isVisible)
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
@@ -76,12 +80,13 @@ export default function CookieBanner() {
 
   return (
     <aside
+      key={lang}
       className={`cookie-banner ${isSettingsOpen ? "is-settings-open" : ""}`.trim()}
-      aria-label={cookieBanner.ariaLabel}
+      aria-label={t(cookieBanner.ariaLabel)}
     >
       {isSettingsOpen ? (
         <div className="cookie-banner__settings-header">
-          <h2>{cookieBanner.settingsTitle}</h2>
+          <h2>{t(cookieBanner.settingsTitle)}</h2>
         </div>
       ) : (
         <>
@@ -92,9 +97,9 @@ export default function CookieBanner() {
           </div>
 
           <div className="cookie-banner__content">
-            <p className="cookie-banner__eyebrow">{cookieBanner.eyebrow}</p>
-            <h2>{cookieBanner.title}</h2>
-            <p>{cookieBanner.text}</p>
+            <p className="cookie-banner__eyebrow">{t(cookieBanner.eyebrow)}</p>
+            <h2>{t(cookieBanner.title)}</h2>
+            <p>{t(cookieBanner.text)}</p>
           </div>
 
           <div className="cookie-banner__actions">
@@ -103,21 +108,21 @@ export default function CookieBanner() {
               className="cookie-banner__button cookie-banner__button--ghost"
               onClick={() => setIsSettingsOpen(true)}
             >
-              {cookieBanner.manageButton}
+              {t(cookieBanner.manageButton)}
             </button>
             <button
               type="button"
               className="cookie-banner__button cookie-banner__button--muted"
               onClick={() => savePreferences(preferences)}
             >
-              {cookieBanner.laterButton}
+              {t(cookieBanner.laterButton)}
             </button>
             <button
               type="button"
               className="cookie-banner__button cookie-banner__button--primary"
               onClick={() => savePreferences({ necessary: true, analytics: true, targeting: true })}
             >
-              {cookieBanner.acceptButton}
+              {t(cookieBanner.acceptButton)}
             </button>
           </div>
         </>
@@ -128,15 +133,15 @@ export default function CookieBanner() {
           {cookieBanner.settings.map((setting) => (
             <article key={setting.key} className="cookie-banner__setting">
               <div className="cookie-banner__setting-copy">
-                <h3>{setting.title}</h3>
-                <p>{setting.text}</p>
+                <h3>{t(setting.title)}</h3>
+                <p>{t(setting.text)}</p>
               </div>
               <button
                 type="button"
                 className={`cookie-banner__switch ${setting.locked ? "is-locked" : ""} ${
                   preferences[setting.key] ? "is-on" : ""
                 }`.trim()}
-                aria-label={setting.ariaLabel}
+                aria-label={setting.ariaLabel ? t(setting.ariaLabel) : undefined}
                 aria-pressed={setting.locked ? undefined : preferences[setting.key]}
                 disabled={setting.locked}
                 onClick={() => handleToggle(setting.key)}
@@ -152,7 +157,7 @@ export default function CookieBanner() {
               className="cookie-banner__button cookie-banner__button--primary"
               onClick={() => savePreferences(preferences)}
             >
-              {cookieBanner.saveButton}
+              {t(cookieBanner.saveButton)}
             </button>
           </div>
         </div>

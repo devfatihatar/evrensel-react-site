@@ -1,4 +1,9 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
+
+Disallow: /404
+Disallow: /*?utm_
+Disallow: /*?fbclid=
+Disallow: /*?gclid=
 
 Sitemap: https://www.evrenselbilisim.com/sitemap.xml

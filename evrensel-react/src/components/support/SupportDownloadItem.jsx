@@ -1,6 +1,9 @@
 import Button from "../shared/Button"
+import { resolveImage } from "../../utils/imageResolver"
 
 export default function SupportDownloadItem({ item }) {
+  const logoSrc = resolveImage(item.logoPath)
+
   return (
     <article className="support-downloads__item">
       <div
@@ -8,7 +11,11 @@ export default function SupportDownloadItem({ item }) {
         style={{ "--download-accent": item.accent }}
         aria-hidden="true"
       >
-        <span>{item.logoText}</span>
+        {logoSrc ? (
+          <img src={logoSrc} alt="" className="support-downloads__logo-image" loading="lazy" decoding="async" />
+        ) : (
+          <span>{item.logoText}</span>
+        )}
       </div>
 
       <div className="support-downloads__content">
@@ -18,7 +25,7 @@ export default function SupportDownloadItem({ item }) {
 
       <div className="support-downloads__actions">
         <Button href={item.downloadUrl} className="support-downloads__button">
-          Indir
+          İndir
         </Button>
       </div>
     </article>

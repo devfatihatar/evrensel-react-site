@@ -39,7 +39,7 @@
     width: clamp(180px, 22vw, 360px);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
-    filter: blur(2px);
+    filter: none;
     pointer-events: none;
     z-index: 0;
     opacity: 0.34;
@@ -50,14 +50,14 @@
     left: clamp(-60px, -5vw, -20px);
     top: clamp(110px, 18vh, 220px);
     background: radial-gradient(circle, rgba(137, 34, 57, 0.34) 0%, rgba(137, 34, 57, 0) 68%);
-    animation: servicesBlobDriftLeft 24s ease-in-out infinite alternate;
+    animation: none;
   }
 
   &::after {
     right: clamp(-70px, -6vw, -24px);
     top: clamp(220px, 34vh, 460px);
     background: radial-gradient(circle, rgba(183, 58, 48, 0.32) 0%, rgba(183, 58, 48, 0) 70%);
-    animation: servicesBlobDriftRight 28s ease-in-out infinite alternate;
+    animation: none;
   }
 
   > .section {
@@ -106,7 +106,7 @@
     box-shadow:
       0 30px 70px rgba(20, 10, 12, 0.22),
       inset 0 1px 0 rgba($color-white, 0.06);
-    backdrop-filter: blur(12px);
+    backdrop-filter: none;
     overflow: hidden;
 
     &::before {
@@ -201,7 +201,8 @@
 
   &__showcase-media {
     width: min(100%, 940px);
-    min-height: clamp(320px, 32vw, 460px);
+    height: clamp(320px, 32vw, 460px);
+    min-height: 0;
     overflow: hidden;
     border-radius: 30px;
     border: 1px solid rgba($color-white, 0.24);
@@ -212,7 +213,7 @@
   &__showcase-image {
     width: 100%;
     height: 100%;
-    min-height: clamp(320px, 32vw, 460px);
+    min-height: 0;
     object-fit: cover;
     display: block;
   }
@@ -228,8 +229,8 @@
     border-radius: 28px;
     border: 1px solid rgba($color-white, 0.16);
     background:
-      radial-gradient(circle at 18% 18%, rgba(255, 183, 120, 0.14), rgba(255, 183, 120, 0) 32%),
-      linear-gradient(145deg, rgba(119, 30, 45, 0.86), rgba(47, 16, 22, 0.72));
+      radial-gradient(circle at 18% 18%, rgba(255, 183, 120, 0.16), rgba(255, 183, 120, 0) 32%),
+      linear-gradient(145deg, rgba(119, 30, 45, 0.94), rgba(47, 16, 22, 0.88));
     box-shadow:
       0 28px 52px rgba(28, 12, 15, 0.28),
       inset 0 1px 0 rgba($color-white, 0.08);
@@ -387,6 +388,137 @@
     }
   }
 
+  &__free-note {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    align-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 100%;
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: 26px;
+    border: 1px solid rgba($color-white, 0.14);
+    background:
+      radial-gradient(circle at 18% 18%, rgba(255, 188, 103, 0.3), rgba(255, 188, 103, 0) 38%),
+      linear-gradient(145deg, rgba(154, 31, 61, 0.96), rgba(47, 16, 22, 0.9) 48%, rgba(211, 76, 56, 0.92));
+    background-size: 180% 180%, 220% 220%;
+    background-position: 0% 0%, 0% 50%;
+    color: $color-white;
+    text-align: center;
+    box-shadow:
+      0 24px 48px rgba(28, 12, 15, 0.24),
+      inset 0 1px 0 rgba($color-white, 0.08);
+    animation: servicesFreeNoteGradient 6s ease-in-out infinite alternate;
+
+    span {
+      color: rgba($color-white, 0.78);
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    strong {
+      font-size: clamp(28px, 3.2vw, 46px);
+      line-height: 1;
+    }
+
+    ul {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 42px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+    }
+
+    li {
+      position: absolute;
+      inset: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-width: min(100%, 190px);
+      margin: auto;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba($color-white, 0.1);
+      color: rgba($color-white, 0.84);
+      font-size: clamp(1.12rem, 1.7vw, 1.55rem);
+      font-weight: 800;
+      opacity: 0;
+      transform: translateX(44px);
+      animation: servicesFreeNoteSlide calc(var(--slide-count, 3) * 4s) ease-in-out infinite;
+      animation-delay: calc(var(--slide-index) * 4s);
+    }
+  }
+
+  &__group-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(18px, 2.4vw, 28px);
+  }
+
+  &__group-card {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+    min-height: 100%;
+    padding: clamp(24px, 2.8vw, 36px);
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at 14% 18%, rgba($color-white, 0.48), rgba($color-white, 0) 32%),
+      linear-gradient(145deg, rgba($color-white, 0.9), rgba($color-white, 0.58));
+    box-shadow:
+      0 22px 44px rgba(18, 10, 12, 0.16),
+      inset 0 1px 0 rgba($color-white, 0.12);
+
+    h2 {
+      margin: 0;
+      color: $color-secondary;
+      font-size: clamp(28px, 2.5vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      min-height: 44px;
+      padding: 11px 12px 11px 30px;
+      border-radius: 14px;
+      background: rgba($color-white, 0.46);
+      color: rgba($color-secondary, 0.78);
+      font-size: clamp(16px, 1.2vw, 18px);
+      font-weight: 700;
+      line-height: 1.55;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 14px;
+        top: 1.35em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: $color-primary;
+      }
+    }
+  }
+
   &__related {
     position: relative;
     z-index: 1;
@@ -484,6 +616,64 @@
   }
 }
 
+@keyframes servicesFreeNoteSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(44px);
+  }
+
+  5%,
+  16% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  20%,
+  100% {
+    opacity: 0;
+    transform: translateX(-44px);
+  }
+}
+
+@keyframes servicesFreeNoteGradient {
+  0% {
+    background-position: 0% 0%, 0% 50%;
+  }
+
+  50% {
+    background-position: 85% 35%, 100% 50%;
+  }
+
+  100% {
+    background-position: 20% 100%, 40% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services-page__free-note {
+    animation: none;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      min-height: 0;
+      overflow: visible;
+    }
+
+    li {
+      position: static;
+      width: auto;
+      min-width: 0;
+      margin: 0;
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+}
+
 @include respond(lg) {
   .services-page {
     &__benefits-grid,
@@ -555,7 +745,8 @@
     &__showcase-media,
     &__showcase-image {
       width: 100%;
-      min-height: 260px;
+      height: 260px;
+      min-height: 0;
       border-radius: 24px;
     }
 
@@ -577,6 +768,7 @@
 
     &__benefits-grid,
     &__related-grid,
+    &__group-grid,
     &__category-list,
     &__detail-list,
     &__detail-steps {
@@ -585,6 +777,7 @@
 
     &__benefit-card,
     &__related-card,
+    &__group-card,
     &__detail-highlight,
     &__category-list li,
     &__detail-list li,
@@ -592,6 +785,15 @@
       min-height: auto;
       padding: 20px;
     }
+
+    &__group-card {
+      grid-template-columns: 1fr;
+
+      ul {
+        grid-template-columns: 1fr;
+      }
+    }
+
   }
 
   .breadcrumb-trail {
@@ -599,5 +801,80 @@
       font-size: 11px;
       letter-spacing: 0.1em;
     }
+  }
+}
+
+@include respond(sm) {
+  .services-page {
+    &__hero-shell,
+    &__catalog-shell,
+    &__benefits-shell,
+    &__category-shell,
+    &__detail-hero,
+    &__detail-box {
+      padding: 14px;
+      border-radius: 22px;
+    }
+
+    &__showcase-media,
+    &__showcase-image {
+      height: 220px;
+      min-height: 0;
+    }
+
+    &__showcase-panel {
+      padding: 18px;
+    }
+  }
+}
+
+.services-page {
+  &__hero-shell,
+  &__catalog-header,
+  &__benefits-header,
+  &__category-header,
+  &__detail-hero-content,
+  &__detail-section-header {
+    text-align: center;
+    justify-items: center;
+  }
+
+  &__hero-shell h1,
+  &__hero-shell p,
+  &__catalog-header h2,
+  &__catalog-header p,
+  &__benefits-header h2,
+  &__benefits-header p,
+  &__category-header h2,
+  &__category-header p,
+  &__detail-hero-content h1,
+  &__detail-hero-content p,
+  &__detail-section-header h2,
+  &__detail-section-header p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__hero-actions,
+  &__detail-actions {
+    justify-content: center;
+  }
+
+  &__category-grid,
+  &__benefits-grid,
+  &__related-grid,
+  &__category-list,
+  &__detail-list,
+  &__detail-steps {
+    justify-items: center;
+  }
+
+  &__category-card,
+  &__benefit-card,
+  &__related-card,
+  &__category-list li,
+  &__detail-list li,
+  &__detail-steps li {
+    width: 100%;
   }
 }

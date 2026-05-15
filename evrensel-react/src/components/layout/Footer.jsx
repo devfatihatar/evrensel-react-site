@@ -1,49 +1,58 @@
 import { Link } from "react-router-dom"
 import layoutData from "../../data/layoutData.json"
 import contactData from "../../data/contactData.json"
+import { useLanguage } from "../../i18n/LanguageContext"
+import { translateText } from "../../i18n/translations"
 
 export default function Footer() {
+  const { lang } = useLanguage()
   const year = new Date().getFullYear()
   const { footer } = layoutData
+  const t = (value) => translateText(value, lang)
   const addressCard = contactData.contactCards.find((card) => card.title === "Adres")
   const address = addressCard?.value ?? footer.addressFallback
-  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`
+  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(address)}&z=18&output=embed`
+  const mapAriaLabel = `${address} ${t("harita konumu")}`
+  const mapTitle = t("Evrensel Bilişim adres haritası")
 
   return (
-    <footer className="footer">
+    <footer key={lang} className="footer">
       <div className="container footer__inner">
         <section className="footer__column footer__brand">
-          <h3>{footer.brand.title}</h3>
-          <p>{footer.brand.text}</p>
-          <nav className="footer__services" aria-label={footer.servicesAriaLabel}>
+          <h3>{t(footer.brand.title)}</h3>
+          <p>{t(footer.brand.text)}</p>
+          <nav className="footer__services" aria-label={t(footer.servicesAriaLabel)}>
             {footer.serviceLinks.map((link) => (
               <Link key={link.href} to={link.href}>
-                {link.label}
+                {t(link.label)}
               </Link>
             ))}
           </nav>
         </section>
 
         <section className="footer__column">
-          <h4>{footer.contactTitle}</h4>
+          <h4>{t(footer.contactTitle)}</h4>
           <ul className="footer__list">
             {footer.contactItems.map((item) => (
               <li key={item.label}>
-                {item.href ? <a href={item.href}>{item.label}</a> : item.label}
+                {item.href ? <a href={item.href}>{t(item.label)}</a> : t(item.label)}
               </li>
             ))}
           </ul>
           <Link className="footer__contact-button" to={footer.contactButton.href}>
-            {footer.contactButton.label}
+            {t(footer.contactButton.label)}
           </Link>
         </section>
 
         <section className="footer__column">
-          <h4>{footer.addressTitle}</h4>
+          <h4>{t(footer.addressTitle)}</h4>
           <p className="footer__address">{address}</p>
-          <div className="footer__map" aria-label={`${address} harita konumu`}>
+          <div
+            className="footer__map"
+            aria-label={mapAriaLabel}
+          >
             <iframe
-              title="Evrensel Bilişim adres haritası"
+              title={mapTitle}
               src={mapSrc}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -55,7 +64,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container">
           <p>
-            {footer.copyrightPrefix} {year} | {footer.copyrightSuffix}
+            {t(footer.copyrightPrefix)} {year} | {t(footer.copyrightSuffix)}
           </p>
         </div>
       </div>

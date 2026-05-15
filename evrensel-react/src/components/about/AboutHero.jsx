@@ -1,6 +1,5 @@
 import Button from "../shared/Button"
 import SectionTitle from "../shared/SectionTitle"
-import CountUpText from "../shared/CountUpText"
 
 export default function AboutHero({ hero, facts }) {
   return (
@@ -24,9 +23,7 @@ export default function AboutHero({ hero, facts }) {
           <ul className="about-page__facts">
             {facts.map((fact) => (
               <li key={fact.label} className="about-page__fact">
-                <strong>
-                  <CountUpText value={fact.value} />
-                </strong>
+                <strong>{fact.value}</strong>
                 <span>{fact.label}</span>
               </li>
             ))}

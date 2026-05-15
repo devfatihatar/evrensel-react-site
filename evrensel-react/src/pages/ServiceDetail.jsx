@@ -6,6 +6,8 @@ import services from "../data/servicesData.json"
 import serviceDetailData from "../data/serviceDetailData.json"
 import seoData from "../data/seoData.json"
 import { getBreadcrumbSchema, getServiceSchema } from "../seo/schema"
+import { useLanguage } from "../i18n/LanguageContext"
+import { translateText } from "../i18n/translations"
 
 const {
   primaryButton,
@@ -19,6 +21,7 @@ const {
 const serviceDetailSeo = seoData.serviceDetail
 
 export default function ServiceDetail() {
+  const { lang } = useLanguage()
   const { slug } = useParams()
   const service = services.find((item) => item.slug === slug)
 
@@ -29,9 +32,10 @@ export default function ServiceDetail() {
   const path = `/hizmetlerimiz/${service.slug}`
   const title = `${service.title} ${serviceDetailSeo.titleSuffix}`
   const description = `${serviceDetailSeo.descriptionPrefix} ${service.shortDescription}`
+  const highlightsAriaLabel = translateText("Hizmet öne çıkanları", lang)
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Ana Sayfa", path: "/" },
+    { name: "Home", path: "/" },
     { name: serviceDetailSeo.breadcrumbServices, path: "/hizmetlerimiz" },
     { name: service.title, path },
   ])
@@ -72,7 +76,7 @@ export default function ServiceDetail() {
                   <p>{service.summary}</p>
                 </div>
 
-                <aside className="services-page__detail-highlights" aria-label="Hizmet öne çıkanları">
+              <aside className="services-page__detail-highlights" aria-label={highlightsAriaLabel}>
                   {service.highlights.map((item, index) => (
                     <div key={item} className="services-page__detail-highlight homepage-shared-card">
                       <span>{String(index + 1).padStart(2, "0")}</span>

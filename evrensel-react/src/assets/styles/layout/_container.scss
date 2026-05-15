@@ -3,3 +3,17 @@
 .container {
   @include container;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

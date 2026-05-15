@@ -23,7 +23,7 @@
       box-shadow:
         0 24px 54px rgba($color-secondary, 0.18),
         inset 0 1px 0 rgba($color-white, 0.08);
-      backdrop-filter: blur(12px);
+      backdrop-filter: none;
     }
   }
 
@@ -322,5 +322,70 @@
     &__cta-box {
       padding: 20px;
     }
+  }
+}
+
+@include respond(sm) {
+  .about-page {
+    &__hero-panel,
+    &__capability-box,
+    &__timeline-item,
+    &__principle-card,
+    &__model-card,
+    &__cta-box {
+      padding: 16px;
+      border-radius: 20px;
+    }
+
+    &__facts {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.about-page {
+  &__hero-copy,
+  &__story-copy,
+  &__capabilities-header,
+  &__principles-header,
+  &__model-header,
+  &__cta-content {
+    text-align: center;
+    justify-items: center;
+  }
+
+  &__hero-copy h1,
+  &__hero-copy p,
+  &__story-copy h2,
+  &__story-copy p,
+  &__capabilities-header h2,
+  &__capabilities-header p,
+  &__principles-header h2,
+  &__principles-header p,
+  &__model-header h2,
+  &__model-header p,
+  &__cta-content h2,
+  &__cta-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__hero-actions,
+  &__cta-actions {
+    justify-content: center;
+  }
+
+  &__timeline,
+  &__principles-grid,
+  &__model-grid,
+  &__facts {
+    justify-items: center;
+  }
+
+  &__timeline-item,
+  &__principle-card,
+  &__model-card,
+  &__fact {
+    width: 100%;
   }
 }

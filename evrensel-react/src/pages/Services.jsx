@@ -25,6 +25,18 @@ const activeCategorySlug = searchParams.get("kategori")
     activeCategory && activeDropdownItem
       ? { ...activeCategory, to: activeDropdownItem.to, label: activeDropdownItem.label }
       : null
+  const serviceCategories = servicesCategoryData.map((category) => {
+    const dropdownItem = serviceDropdownItems.find((item) => {
+      const query = item.to.split("?")[1] ?? ""
+      return new URLSearchParams(query).get("kategori") === category.slug
+    })
+
+    return {
+      ...category,
+      to: dropdownItem?.to ?? `/hizmetlerimiz?kategori=${category.slug}`,
+      label: dropdownItem?.label ?? category.label,
+    }
+  })
   const pageTitle = activeCategoryWithNav
     ? `${activeCategoryWithNav.label} | Hizmetlerimiz | Evrensel Bilişim`
     : servicesSeo.title
@@ -32,8 +44,8 @@ const activeCategorySlug = searchParams.get("kategori")
   const pagePath = activeCategoryWithNav?.to ?? servicesSeo.path
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Ana Sayfa", path: "/" },
-    { name: "Hizmetlerimiz", path: servicesSeo.path },
+    { name: "Home", path: "/" },
+    { name: "Our Services", path: servicesSeo.path },
     ...(activeCategoryWithNav
       ? [{ name: activeCategoryWithNav.label, path: activeCategoryWithNav.to }]
       : []),
@@ -56,6 +68,7 @@ const activeCategorySlug = searchParams.get("kategori")
           catalog={servicesPageData.catalog}
           hero={servicesPageData.hero}
           labels={servicesPageData.labels}
+          serviceCategories={serviceCategories}
           services={services}
           serviceShowcaseImages={resolveImageList(servicesPageData.showcaseImagePaths)}
         />

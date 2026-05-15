@@ -9,6 +9,9 @@ import {
   SITE_URL,
   toAbsoluteUrl,
 } from "../../seo/config"
+import { getWebPageSchema } from "../../seo/schema"
+import { useLanguage } from "../../i18n/LanguageContext"
+import { translateText } from "../../i18n/translations"
 
 export default function PageSeo({
   title,
@@ -21,12 +24,19 @@ export default function PageSeo({
   jsonLd = [],
 }) {
   const location = useLocation()
+  const { lang } = useLanguage()
   const canonicalPath = path || location.pathname
   const canonicalUrl = toAbsoluteUrl(canonicalPath)
-  const pageTitle = title || DEFAULT_TITLE
-  const pageDescription = description || DEFAULT_DESCRIPTION
+  const pageTitle = translateText(title || DEFAULT_TITLE, lang)
+  const pageDescription = translateText(description || DEFAULT_DESCRIPTION, lang)
   const imageUrl = image ? (image.startsWith("http") ? image : toAbsoluteUrl(image)) : null
   const robots = noindex ? "noindex, nofollow" : "index, follow"
+  const locale = lang === "en" ? "en_US" : DEFAULT_LOCALE
+  const language = lang === "en" ? "en-US" : "tr-TR"
+  const schemas = [
+    getWebPageSchema({ title: pageTitle, description: pageDescription, url: canonicalUrl }),
+    ...jsonLd,
+  ]
 
   return (
     <Helmet>
@@ -34,13 +44,16 @@ export default function PageSeo({
       <meta name="description" content={pageDescription} />
       <meta name="robots" content={robots} />
       <meta name="author" content={SITE_NAME} />
-      <meta name="language" content="tr-TR" />
+      <meta name="language" content={language} />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      <meta name="format-detection" content="telephone=no" />
 
       <link rel="canonical" href={canonicalUrl} />
       <link rel="alternate" hrefLang="tr-TR" href={canonicalUrl} />
+      <link rel="alternate" hrefLang="en-US" href={canonicalUrl} />
       <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
 
-      <meta property="og:locale" content={DEFAULT_LOCALE} />
+      <meta property="og:locale" content={locale} />
       <meta property="og:type" content={type} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:title" content={pageTitle} />
@@ -60,7 +73,7 @@ export default function PageSeo({
 
       <meta property="article:publisher" content={SITE_URL} />
 
-      {jsonLd.map((schema, index) => (
+      {schemas.map((schema, index) => (
         <script key={`jsonld-${index}`} type="application/ld+json">
           {JSON.stringify(schema)}
         </script>

@@ -13,7 +13,6 @@ export default function SupportHero({ section }) {
           className="support-main-visual__image"
           loading="eager"
           decoding="async"
-          fetchPriority="high"
         />
 
         <div className="container support-main-visual__overlay">

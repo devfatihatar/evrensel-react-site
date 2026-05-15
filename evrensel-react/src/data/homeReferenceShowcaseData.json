@@ -1,14 +1,38 @@
 {
-  "title": "Referanslarimiz",
-  "description": "Birlikte calistigimiz firmalar ve projeler.",
+  "title": "Referanslarımız",
+  "description": "Birlikte çalıştığımız firmalar ve projeler.",
   "previews": [
-    { "name": "Talyantis", "imagePath": "referances/talyantis.jpg" },
-    { "name": "Rotlog Logistik", "imagePath": "referances/rotlog.jpg" },
-    { "name": "Renova", "imagePath": "referances/renova.jpg" },
-    { "name": "Yatsan", "imagePath": "referances/ref_yatsan.webp" },
-    { "name": "Storpark", "imagePath": "brands/storpark.jpg" },
-    { "name": "Sense Spa", "imagePath": "brands/sensespa.jpg" },
-    { "name": "Sare Suites", "imagePath": "brands/saresuites.jpg" },
-    { "name": "XDream", "imagePath": "brands/xdream.jpg" }
+    {
+      "name": "Talyantis",
+      "imagePath": "referances/talyantis.jpg"
+    },
+    {
+      "name": "Rotlog Logistik",
+      "imagePath": "referances/rotlog.jpg"
+    },
+    {
+      "name": "Renova",
+      "imagePath": "referances/renova.jpg"
+    },
+    {
+      "name": "Yatsan",
+      "imagePath": "referances/ref_yatsan.webp"
+    },
+    {
+      "name": "Storpark",
+      "imagePath": "brands/storpark.jpg"
+    },
+    {
+      "name": "Sense Spa",
+      "imagePath": "brands/sensespa.jpg"
+    },
+    {
+      "name": "Sare Suites",
+      "imagePath": "brands/saresuites.jpg"
+    },
+    {
+      "name": "XDream",
+      "imagePath": "brands/xdream.jpg"
+    }
   ]
 }

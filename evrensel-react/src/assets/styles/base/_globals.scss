@@ -29,6 +29,25 @@ main {
   min-height: calc(100vh - 160px);
 }
 
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+button,
+span,
+li {
+  overflow-wrap: anywhere;
+}
+
 .page {
   padding-top: 36px;
 
@@ -99,5 +118,40 @@ main {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    min-height: auto;
+  }
+
+  .page {
+    padding-top: 18px;
+
+    > .section {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
+
+    > .section + .section {
+      margin-top: 10px;
+
+      &::before {
+        width: min(100%, calc(100% - 32px));
+      }
+    }
+  }
+
+  .section {
+    padding: 56px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 42px 0;
   }
 }

@@ -1,25 +1,119 @@
-
 {
   "brandTickerTitle": "Çalıştığımız Markalar",
   "brandLogos": [
-    { "name": "Aynali", "imagePath": "brands/aynali.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "BM Terlik", "imagePath": "brands/bmterlik.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Netfile", "imagePath": "brands/netfile.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Modelin", "imagePath": "brands/modelin.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Mia", "imagePath": "brands/mia.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Iceberry", "imagePath": "brands/iceberry.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Huray Hugul", "imagePath": "brands/hurayhugul.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Gioco", "imagePath": "brands/gioco.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Dr Bio", "imagePath": "brands/drbio.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Renova", "imagePath": "brands/renova.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Yatsan", "imagePath": "brands/ref_yatsan.webp", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Otopratik", "imagePath": "brands/ref_otopratik.webp", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Otokontrol", "imagePath": "brands/otokontrol.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Sense Spa", "imagePath": "brands/sensespa.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Sare Suites", "imagePath": "brands/saresuites.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Storpark", "imagePath": "brands/storpark.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Talyantis", "imagePath": "brands/talyantis.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Sushi Hanga", "imagePath": "brands/sushihanga.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" },
-    { "name": "Xdream", "imagePath": "brands/xdream.jpg", "bgColor": "#F5F2F1", "textColor": "#2B3040" }
+    {
+      "name": "Aynali",
+      "imagePath": "brands/aynali.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "BM Terlik",
+      "imagePath": "brands/bmterlik.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Netfile",
+      "imagePath": "brands/netfile.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Modelin",
+      "imagePath": "brands/modelin.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Mia",
+      "imagePath": "brands/mia.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Iceberry",
+      "imagePath": "brands/iceberry.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Huray Hugul",
+      "imagePath": "brands/hurayhugul.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Gioco",
+      "imagePath": "brands/gioco.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Dr Bio",
+      "imagePath": "brands/drbio.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Renova",
+      "imagePath": "brands/renova.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Yatsan",
+      "imagePath": "brands/ref_yatsan.webp",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Otopratik",
+      "imagePath": "brands/ref_otopratik.webp",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Otokontrol",
+      "imagePath": "brands/otokontrol.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Sense Spa",
+      "imagePath": "brands/sensespa.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Sare Suites",
+      "imagePath": "brands/saresuites.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Storpark",
+      "imagePath": "brands/storpark.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Talyantis",
+      "imagePath": "brands/talyantis.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Sushi Hanga",
+      "imagePath": "brands/sushihanga.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    },
+    {
+      "name": "Xdream",
+      "imagePath": "brands/xdream.jpg",
+      "bgColor": "#F5F2F1",
+      "textColor": "#2B3040"
+    }
   ]
 }

@@ -9,8 +9,8 @@ const supportSeo = seoData.support
 
 export default function Support() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Ana Sayfa", path: "/" },
-    { name: "Yardım ve Destek", path: supportSeo.path },
+    { name: "Home", path: "/" },
+    { name: "Help & Support", path: supportSeo.path },
   ])
 
   const serviceSchema = getServiceSchema({

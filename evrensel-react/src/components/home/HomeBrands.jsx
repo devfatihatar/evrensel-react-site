@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import homeReferencesData from "../../data/homeReferencesData.json"
+import { useLanguage } from "../../i18n/LanguageContext"
+import { translateText } from "../../i18n/translations"
 
 const { brandTickerTitle, brandLogos } = homeReferencesData
 const brandImages = import.meta.glob("../../assets/images/brands/*", {
@@ -8,14 +10,12 @@ const brandImages = import.meta.glob("../../assets/images/brands/*", {
 })
 
 export default function HomeBrands() {
+  const { lang } = useLanguage()
+  const t = (value) => translateText(value, lang)
   const tickerRef = useRef(null)
   const isInteractingRef = useRef(false)
   const dragStartXRef = useRef(0)
   const dragStartScrollRef = useRef(0)
-  const blockWidthRef = useRef(0)
-  const autoTimerRef = useRef(null)
-  const stepAnimationRef = useRef(null)
-  const isStepAnimatingRef = useRef(false)
   const [isDragging, setIsDragging] = useState(false)
 
   const resolvedBrands = useMemo(
@@ -27,96 +27,9 @@ export default function HomeBrands() {
     []
   )
 
-  const loopedBrands = useMemo(
-    () => [...resolvedBrands, ...resolvedBrands, ...resolvedBrands],
-    [resolvedBrands]
-  )
-
-  useEffect(() => {
-    const ticker = tickerRef.current
-    if (!ticker || !resolvedBrands.length) return
-
-    const updateBlockWidth = () => {
-      blockWidthRef.current = ticker.scrollWidth / 3
-      return blockWidthRef.current
-    }
-
-    const wrapAtEdges = () => {
-      const blockWidth = blockWidthRef.current || updateBlockWidth()
-      if (!blockWidth) return
-
-      const maxScroll = ticker.scrollWidth - ticker.clientWidth
-      if (maxScroll <= 0) return
-
-      if (ticker.scrollLeft <= 2) {
-        ticker.scrollLeft += blockWidth
-      } else if (ticker.scrollLeft >= maxScroll - 2) {
-        ticker.scrollLeft -= blockWidth
-      }
-    }
-
-    const blockWidth = updateBlockWidth()
-    if (blockWidth) ticker.scrollLeft = blockWidth + 1
-
-    const runAutoStep = () => {
-      if (isInteractingRef.current || isStepAnimatingRef.current) return
-
-      const start = ticker.scrollLeft
-      const distance = 150
-      const durationMs = 900
-      let startTime = 0
-      isStepAnimatingRef.current = true
-
-      const step = (timestamp) => {
-        if (!startTime) startTime = timestamp
-        const progress = Math.min((timestamp - startTime) / durationMs, 1)
-        const eased = 1 - Math.pow(1 - progress, 3)
-        ticker.scrollLeft = start + distance * eased
-        wrapAtEdges()
-
-        if (progress < 1) {
-          stepAnimationRef.current = window.requestAnimationFrame(step)
-          return
-        }
-
-        isStepAnimatingRef.current = false
-        stepAnimationRef.current = null
-      }
-
-      stepAnimationRef.current = window.requestAnimationFrame(step)
-    }
-
-    const onScroll = () => wrapAtEdges()
-    const onResize = () => {
-      const prevBlock = blockWidthRef.current || 1
-      const localPosition = ticker.scrollLeft - prevBlock
-      const nextBlock = updateBlockWidth()
-      const nextLocal = ((localPosition % nextBlock) + nextBlock) % nextBlock
-      const maxScroll = ticker.scrollWidth - ticker.clientWidth
-      ticker.scrollLeft = Math.min(maxScroll - 1, nextBlock + nextLocal)
-      wrapAtEdges()
-    }
-    ticker.addEventListener("scroll", onScroll, { passive: true })
-    window.addEventListener("resize", onResize)
-    autoTimerRef.current = window.setInterval(runAutoStep, 3000)
-
-    return () => {
-      ticker.removeEventListener("scroll", onScroll)
-      window.removeEventListener("resize", onResize)
-      if (autoTimerRef.current) window.clearInterval(autoTimerRef.current)
-      if (stepAnimationRef.current) window.cancelAnimationFrame(stepAnimationRef.current)
-      isStepAnimatingRef.current = false
-    }
-  }, [resolvedBrands.length])
-
   const startDrag = (pageX) => {
     const ticker = tickerRef.current
     if (!ticker) return
-    if (stepAnimationRef.current) {
-      window.cancelAnimationFrame(stepAnimationRef.current)
-      stepAnimationRef.current = null
-      isStepAnimatingRef.current = false
-    }
     setIsDragging(true)
     isInteractingRef.current = true
     dragStartXRef.current = pageX
@@ -128,12 +41,6 @@ export default function HomeBrands() {
     if (!ticker || !isDragging) return
     const deltaX = pageX - dragStartXRef.current
     ticker.scrollLeft = dragStartScrollRef.current - deltaX
-    const blockWidth = blockWidthRef.current || 0
-    if (blockWidth > 0) {
-      const maxScroll = ticker.scrollWidth - ticker.clientWidth
-      if (ticker.scrollLeft <= 2) ticker.scrollLeft += blockWidth
-      else if (ticker.scrollLeft >= maxScroll - 2) ticker.scrollLeft -= blockWidth
-    }
   }
 
   const stopDrag = () => {
@@ -145,15 +52,15 @@ export default function HomeBrands() {
   }
 
   return (
-    <section className="home-brands section reveal-on-scroll reveal-left">
+    <section key={lang} className="home-brands section reveal-on-scroll reveal-left">
       <div className="container">
         <div className="references__ticker-block">
-          <p className="references__ticker-title">{brandTickerTitle}</p>
+          <p className="references__ticker-title">{t(brandTickerTitle)}</p>
 
           <div
             className={`references__ticker ${isDragging ? "is-dragging" : ""}`.trim()}
             ref={tickerRef}
-            aria-label={brandTickerTitle}
+            aria-label={t(brandTickerTitle)}
             onMouseDown={(event) => startDrag(event.pageX)}
             onMouseMove={(event) => moveDrag(event.pageX)}
             onMouseUp={stopDrag}
@@ -162,7 +69,7 @@ export default function HomeBrands() {
             onTouchMove={(event) => moveDrag(event.touches[0].pageX)}
             onTouchEnd={stopDrag}
           >
-            {loopedBrands.map((brand, index) => (
+            {resolvedBrands.map((brand, index) => (
               <article
                 key={`${brand.name}-${index}`}
                 className="references__brand"
@@ -173,7 +80,7 @@ export default function HomeBrands() {
                   {brand.imageSrc ? (
                     <img
                       src={brand.imageSrc}
-                      alt={`${brand.name} logosu`}
+                      alt={`${brand.name} ${t("logosu")}`}
                       className="references__brand-logo-image"
                       loading="lazy"
                       decoding="async"

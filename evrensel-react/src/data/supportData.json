@@ -110,30 +110,121 @@
   "downloadsSection": {
     "eyebrow": "İndirilebilir Araçlar",
     "title": "Sık kullandığımız programları tek yerden indirin",
-    "subtitle": "WinRAR, uzaktan destek yazılımları veya temel araçları burada listeleyebiliriz. Şu an aşağıda örnek bir kurulum gösterdim.",
+    "subtitle": "Uzaktan bağlantı, bakım, disk yönetimi, kamera ve yedekleme araçlarını bu alanda listeliyoruz.",
     "listAriaLabel": "İndirilebilir programlar listesi"
   },
   "downloadItems": [
     {
-      "name": "WinRAR",
-      "description": "Sıkıştırılmış dosyaları açmak ve arşiv oluşturmak için kullandığımız temel araç.",
-      "logoText": "WR",
-      "accent": "#8f1f37",
-      "downloadUrl": "#"
-    },
-    {
-      "name": "AnyDesk",
-      "description": "Uzaktan bağlantı ve teknik destek sürecinde hızlı erişim için kullanılabilir.",
+      "name": "Uzak Bağlantı - AnyDesk",
+      "description": "Uzaktan teknik destek ve hızlı bağlantı işlemleri için kullanılır.",
       "logoText": "AD",
       "accent": "#c53d33",
-      "downloadUrl": "#"
+      "downloadUrl": "https://download.anydesk.com/AnyDesk.exe",
+      "logoPath": "yardımdesteklogo/anydesk.png"
     },
     {
-      "name": "Google Chrome",
-      "description": "Tarayıcı kurulumu veya uzantı testleri için en çok kullandığımız alternatiflerden biri.",
-      "logoText": "GC",
-      "accent": "#d67a28",
-      "downloadUrl": "#"
+      "name": "Uzak Bağlantı - Alpemix",
+      "description": "Uzaktan bağlantı ve destek oturumları için alternatif erişim aracıdır.",
+      "logoText": "AX",
+      "accent": "#2b75bb",
+      "downloadUrl": "https://www.alpemix.com/site/Alpemix.exe",
+      "logoPath": "yardımdesteklogo/alpemix.png"
+    },
+    {
+      "name": "Ağ Tarama - Netscan",
+      "description": "Yerel ağdaki cihazları ve bağlantıları taramak için kullanılır.",
+      "logoText": "NS",
+      "accent": "#3267a8",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/netscan.rar",
+      "logoPath": "yardımdesteklogo/netscan.png"
+    },
+    {
+      "name": "Outlook Dosya Onarımı - Scanpst",
+      "description": "Outlook veri dosyalarını kontrol etmek ve onarmak için kullanılır.",
+      "logoText": "SP",
+      "accent": "#1f6fb2",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/scanpst.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Onarım Aracı - Combofix",
+      "description": "Sistem temizliği ve temel onarım süreçlerinde kullanılan destek aracıdır.",
+      "logoText": "CF",
+      "accent": "#8f1f37",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/combofix.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Foto Editörü - ACDSee",
+      "description": "Görsel görüntüleme ve temel fotoğraf düzenleme işlemleri için kullanılır.",
+      "logoText": "AC",
+      "accent": "#5d4bb8",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/acdsee.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Kamera - iVMS 4200",
+      "description": "Güvenlik kamera sistemlerinin izleme ve yönetim işlemleri için kullanılır.",
+      "logoText": "IV",
+      "accent": "#b63a2d",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/ivms4200.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Kamera - CMS2000",
+      "description": "Kamera görüntüleme ve yönetim ihtiyaçları için kullanılan yardımcı yazılımdır.",
+      "logoText": "CM",
+      "accent": "#384f68",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/cms2000.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Sıkıştırma Aracı - WinRAR",
+      "description": "Sıkıştırılmış dosyaları açmak ve arşiv oluşturmak için kullanılır.",
+      "logoText": "WR",
+      "accent": "#8f1f37",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/winrar.exe",
+      "logoPath": "yardımdesteklogo/winrar.png"
+    },
+    {
+      "name": "Disk Manager - Disk Genius",
+      "description": "Disk, bölümleme ve veri kurtarma işlemleri için kullanılan yönetim aracıdır.",
+      "logoText": "DG",
+      "accent": "#287a58",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/diskgenius.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Disk Manager - EaseUS Server",
+      "description": "Sunucu disk yönetimi ve bölümleme işlemleri için kullanılan araçtır.",
+      "logoText": "EU",
+      "accent": "#2f62c7",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/easeus.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "SQL Yedekleme",
+      "description": "SQL veritabanı yedekleme süreçlerinde kullanılan yardımcı araçtır.",
+      "logoText": "SQL",
+      "accent": "#c06a2b",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/Yedekleme.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Partition Magic",
+      "description": "Disk bölümleme ve temel disk düzenleme işlemleri için kullanılır.",
+      "logoText": "PM",
+      "accent": "#6554bd",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/Partition%20Magic.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
+    },
+    {
+      "name": "Partition Magic Server",
+      "description": "Sunucu ortamlarında disk bölümleme ve yönetim işlemleri için kullanılır.",
+      "logoText": "PS",
+      "accent": "#4f5f73",
+      "downloadUrl": "https://evrenselbilisim.net/images/dosya/Partition%20Master%20Server.rar",
+      "logoPath": "yardımdesteklogo/indir.png"
     }
   ]
 }

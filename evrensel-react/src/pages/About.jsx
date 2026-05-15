@@ -27,8 +27,8 @@ const aboutSeo = seoData.about
 
 export default function About() {
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Ana Sayfa", path: "/" },
-    { name: "Hakkımızda", path: aboutSeo.path },
+    { name: "Home", path: "/" },
+    { name: "About Us", path: aboutSeo.path },
   ])
 
   return (

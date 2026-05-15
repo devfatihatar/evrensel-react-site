@@ -1,16 +1,24 @@
 import Button from "../shared/Button"
+import { useLanguage } from "../../i18n/LanguageContext"
+import { translateText } from "../../i18n/translations"
 
 export default function HardwareHero({ hero, highlights, backgroundImage, devicesImage }) {
+  const { lang } = useLanguage()
+
+  const mainVisualAriaLabel = translateText("Donanım ana görseli", lang)
+  const backgroundAlt = translateText("Donanım ana slider görseli", lang)
+  const highlightsAriaLabel = translateText("Donanım avantajları", lang)
+  const panelAriaLabel = translateText(hero.panelAriaLabel, lang)
+
   return (
-    <section className="section hardware-main-visual reveal-on-scroll reveal-right" aria-label="Donanım ana görseli">
+    <section className="section hardware-main-visual reveal-on-scroll reveal-right" aria-label={mainVisualAriaLabel}>
       <div className="hardware-main-visual__frame">
         <img
           src={backgroundImage}
-          alt="Donanım ana slider görseli"
+          alt={backgroundAlt}
           className="hardware-main-visual__image"
           loading="eager"
           decoding="async"
-          fetchPriority="high"
         />
 
         <div className="container hardware-main-visual__overlay">
@@ -21,14 +29,11 @@ export default function HardwareHero({ hero, highlights, backgroundImage, device
 
               <div className="hardware-hero__actions">
                 <Button to="/iletisim">{hero.primaryButton}</Button>
-                <Button to="/yardim-destek" variant="secondary">
-                  {hero.secondaryButton}
-                </Button>
               </div>
             </div>
 
-            <aside className="hardware-hero__aside" aria-label={hero.panelAriaLabel}>
-              <div className="hardware-hero__highlights" aria-label="Donanım avantajları">
+            <aside className="hardware-hero__aside" aria-label={panelAriaLabel}>
+              <div className="hardware-hero__highlights" aria-label={highlightsAriaLabel}>
                 {highlights.map((item) => (
                   <article key={item.label} className="hardware-hero__highlight homepage-shared-card">
                     <div className="hardware-hero__highlight-visual">

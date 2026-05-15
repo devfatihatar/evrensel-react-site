@@ -63,7 +63,7 @@
       transform: translateX(30px);
       opacity: 1;
       box-shadow: 0 14px 26px rgba($color-secondary, 0.34);
-      animation: socialCardFloat 2.8s ease-in-out infinite;
+      animation: none;
     }
 
     &--instagram {
@@ -180,14 +180,14 @@
     right: clamp(16px, 2vw, 28px);
     bottom: clamp(16px, 2vw, 28px);
     z-index: 40;
-    width: clamp(42px, 2.94vw, 50px);
-    height: clamp(42px, 2.94vw, 50px);
+    width: 64px;
+    height: 64px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     overflow: visible;
     opacity: 0.6;
-    animation: homeWhatsappBuzz 5s ease-in-out infinite;
+    animation: none;
     transition:
       transform 0.24s ease,
       opacity 0.24s ease,
@@ -280,7 +280,12 @@
     display: none;
 
     &__whatsapp {
+      right: 14px;
+      bottom: 14px;
+      width: 56px;
+      height: 56px;
       display: inline-flex;
+      opacity: 0.96;
     }
   }
 }
